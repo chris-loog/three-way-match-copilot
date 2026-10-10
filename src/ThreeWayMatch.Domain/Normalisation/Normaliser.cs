@@ -325,6 +325,18 @@ public static partial class Normaliser
     [GeneratedRegex(@"[A-Z]{2}\d{2}(?:\s?[A-Z0-9]{4}){2,7}(?:\s?[A-Z0-9]{1,3})?")]
     private static partial Regex IbanShape();
 
+    // ---------- text ----------
+
+    /// <summary>
+    /// A line description in the form used to compare and to store learned aliases: trimmed, lower case, single spaces.
+    /// </summary>
+    public static string NormaliseDescription(string? text) =>
+        string.Join(' ', (text ?? string.Empty).ToLowerInvariant().Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
+
+    /// <summary>A reference reduced to letters and digits in upper case, so "po 2026-0001" and "PO-2026-0001." compare equal.</summary>
+    public static string ReferenceKey(string? text) =>
+        string.Concat((text ?? string.Empty).Where(char.IsLetterOrDigit)).ToUpperInvariant();
+
     // ---------- units ----------
 
     private static readonly Dictionary<string, UnitCode> UnitSpellings = new(StringComparer.OrdinalIgnoreCase)

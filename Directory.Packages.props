@@ -11,6 +11,7 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.12" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.12" />
     <PackageVersion Include="Bogus" Version="35.6.5" />
+    <PackageVersion Include="FuzzySharp" Version="2.0.2" />
     <PackageVersion Include="QuestPDF" Version="2026.9.1" />
     <PackageVersion Include="Azure.AI.DocumentIntelligence" Version="1.0.0" />
     <PackageVersion Include="Azure.Identity" Version="1.21.0" />

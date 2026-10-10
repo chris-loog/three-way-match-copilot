@@ -16,6 +16,9 @@ public enum MatchMethod
     ItemCode,
     LearnedAlias,
     FuzzyDescription,
+
+    /// <summary>A delivery or fuel charge matched to the PO's charge line by keyword, not by item code.</summary>
+    ChargeKeyword,
     None,
 }
 
