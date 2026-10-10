@@ -57,6 +57,11 @@ internal static class SeedCommand
         Console.WriteLine($"  fully received: {fully} ({Percent(fully, orders.Count)})");
         Console.WriteLine($"  partly:         {partly} ({Percent(partly, orders.Count)})");
         Console.WriteLine($"  not received:   {none} ({Percent(none, orders.Count)})");
+        foreach (var group in orders.GroupBy(o => o.Supplier!.Name).OrderByDescending(g => g.Count()))
+        {
+            Console.WriteLine($"  {group.Key,-28} {group.Count(),3} orders");
+        }
+
         Console.WriteLine($"Valid IBAN checksums: {data.Suppliers.Count(s => IbanGenerator.HasValidChecksum(s.Iban))} of {data.Suppliers.Count}");
         Console.WriteLine($"Goods receipts:   {data.GoodsReceipts.Count} ({data.GoodsReceipts.Sum(r => r.Lines.Count)} lines)");
     }

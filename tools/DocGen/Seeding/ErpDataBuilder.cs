@@ -129,7 +129,9 @@ internal sealed class ErpDataBuilder(int seed)
             .ToList();
 
         var supplierSpecs = SeedCatalogue.Suppliers.ToArray();
-        var weights = supplierSpecs.Select(s => (float)s.PoWeight).ToArray();
+        // Bogus wants probabilities that add up to 1, not raw weights.
+        var totalWeight = supplierSpecs.Sum(s => s.PoWeight);
+        var weights = supplierSpecs.Select(s => (float)s.PoWeight / totalWeight).ToArray();
 
         var purchaseOrders = new List<PurchaseOrder>();
         for (var i = 0; i < PurchaseOrderCount; i++)

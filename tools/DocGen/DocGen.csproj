@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" />
+    <PackageReference Include="QuestPDF" />
   </ItemGroup>
 
 </Project>

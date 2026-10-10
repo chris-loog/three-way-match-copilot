@@ -1,10 +1,12 @@
+using DocGen.Generation;
 using DocGen.Seeding;
 
 const string usage = """
     DocGen: test data tool for Three-Way Match Copilot
 
     Commands:
-      seed [--dry-run]   Fill the erp schema with the fictional ERP data (--dry-run: build and summarise only)
+      seed [--dry-run]                 Fill the erp schema with the fictional ERP data (--dry-run: build and summarise only)
+      generate [--out DIR] [--dry-run] Render invoices and delivery notes with ground truth (default DIR: data/generated)
     """;
 
 if (args.Length == 0)
@@ -17,6 +19,8 @@ switch (args[0])
 {
     case "seed":
         return await SeedCommand.RunAsync(args[1..]);
+    case "generate":
+        return GenerateCommand.Run(args[1..]);
     default:
         Console.Error.WriteLine($"Unknown command '{args[0]}'.{Environment.NewLine}{usage}");
         return 1;
