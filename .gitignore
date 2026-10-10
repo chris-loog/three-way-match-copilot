@@ -113,3 +113,6 @@ node_modules/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Augraphy download cache
+augraphy_cache/

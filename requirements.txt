@@ -1,0 +1,7 @@
+# Shared by tools/degrade and eval/. One virtual environment for both:
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+pymupdf
+augraphy
+opencv-python-headless
+numpy
+pillow
