@@ -524,7 +524,9 @@ internal sealed class DocumentPlanner(ErpData erp, int seed)
             return Decision.Rejected;
         }
 
-        if (injected.Any(d => d.Code == DiscrepancyCode.PartialDelivery))
+        // Waiting only helps when waiting is the whole problem; a second real finding needs a person now.
+        var real = injected.Where(d => d.Severity >= Severity.Warning).ToList();
+        if (real.Count > 0 && real.All(d => d.Code == DiscrepancyCode.PartialDelivery))
         {
             return Decision.OnHold;
         }

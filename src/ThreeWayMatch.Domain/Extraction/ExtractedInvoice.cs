@@ -25,7 +25,9 @@ public sealed record ExtractedInvoice
 
     /// <summary>
     /// The fields a wrong value in would cost money or hide fraud. Every one of them must be sure enough
-    /// before a document can be approved automatically. Fields that were not found at all count as unreadable (confidence 0).
+    /// before a document can be approved automatically. Fields that were not found at all count as unreadable (confidence 0),
+    /// except the PO reference: an invoice may simply not carry one, and NO_PO_REFERENCE reports that on its own.
+    /// A PO reference that is there but read with doubt still counts.
     /// </summary>
     public IReadOnlyDictionary<string, double> KeyFieldConfidences()
     {
@@ -33,12 +35,16 @@ public sealed record ExtractedInvoice
         {
             ["SupplierVatNumber"] = SupplierVatNumber.Confidence ?? 0,
             ["InvoiceNumber"] = InvoiceNumber.Confidence ?? 0,
-            ["PurchaseOrderReference"] = PurchaseOrderReference.Confidence ?? 0,
             ["NetTotal"] = NetTotal.Confidence ?? 0,
             ["VatTotal"] = VatTotal.Confidence ?? 0,
             ["GrossTotal"] = GrossTotal.Confidence ?? 0,
             ["Iban"] = Iban.Confidence ?? 0,
         };
+
+        if (PurchaseOrderReference.HasValue)
+        {
+            confidences["PurchaseOrderReference"] = PurchaseOrderReference.Confidence ?? 0;
+        }
 
         foreach (var line in Lines)
         {

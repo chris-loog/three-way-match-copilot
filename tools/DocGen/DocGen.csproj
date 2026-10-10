@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="ThreeWayMatch.Domain.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\ThreeWayMatch.Infrastructure\ThreeWayMatch.Infrastructure.csproj" />
   </ItemGroup>
 

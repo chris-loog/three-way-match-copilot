@@ -51,7 +51,7 @@ internal sealed class MatchingWorld
     public MatchingWorld()
     {
         Timber = new Supplier { Id = 1, Name = "Sillaotsa Saeveski OÜ", Category = "Sawn timber", VatNumber = TimberVat, RegistryCode = "11812518", Iban = "EE780400150311134947", DocumentCulture = "et-EE" };
-        Panels = new Supplier { Id = 2, Name = "Baltic Board Supply OÜ", Category = "Panels", VatNumber = PanelVat, RegistryCode = "10776889", Iban = "EE330400150311134111", DocumentCulture = "en-GB" };
+        Panels = new Supplier { Id = 2, Name = "Baltic Board Supply OÜ", Category = "Panels", VatNumber = PanelVat, RegistryCode = "10776889", Iban = "EE490400150311134111", DocumentCulture = "en-GB" };
 
         Board = Sell(1, Timber, new Item { Id = 1, Code = "TMB-0001", Name = "Spruce board 25x150 mm, dried, 4.8 m", BaseUnit = "m³" }, "KS-0101", "Kuuselaud 25x150 mm, kuivatatud, 4,8 m", "m³", 1m);
         Lath = Sell(2, Timber, new Item { Id = 2, Code = "TMB-0002", Name = "Spruce lath 22x45 mm", BaseUnit = "m³" }, "KS-0102", "Kuuseliist 22x45 mm", "pakk", 0.25m);
@@ -121,6 +121,14 @@ internal sealed class MatchingWorld
         return line;
     }
 
-    private static void Receive(PurchaseOrderLine line, decimal quantity) =>
-        line.ReceiptLines.Add(new GoodsReceiptLine { PurchaseOrderLine = line, PurchaseOrderLineId = line.Id, Quantity = quantity });
+    private static void Receive(PurchaseOrderLine line, decimal quantity, string deliveryNote = "DN-1001")
+    {
+        var receipt = new GoodsReceipt
+        {
+            Number = $"GR-{line.Id}", PurchaseOrder = line.PurchaseOrder, PurchaseOrderId = line.PurchaseOrderId, DeliveryNoteNumber = deliveryNote,
+        };
+        var receiptLine = new GoodsReceiptLine { GoodsReceipt = receipt, PurchaseOrderLine = line, PurchaseOrderLineId = line.Id, Quantity = quantity };
+        receipt.Lines.Add(receiptLine);
+        line.ReceiptLines.Add(receiptLine);
+    }
 }

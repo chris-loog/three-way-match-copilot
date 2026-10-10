@@ -7,6 +7,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\ThreeWayMatch.Domain\ThreeWayMatch.Domain.csproj" />
     <ProjectReference Include="..\..\src\ThreeWayMatch.Infrastructure\ThreeWayMatch.Infrastructure.csproj" />
+    <!-- The document generator, so tests can run the whole rule set over every generated document. -->
+    <ProjectReference Include="..\..\tools\DocGen\DocGen.csproj" />
   </ItemGroup>
 
   <ItemGroup>

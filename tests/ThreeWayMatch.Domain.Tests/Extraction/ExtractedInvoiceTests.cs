@@ -8,17 +8,17 @@ public class ExtractedInvoiceTests
 
     private static ExtractedField<decimal?> Amount(decimal value, double confidence) => new(value, value.ToString(System.Globalization.CultureInfo.InvariantCulture), confidence);
 
-    private static ExtractedInvoice Invoice(double iban = 0.95, double unitPrice = 0.95, bool withPoReference = true) => new()
+    private static ExtractedInvoice Invoice(double iban = 0.95, double unitPrice = 0.95, bool withPoReference = true, bool withIban = true, double poReference = 0.95) => new()
     {
         ModelId = "prebuilt-invoice",
         RawJson = "{}",
         SupplierVatNumber = Text("EE109532815", 0.95),
         InvoiceNumber = Text("A-1", 0.95),
-        PurchaseOrderReference = withPoReference ? Text("PO-2026-0001", 0.95) : ExtractedField.Missing<string>(),
+        PurchaseOrderReference = withPoReference ? Text("PO-2026-0001", poReference) : ExtractedField.Missing<string>(),
         NetTotal = Amount(100m, 0.95),
         VatTotal = Amount(24m, 0.95),
         GrossTotal = Amount(124m, 0.95),
-        Iban = Text("EE780400150311134947", iban),
+        Iban = withIban ? Text("EE780400150311134947", iban) : ExtractedField.Missing<string>(),
         Lines =
         [
             new ExtractedInvoiceLine(1, Text("X1", 0.9), Text("Board", 0.9), Amount(5m, 0.95), Text("m³", 0.9), Amount(20m, unitPrice), ExtractedField.Missing<decimal?>(), Amount(100m, 0.95)),
@@ -40,10 +40,25 @@ public class ExtractedInvoiceTests
     [Fact]
     public void A_field_the_model_did_not_return_counts_as_unreadable()
     {
+        var invoice = Invoice(withIban: false);
+
+        Assert.Equal(0, invoice.KeyFieldConfidences()["Iban"]);
+        Assert.Equal(0, invoice.MinKeyFieldConfidence());
+    }
+
+    [Fact]
+    public void A_missing_po_reference_is_not_unreadable_because_no_po_reference_reports_it()
+    {
         var invoice = Invoice(withPoReference: false);
 
-        Assert.Equal(0, invoice.KeyFieldConfidences()["PurchaseOrderReference"]);
-        Assert.Equal(0, invoice.MinKeyFieldConfidence());
+        Assert.DoesNotContain("PurchaseOrderReference", invoice.KeyFieldConfidences().Keys);
+        Assert.Empty(invoice.LowConfidenceFields(0.80));
+    }
+
+    [Fact]
+    public void A_po_reference_that_is_present_but_doubtful_still_counts()
+    {
+        Assert.Equal(["PurchaseOrderReference"], Invoice(poReference: 0.40).LowConfidenceFields(0.80));
     }
 
     [Fact]

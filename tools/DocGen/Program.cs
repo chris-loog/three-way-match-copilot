@@ -1,3 +1,4 @@
+using DocGen.Evaluation;
 using DocGen.Extraction;
 using DocGen.Generation;
 using DocGen.Seeding;
@@ -8,6 +9,7 @@ const string usage = """
     Commands:
       seed [--dry-run]                 Fill the erp schema with the fictional ERP data (--dry-run: build and summarise only)
       generate [--out DIR] [--dry-run] Render invoices and delivery notes with ground truth (default DIR: data/generated)
+      check-rules [--verbose]          Run matching and rules over the generated documents (offline); exit 1 on a wrong auto-approval
       extract [--split dev|test|all] [--quality Q] [--limit N] [--dataset DIR] [--cache DIR]
                                        Read dataset invoices with Document Intelligence (calls Azure; cached by content hash)
     """;
@@ -24,6 +26,8 @@ switch (args[0])
         return await SeedCommand.RunAsync(args[1..]);
     case "generate":
         return GenerateCommand.Run(args[1..]);
+    case "check-rules":
+        return CheckRulesCommand.Run(args[1..]);
     case "extract":
         return await ExtractCommand.RunAsync(args[1..]);
     default:
