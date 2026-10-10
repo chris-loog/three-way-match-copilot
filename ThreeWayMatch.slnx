@@ -1,2 +1,6 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ThreeWayMatch.Domain/ThreeWayMatch.Domain.csproj" />
+    <Project Path="src/ThreeWayMatch.Infrastructure/ThreeWayMatch.Infrastructure.csproj" />
+  </Folder>
 </Solution>
