@@ -12,6 +12,13 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.12" />
     <PackageVersion Include="Bogus" Version="35.6.5" />
     <PackageVersion Include="QuestPDF" Version="2026.9.1" />
+    <PackageVersion Include="Azure.AI.DocumentIntelligence" Version="1.0.0" />
+    <PackageVersion Include="Azure.Identity" Version="1.21.0" />
+    <!-- Azure.Identity needs a newer Azure.Core than the Document Intelligence SDK asks for; pin the newer one for everyone. -->
+    <PackageVersion Include="Azure.Core" Version="1.53.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.4" />
   </ItemGroup>
 
 </Project>

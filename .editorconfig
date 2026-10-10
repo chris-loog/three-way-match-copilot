@@ -54,3 +54,7 @@ dotnet_naming_style.underscore_camel.capitalization = camel_case
 [**/Migrations/*.cs]
 generated_code = true
 dotnet_analyzer_diagnostic.severity = none
+
+# Test names are sentences ("Reads_the_totals_as_decimals"), so underscores are fine there.
+[tests/**/*.cs]
+dotnet_diagnostic.CA1707.severity = none

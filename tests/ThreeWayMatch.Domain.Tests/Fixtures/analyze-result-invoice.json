@@ -1,0 +1,952 @@
+{
+  "apiVersion": "2024-11-30",
+  "modelId": "prebuilt-invoice",
+  "stringIndexType": "utf16CodeUnit",
+  "content": "Baltic Board Supply OÜ\nSadama 25\n10111 Tallinn\nVAT no. EE109532815\nReg. code 10776889\nINVOICE\nInvoice no.: BBS/2026/0354\nInvoice date: 16 Apr 2026\nYour order: PO-2026-0003\nBank account (IBAN): EE78 0400 1503 1113 4947\nTotal payable 20,538.12 EUR",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "angle": 0,
+      "width": 8.27,
+      "height": 11.69,
+      "unit": "inch",
+      "words": [
+        {
+          "content": "Baltic",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 0,
+            "length": 6
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Board",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 7,
+            "length": 5
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Supply",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 13,
+            "length": 6
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "OÜ",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 20,
+            "length": 2
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Sadama",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 23,
+            "length": 6
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "25",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 30,
+            "length": 2
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "10111",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 33,
+            "length": 5
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Tallinn",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 39,
+            "length": 7
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "VAT",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 47,
+            "length": 3
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "no.",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 51,
+            "length": 3
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "EE109532815",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 55,
+            "length": 11
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Reg.",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 67,
+            "length": 4
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "code",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 72,
+            "length": 4
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "10776889",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 77,
+            "length": 8
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "INVOICE",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 86,
+            "length": 7
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Invoice",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 94,
+            "length": 7
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "no.:",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 102,
+            "length": 4
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "BBS/2026/0354",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 107,
+            "length": 13
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Invoice",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 121,
+            "length": 7
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "date:",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 129,
+            "length": 5
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "16",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 135,
+            "length": 2
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Apr",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 138,
+            "length": 3
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "2026",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 142,
+            "length": 4
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Your",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 147,
+            "length": 4
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "order:",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 152,
+            "length": 6
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "PO-2026-0003",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 159,
+            "length": 12
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "Bank",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 172,
+            "length": 4
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "account",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 177,
+            "length": 7
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "(IBAN):",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 185,
+            "length": 7
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "EE78",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 193,
+            "length": 4
+          },
+          "confidence": 0.97
+        },
+        {
+          "content": "0400",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 198,
+            "length": 4
+          },
+          "confidence": 0.97
+        },
+        {
+          "content": "1503",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 203,
+            "length": 4
+          },
+          "confidence": 0.97
+        },
+        {
+          "content": "1113",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 208,
+            "length": 4
+          },
+          "confidence": 0.55
+        },
+        {
+          "content": "4947",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 213,
+            "length": 4
+          },
+          "confidence": 0.97
+        },
+        {
+          "content": "Total",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 218,
+            "length": 5
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "payable",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 224,
+            "length": 7
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "20,538.12",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 232,
+            "length": 9
+          },
+          "confidence": 0.99
+        },
+        {
+          "content": "EUR",
+          "polygon": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "span": {
+            "offset": 242,
+            "length": 3
+          },
+          "confidence": 0.99
+        }
+      ],
+      "spans": [
+        {
+          "offset": 0,
+          "length": 245
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "docType": "invoice",
+      "boundingRegions": [],
+      "fields": {
+        "VendorName": {
+          "type": "string",
+          "valueString": "Baltic Board Supply OÜ",
+          "content": "Baltic Board Supply OÜ",
+          "confidence": 0.97
+        },
+        "VendorTaxId": {
+          "type": "string",
+          "valueString": "EE109532815",
+          "content": "EE109532815",
+          "confidence": 0.93
+        },
+        "InvoiceId": {
+          "type": "string",
+          "valueString": "BBS/2026/0354",
+          "content": "BBS/2026/0354",
+          "confidence": 0.96
+        },
+        "InvoiceDate": {
+          "type": "date",
+          "valueDate": "2026-04-16",
+          "content": "16 Apr 2026",
+          "confidence": 0.95
+        },
+        "PurchaseOrder": {
+          "type": "string",
+          "valueString": "PO-2026-0003",
+          "content": "PO-2026-0003",
+          "confidence": 0.91
+        },
+        "SubTotal": {
+          "type": "currency",
+          "valueCurrency": {
+            "currencyCode": "EUR",
+            "currencySymbol": "€",
+            "amount": 16563.0
+          },
+          "content": "16,563.00",
+          "confidence": 0.94
+        },
+        "TotalTax": {
+          "type": "currency",
+          "valueCurrency": {
+            "currencyCode": "EUR",
+            "currencySymbol": "€",
+            "amount": 3975.12
+          },
+          "content": "3,975.12",
+          "confidence": 0.92
+        },
+        "InvoiceTotal": {
+          "type": "currency",
+          "valueCurrency": {
+            "currencyCode": "EUR",
+            "currencySymbol": "€",
+            "amount": 20538.12
+          },
+          "content": "20,538.12",
+          "confidence": 0.95
+        },
+        "Items": {
+          "type": "array",
+          "valueArray": [
+            {
+              "type": "object",
+              "valueObject": {
+                "ProductCode": {
+                  "type": "string",
+                  "valueString": "BBS00157",
+                  "content": "BBS00157",
+                  "confidence": 0.96
+                },
+                "Description": {
+                  "type": "string",
+                  "valueString": "Spruce plywood 15 mm, 1220x2440",
+                  "content": "Spruce plywood 15 mm, 1220x2440",
+                  "confidence": 0.95
+                },
+                "Quantity": {
+                  "type": "number",
+                  "valueNumber": 283,
+                  "content": "283",
+                  "confidence": 0.97
+                },
+                "Unit": {
+                  "type": "string",
+                  "valueString": "pcs",
+                  "content": "pcs",
+                  "confidence": 0.9
+                },
+                "UnitPrice": {
+                  "type": "currency",
+                  "valueCurrency": {
+                    "currencyCode": "EUR",
+                    "currencySymbol": "€",
+                    "amount": 36.0
+                  },
+                  "content": "36.00",
+                  "confidence": 0.94
+                },
+                "Amount": {
+                  "type": "currency",
+                  "valueCurrency": {
+                    "currencyCode": "EUR",
+                    "currencySymbol": "€",
+                    "amount": 10188.0
+                  },
+                  "content": "10,188.00",
+                  "confidence": 0.95
+                },
+                "TaxRate": {
+                  "type": "string",
+                  "valueString": "24%",
+                  "content": "24",
+                  "confidence": 0.88
+                }
+              }
+            },
+            {
+              "type": "object",
+              "valueObject": {
+                "ProductCode": {
+                  "type": "string",
+                  "valueString": "BBS00192",
+                  "content": "BBS00192",
+                  "confidence": 0.96
+                },
+                "Description": {
+                  "type": "string",
+                  "valueString": "MDF 16 mm raw, 2800x2070",
+                  "content": "MDF 16 mm raw, 2800x2070",
+                  "confidence": 0.95
+                },
+                "Quantity": {
+                  "type": "number",
+                  "valueNumber": 185,
+                  "content": "185",
+                  "confidence": 0.97
+                },
+                "Unit": {
+                  "type": "string",
+                  "valueString": "pcs",
+                  "content": "pcs",
+                  "confidence": 0.9
+                },
+                "UnitPrice": {
+                  "type": "currency",
+                  "valueCurrency": {
+                    "currencyCode": "EUR",
+                    "currencySymbol": "€",
+                    "amount": 34.0
+                  },
+                  "content": "34.00",
+                  "confidence": 0.94
+                },
+                "Amount": {
+                  "type": "currency",
+                  "valueCurrency": {
+                    "currencyCode": "EUR",
+                    "currencySymbol": "€",
+                    "amount": 6290.0
+                  },
+                  "content": "6,290.00",
+                  "confidence": 0.95
+                },
+                "TaxRate": {
+                  "type": "string",
+                  "valueString": "24%",
+                  "content": "24",
+                  "confidence": 0.88
+                }
+              }
+            },
+            {
+              "type": "object",
+              "valueObject": {
+                "ProductCode": {
+                  "type": "string",
+                  "valueString": "BBS00332",
+                  "content": "BBS00332",
+                  "confidence": 0.96
+                },
+                "Description": {
+                  "type": "string",
+                  "valueString": "Delivery charge",
+                  "content": "Delivery charge",
+                  "confidence": 0.95
+                },
+                "Quantity": {
+                  "type": "number",
+                  "valueNumber": 1,
+                  "content": "1",
+                  "confidence": 0.97
+                },
+                "Unit": {
+                  "type": "string",
+                  "valueString": "trip",
+                  "content": "trip",
+                  "confidence": 0.9
+                },
+                "UnitPrice": {
+                  "type": "currency",
+                  "valueCurrency": {
+                    "currencyCode": "EUR",
+                    "currencySymbol": "€",
+                    "amount": 85.0
+                  },
+                  "content": "85.00",
+                  "confidence": 0.94
+                },
+                "Amount": {
+                  "type": "currency",
+                  "valueCurrency": {
+                    "currencyCode": "EUR",
+                    "currencySymbol": "€",
+                    "amount": 85.0
+                  },
+                  "content": "85.00",
+                  "confidence": 0.95
+                },
+                "TaxRate": {
+                  "type": "string",
+                  "valueString": "24%",
+                  "content": "24",
+                  "confidence": 0.88
+                }
+              }
+            }
+          ]
+        }
+      },
+      "confidence": 0.92,
+      "spans": [
+        {
+          "offset": 0,
+          "length": 245
+        }
+      ]
+    }
+  ]
+}
