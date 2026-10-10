@@ -32,17 +32,4 @@ internal static class IbanGenerator
 
         return $"EE{checkDigits:D2}{bban}";
     }
-
-    /// <summary>Checks the mod-97 rule. Used by the seeder's self-check; the production validator is written in step 3.2.</summary>
-    public static bool HasValidChecksum(string iban)
-    {
-        var rearranged = iban[4..] + iban[..4];
-        var digits = new StringBuilder();
-        foreach (var c in rearranged)
-        {
-            digits.Append(char.IsLetter(c) ? (c - 'A' + 10).ToString(CultureInfo.InvariantCulture) : c.ToString());
-        }
-
-        return BigInteger.Parse(digits.ToString(), CultureInfo.InvariantCulture) % 97 == 1;
-    }
 }

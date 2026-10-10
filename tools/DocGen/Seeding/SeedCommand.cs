@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ThreeWayMatch.Domain.Erp;
+using ThreeWayMatch.Domain.Normalisation;
 using ThreeWayMatch.Infrastructure.Persistence;
 
 namespace DocGen.Seeding;
@@ -62,7 +63,7 @@ internal static class SeedCommand
             Console.WriteLine($"  {group.Key,-28} {group.Count(),3} orders");
         }
 
-        Console.WriteLine($"Valid IBAN checksums: {data.Suppliers.Count(s => IbanGenerator.HasValidChecksum(s.Iban))} of {data.Suppliers.Count}");
+        Console.WriteLine($"Valid IBAN checksums: {data.Suppliers.Count(s => Normaliser.CheckIban(s.Iban).Status == IbanStatus.Valid)} of {data.Suppliers.Count}");
         Console.WriteLine($"Goods receipts:   {data.GoodsReceipts.Count} ({data.GoodsReceipts.Sum(r => r.Lines.Count)} lines)");
     }
 

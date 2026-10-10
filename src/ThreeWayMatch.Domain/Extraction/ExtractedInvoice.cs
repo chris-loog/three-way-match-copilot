@@ -1,7 +1,7 @@
 namespace ThreeWayMatch.Domain.Extraction;
 
 /// <summary>An invoice as read from a document. Nothing here is trusted yet: it is checked and matched later.</summary>
-public sealed class ExtractedInvoice
+public sealed record ExtractedInvoice
 {
     /// <summary>The Document Intelligence model that produced this result, e.g. <c>prebuilt-invoice</c>.</summary>
     public required string ModelId { get; init; }

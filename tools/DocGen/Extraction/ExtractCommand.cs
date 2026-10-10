@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Text.Json;
 using ThreeWayMatch.Domain.Extraction;
+using ThreeWayMatch.Domain.Normalisation;
 using ThreeWayMatch.Infrastructure.DocumentIntelligence;
 
 namespace DocGen.Extraction;
@@ -48,7 +49,9 @@ internal static class ExtractCommand
         foreach (var row in rows)
         {
             await using var stream = File.OpenRead(Path.Combine(dataset, row["file"]));
-            var invoice = await extractor.ExtractInvoiceAsync(stream);
+            // Our own reading of the printed text must agree with the model's; where it does not, confidence drops to 0.
+            var culture = CultureInfo.GetCultureInfo(row["language"] == "et" ? "et-EE" : "en-GB");
+            var invoice = ExtractionCrossCheck.Apply(await extractor.ExtractInvoiceAsync(stream), culture);
             var truth = JsonDocument.Parse(await File.ReadAllTextAsync(Path.Combine(dataset, "ground_truth", $"{row["document_id"]}.json")));
             var header = truth.RootElement.GetProperty("header");
 
