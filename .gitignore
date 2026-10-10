@@ -1,0 +1,115 @@
+# =====================================================================
+# Three-Way Match Copilot — .gitignore
+# =====================================================================
+
+# ---------------------------------------------------------------------
+# LLM / AI assistant files (kept local, never committed)
+# ---------------------------------------------------------------------
+CLAUDE.md
+CLAUDE.local.md
+**/CLAUDE.md
+PROGRESS.md
+.claude/
+.agents/
+skills-lock.json
+AGENTS.md
+GEMINI.md
+.cursor/
+.cursorrules
+.cursorignore
+.windsurf/
+.windsurfrules
+.continue/
+.aider*
+.codex/
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/
+.mcp.json
+# Personal interview prep written with AI help
+docs/interview-notes.md
+docs/interview-qa.md
+
+# ---------------------------------------------------------------------
+# Data (generated, reproducible from the fixed seed; never real data)
+# ---------------------------------------------------------------------
+data/
+*.csv
+*.zip
+*.parquet
+# Document Intelligence result cache
+.cache/
+di-cache/
+
+# ---------------------------------------------------------------------
+# Secrets & local settings
+# ---------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.pfx
+secrets.json
+local.settings.json
+appsettings.*.local.json
+appsettings.Development.local.json
+.azure/
+
+# ---------------------------------------------------------------------
+# .NET
+# ---------------------------------------------------------------------
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+*.user
+*.rsuser
+*.suo
+*.userprefs
+*.dbmdl
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+*.trx
+# EF Core migration bundle (built for deploys)
+efbundle
+efbundle.exe
+# Azure Functions
+.azurefunctions/
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/packages/
+
+# ---------------------------------------------------------------------
+# Python (tools/degrade, eval)
+# ---------------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------------
+# Node (npx tooling)
+# ---------------------------------------------------------------------
+node_modules/
+
+# ---------------------------------------------------------------------
+# Editors & OS
+# ---------------------------------------------------------------------
+.vs/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
