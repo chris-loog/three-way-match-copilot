@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Text.Json;
 using ThreeWayMatch.Domain.Extraction;
 using ThreeWayMatch.Domain.Normalisation;
+using ThreeWayMatch.Domain.Rules;
 using ThreeWayMatch.Infrastructure.DocumentIntelligence;
 
 namespace DocGen.Extraction;
@@ -29,7 +30,7 @@ internal static class ExtractCommand
         var quality = ValueOf(args, "--quality");
         var limit = int.Parse(ValueOf(args, "--limit") ?? "10", CultureInfo.InvariantCulture);
         var cacheDirectory = ValueOf(args, "--cache") ?? Path.Combine("data", "di-cache");
-        var threshold = new ExtractionOptions().ConfidenceThreshold;
+        var threshold = new DiscrepancyOptions().ConfidenceThreshold;
 
         var rows = ReadManifest(Path.Combine(dataset, "manifest.csv"))
             .Where(r => r["document_type"] == "Invoice" && string.IsNullOrEmpty(r["duplicate_of"]))

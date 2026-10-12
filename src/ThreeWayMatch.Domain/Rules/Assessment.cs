@@ -1,4 +1,5 @@
 using ThreeWayMatch.Domain.Ap;
+using ThreeWayMatch.Domain.Extraction;
 using ThreeWayMatch.Domain.Matching;
 
 namespace ThreeWayMatch.Domain.Rules;
@@ -9,7 +10,11 @@ public sealed record Assessment(
     IReadOnlyList<Finding> Findings,
     IReadOnlyList<MatchConcern> Concerns,
     MatchOutcome Match,
-    decimal AmountAtStake);
+    decimal AmountAtStake)
+{
+    /// <summary>The invoice after the cross-check (doubtful fields have confidence 0). Null for delivery notes.</summary>
+    public ExtractedInvoice? CheckedInvoice { get; init; }
+}
 
 public static class DecisionMaker
 {

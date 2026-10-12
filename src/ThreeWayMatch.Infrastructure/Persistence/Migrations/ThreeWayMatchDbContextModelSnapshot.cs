@@ -130,8 +130,10 @@ namespace ThreeWayMatch.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContentHash")
+                    b.HasIndex("BlobPath")
                         .IsUnique();
+
+                    b.HasIndex("ContentHash");
 
                     b.HasIndex("Status");
 

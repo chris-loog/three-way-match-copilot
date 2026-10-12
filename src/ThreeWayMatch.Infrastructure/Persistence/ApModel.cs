@@ -16,7 +16,10 @@ internal static class ApModel
             e.Property(x => x.BlobPath).HasMaxLength(500);
             e.Property(x => x.ContentHash).HasMaxLength(64).IsFixedLength();
             e.Property(x => x.ErrorMessage).HasMaxLength(2000);
-            e.HasIndex(x => x.ContentHash).IsUnique();
+            // One row per uploaded blob: a retried queue message finds its row and resumes. The hash is not unique,
+            // because a resent file must still become a row of its own so DUPLICATE_INVOICE can reject it.
+            e.HasIndex(x => x.BlobPath).IsUnique();
+            e.HasIndex(x => x.ContentHash);
             e.HasIndex(x => x.Status);
             e.HasOne(x => x.Extracted).WithOne(x => x.Document).HasForeignKey<ExtractedDocument>(x => x.DocumentId)
                 .OnDelete(DeleteBehavior.Cascade);

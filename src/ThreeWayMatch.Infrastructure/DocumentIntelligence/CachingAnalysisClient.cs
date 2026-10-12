@@ -20,8 +20,9 @@ internal sealed class CachingAnalysisClient(IAnalysisClient inner, string direct
 
         var json = await inner.AnalyzeInvoiceAsync(document, cancellationToken);
 
-        // Write to a temporary name first so a crash never leaves half a file that later reads as a result.
-        var temporary = path + ".tmp";
+        // Write to a unique temporary name first: a crash never leaves half a file that later reads as a result,
+        // and two analyses of the same document at once do not write to the same temporary file.
+        var temporary = $"{path}.{Guid.NewGuid():N}.tmp";
         await File.WriteAllTextAsync(temporary, json, cancellationToken);
         File.Move(temporary, path, overwrite: true);
         return json;

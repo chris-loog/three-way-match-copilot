@@ -45,7 +45,10 @@ public sealed class DocumentAssessor(IReadOnlyList<IDiscrepancyRule> rules)
     {
         var findings = rules.SelectMany(rule => rule.Evaluate(context)).ToList();
         var concerns = context.Match.Concerns;
-        return new Assessment(DecisionMaker.Decide(findings, concerns), findings, concerns, context.Match, DecisionMaker.AmountAtStake(findings));
+        return new Assessment(DecisionMaker.Decide(findings, concerns), findings, concerns, context.Match, DecisionMaker.AmountAtStake(findings))
+        {
+            CheckedInvoice = context.Invoice,
+        };
     }
 
     private static CultureInfo CultureOf(string? name)
