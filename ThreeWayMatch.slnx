@@ -3,6 +3,7 @@
     <Project Path="src/ThreeWayMatch.Domain/ThreeWayMatch.Domain.csproj" />
     <Project Path="src/ThreeWayMatch.Functions/ThreeWayMatch.Functions.csproj" />
     <Project Path="src/ThreeWayMatch.Infrastructure/ThreeWayMatch.Infrastructure.csproj" />
+    <Project Path="src/ThreeWayMatch.Web/ThreeWayMatch.Web.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/ThreeWayMatch.Domain.Tests/ThreeWayMatch.Domain.Tests.csproj" />

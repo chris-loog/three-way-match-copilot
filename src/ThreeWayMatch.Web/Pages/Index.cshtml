@@ -1,0 +1,70 @@
+@page "/"
+@model IndexModel
+@{
+    ViewData["Title"] = Model.Heading;
+    ViewData["Nav"] = Model.Show.ToString();
+}
+
+<header class="page-head">
+    <h1>@Model.Heading</h1>
+    <p class="lede">@Model.Lede</p>
+</header>
+
+<form method="get" class="field" hx-get="@Url.Page("/Index")" hx-trigger="input changed delay:300ms from:#search" hx-target="#ledger" hx-select="#ledger" hx-swap="outerHTML" hx-push-url="true" hx-boost="false">
+    <label for="search">Find an invoice</label>
+    <input id="search" name="Search" type="text" value="@Model.Search" placeholder="Supplier, invoice number or order" size="36" autocomplete="off" />
+    <input type="hidden" name="Show" value="@Model.Show" />
+</form>
+
+<section id="ledger" aria-label="@Model.Heading">
+    @if (Model.Rows.Count == 0)
+    {
+        <p class="empty">
+            @if (!string.IsNullOrWhiteSpace(Model.Search))
+            {
+                <text>Nothing matches “@Model.Search”. Clear the search to see everything in this list.</text>
+            }
+            else if (Model.Show == InboxFilter.NeedsReview)
+            {
+                <text>Nothing is waiting for you. New invoices show up here when something does not match. You can <a asp-page="/Upload">upload documents</a> to try it.</text>
+            }
+            else
+            {
+                <text>Nothing here yet.</text>
+            }
+        </p>
+    }
+    else
+    {
+        <div class="ledger">
+            <div class="row row-head">
+                <span>Money at stake</span>
+                <span>Invoice</span>
+                <span>What we found</span>
+                <span class="num">Total</span>
+            </div>
+            @foreach (var row in Model.Rows)
+            {
+                <div class="row">
+                    <span class="amount @(row.AmountAtStake == 0 ? "none" : "")">
+                        @(row.AmountAtStake == 0 ? "Nothing at risk" : Presentation.Money(row.AmountAtStake))
+                    </span>
+                    <span class="who-row">
+                        <a asp-page="/Documents/Detail" asp-route-id="@row.DocumentId">@row.Supplier</a>
+                        <span class="sub" style="display:block">
+                            @(row.Number ?? "No invoice number")@(row.PurchaseOrder is null ? "" : " for order " + row.PurchaseOrder), received @Presentation.Age(row.ReceivedAt, Model.Now)
+                        </span>
+                    </span>
+                    <span class="marks">
+                        @foreach (var finding in row.Findings.Where(f => f.Severity != Severity.Info || row.Findings.Count == 1).DistinctBy(f => f.Code))
+                        {
+                            <span class="mark @Presentation.Css(finding.Severity)">@Presentation.Title(finding.Code)</span>
+                        }
+                    </span>
+                    <span class="num">@Presentation.Money(row.Gross, row.Currency)</span>
+                </div>
+            }
+        </div>
+        <p class="sub" style="margin-top:12px">@Model.Rows.Count @(Model.Rows.Count == 1 ? "invoice" : "invoices")@(Model.TotalAtStake > 0 ? ", " + Presentation.Money(Model.TotalAtStake) + " at stake in total" : "")</p>
+    }
+</section>

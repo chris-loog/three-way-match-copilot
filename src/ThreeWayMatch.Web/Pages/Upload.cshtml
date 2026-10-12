@@ -1,0 +1,42 @@
+@page
+@model UploadModel
+@{
+    ViewData["Title"] = "Upload documents";
+    ViewData["Nav"] = "Upload";
+}
+
+<header class="page-head">
+    <h1>Upload documents</h1>
+    <p class="lede">Add supplier invoices or delivery notes as PDF, JPG or PNG, up to 10 MB each. Each one is read and matched against the orders and deliveries.</p>
+</header>
+
+<form method="post" enctype="multipart/form-data" hx-boost="false" class="panel" style="max-width:40rem">
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <p class="callout" role="alert">@Html.ValidationSummary(true)</p>
+    }
+    <div class="field">
+        <label for="type">What are you uploading?</label>
+        <select id="type" asp-for="Type">
+            <option value="Invoice">Supplier invoices</option>
+            <option value="DeliveryNote">Delivery notes</option>
+        </select>
+    </div>
+    <div class="field drop" id="drop">
+        <label for="files">Choose files, or drop them here</label>
+        <input id="files" name="files" type="file" multiple accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" />
+    </div>
+    <button class="btn" type="submit">Upload</button>
+</form>
+
+@section Scripts {
+    <script>
+        (function () {
+            var drop = document.getElementById('drop'), input = document.getElementById('files');
+            if (!drop || !input) return;
+            ['dragenter', 'dragover'].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.add('over-file'); }); });
+            ['dragleave', 'drop'].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.remove('over-file'); }); });
+            drop.addEventListener('drop', function (ev) { if (ev.dataTransfer && ev.dataTransfer.files.length) { input.files = ev.dataTransfer.files; } });
+        })();
+    </script>
+}

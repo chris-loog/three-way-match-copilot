@@ -1,0 +1,97 @@
+@page
+@model DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+    ViewData["Nav"] = "Dashboard";
+    var s = Model.Stats;
+}
+
+<header class="page-head">
+    <h1>Dashboard</h1>
+    <p class="lede">How much of the invoice flow no one had to touch, what is still open, and where the reading goes wrong.</p>
+</header>
+
+<section class="panel">
+    @if (s.Processed == 0)
+    {
+        <p class="empty" style="padding:0">No invoices have been processed yet. <a asp-page="/Upload">Upload some documents</a> and this page fills in.</p>
+    }
+    else
+    {
+        <p class="hero-figure">@((s.StraightThroughRate * 100).ToString("0", System.Globalization.CultureInfo.InvariantCulture))%</p>
+        <p>of @s.Processed invoices were approved without anyone touching them.</p>
+        <div class="facts">
+            <span><b>@s.OpenExceptions</b> waiting for a person</span>
+            <span><b>@Presentation.Money(s.OpenAmount)</b> at stake in those</span>
+        </div>
+    }
+</section>
+
+@if (s.Processed > 0)
+{
+    <div class="charts" style="margin-top:24px">
+        <section class="panel">
+            <h2 class="section-title">What happened to each invoice</h2>
+            <div class="chart-box"><canvas id="decisions" role="img" aria-label="Invoices by outcome"></canvas></div>
+        </section>
+        <section class="panel">
+            <h2 class="section-title">What we found most often</h2>
+            <div class="chart-box"><canvas id="findings" role="img" aria-label="Most common findings"></canvas></div>
+        </section>
+    </div>
+}
+
+<section class="panel" style="margin-top:24px">
+    <h2 class="section-title">How often a reviewer had to fix what was read</h2>
+    @if (s.FieldAccuracy.All(f => f.Corrections == 0))
+    {
+        <p class="sub">No corrections yet. When a reviewer fixes a value, it counts here, so you can see which fields and suppliers are read badly.</p>
+    }
+    else
+    {
+        <div class="charts">
+            <table class="plain">
+                <thead><tr><th>Field</th><th class="num">Corrected</th><th class="num">Read correctly</th></tr></thead>
+                <tbody>
+                @foreach (var f in s.FieldAccuracy.OrderByDescending(f => f.Corrections))
+                {
+                    <tr><td>@f.Field</td><td class="num">@f.Corrections of @f.Total</td><td class="num">@(((1.0 - (double)f.Corrections / f.Total) * 100).ToString("0.#", System.Globalization.CultureInfo.InvariantCulture))%</td></tr>
+                }
+                </tbody>
+            </table>
+            <table class="plain">
+                <thead><tr><th>Supplier</th><th class="num">Corrections</th><th class="num">Invoices</th></tr></thead>
+                <tbody>
+                @foreach (var f in s.SupplierCorrections)
+                {
+                    <tr><td>@f.Supplier</td><td class="num">@f.Corrections</td><td class="num">@f.Documents</td></tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>
+
+@section Scripts {
+    @if (s.Processed > 0)
+    {
+        <script src="~/lib/chartjs/chart.umd.min.js"></script>
+        <script>
+            (function () {
+                var data = @Html.Raw(Model.ChartData);
+                var ink = '#1a2220', spruce = '#1d3b33', rule = '#d3d8cf';
+                var colours = { 'Approved automatically': '#3b7a58', 'On hold': '#e2a71b', 'Needs review': '#c73a2c', 'Rejected': '#69746e' };
+                new Chart(document.getElementById('decisions'), {
+                    type: 'doughnut',
+                    data: { labels: data.decisions.map(function (d) { return d.label; }), datasets: [{ data: data.decisions.map(function (d) { return d.value; }), backgroundColor: data.decisions.map(function (d) { return colours[d.label] || spruce; }), borderColor: '#fbfbf8', borderWidth: 2 }] },
+                    options: { maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: ink, font: { family: 'Hanken Grotesk', size: 13 } } } } }
+                });
+                new Chart(document.getElementById('findings'), {
+                    type: 'bar',
+                    data: { labels: data.findings.map(function (d) { return d.label; }), datasets: [{ data: data.findings.map(function (d) { return d.value; }), backgroundColor: spruce }] },
+                    options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { precision: 0, color: ink }, grid: { color: rule } }, y: { ticks: { color: ink, font: { family: 'Hanken Grotesk', size: 13 } }, grid: { display: false } } } }
+                });
+            })();
+        </script>
+    }
+}

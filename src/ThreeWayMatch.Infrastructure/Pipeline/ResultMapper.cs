@@ -48,9 +48,20 @@ internal static class ResultMapper
         return entity;
     }
 
-    /// <summary>Stores the confidence after the cross-check, so a reader sees the doubt the rules acted on.</summary>
-    public static void ApplyConfidence(ExtractedDocument entity, ExtractedInvoice checkedInvoice)
+    /// <summary>
+    /// Stores what the rules acted on: the values after any reviewer corrections, with the confidence after the cross-check,
+    /// so a reader sees the same document the decision was based on.
+    /// </summary>
+    public static void ApplyChecked(ExtractedDocument entity, ExtractedInvoice checkedInvoice)
     {
+        entity.SupplierVatNumber = checkedInvoice.SupplierVatNumber.Value;
+        entity.DocumentNumber = checkedInvoice.InvoiceNumber.Value;
+        entity.PurchaseOrderReference = checkedInvoice.PurchaseOrderReference.Value;
+        entity.DocumentDate = checkedInvoice.InvoiceDate.Value;
+        entity.NetTotal = checkedInvoice.NetTotal.Value;
+        entity.VatTotal = checkedInvoice.VatTotal.Value;
+        entity.GrossTotal = checkedInvoice.GrossTotal.Value;
+        entity.Iban = checkedInvoice.Iban.Value;
         entity.MinKeyFieldConfidence = checkedInvoice.MinKeyFieldConfidence();
         entity.FieldConfidenceJson = JsonSerializer.Serialize(checkedInvoice.KeyFieldConfidences());
         foreach (var line in checkedInvoice.Lines)
@@ -58,6 +69,10 @@ internal static class ResultMapper
             var stored = entity.Lines.FirstOrDefault(l => l.LineNumber == line.LineNumber);
             if (stored is not null)
             {
+                stored.SupplierItemCode = line.ItemCode.Value;
+                stored.Unit = line.Unit.Value;
+                stored.Quantity = line.Quantity.Value;
+                stored.UnitPrice = line.UnitPrice.Value;
                 stored.Confidence = new[] { line.Quantity.Confidence, line.UnitPrice.Confidence }.Min();
             }
         }

@@ -1,0 +1,9 @@
+@model ThreeWayMatch.Web.Pages.Documents.EditFieldModel
+<details class="edit">
+    <summary>Correct @Model.Label</summary>
+    <form method="post" asp-page-handler="Correct" asp-route-id="@Model.DocumentId">
+        <input type="hidden" name="field" value="@Model.Field" />
+        <input type="text" name="value" value="@Model.Current" aria-label="Corrected @Model.Label" size="18" />
+        <button class="btn small" type="submit">Save and match again</button>
+    </form>
+</details>

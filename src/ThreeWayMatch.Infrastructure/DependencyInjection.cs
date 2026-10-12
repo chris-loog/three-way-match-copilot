@@ -21,15 +21,23 @@ public static class DependencyInjection
     }
 
     /// <summary>
-    /// Registers what the processing pipeline needs besides the database and the extractor:
-    /// the rules, the snapshot loader and the processor. The processor is scoped because it shares one database context per message.
+    /// Registers the matching stage: the rules, the snapshot loader and the matcher. The review UI needs only this,
+    /// because it re-matches after a correction but never reads a document itself.
     /// </summary>
-    public static IServiceCollection AddProcessingPipeline(this IServiceCollection services, DiscrepancyOptions? options = null)
+    public static IServiceCollection AddMatching(this IServiceCollection services, DiscrepancyOptions? options = null)
     {
         services.AddSingleton(options ?? new DiscrepancyOptions());
         services.AddSingleton(DocumentAssessor.CreateDefault());
         services.AddSingleton(TimeProvider.System);
         services.AddScoped<SnapshotLoader>();
+        services.AddScoped<DocumentMatcher>();
+        return services;
+    }
+
+    /// <summary>Registers the whole processing pipeline: matching plus the processor that reads and records an uploaded file.</summary>
+    public static IServiceCollection AddProcessingPipeline(this IServiceCollection services, DiscrepancyOptions? options = null)
+    {
+        services.AddMatching(options);
         services.AddScoped<DocumentProcessor>();
         return services;
     }

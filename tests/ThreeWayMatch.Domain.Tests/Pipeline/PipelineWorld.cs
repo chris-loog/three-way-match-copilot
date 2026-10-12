@@ -31,6 +31,12 @@ internal sealed class PipelineWorld : IDisposable
             .Options;
 
         using var db = NewContext();
+        SeedErp(db, received);
+    }
+
+    /// <summary>Fills an empty database with the supplier, the order and (optionally) its full goods receipt.</summary>
+    public static void SeedErp(ThreeWayMatchDbContext db, bool received = true)
+    {
         var supplier = new Supplier
         {
             Name = "Baltic Board Supply OÜ", Category = "Panels", VatNumber = SupplierVat, RegistryCode = "10776889",
@@ -75,9 +81,12 @@ internal sealed class PipelineWorld : IDisposable
 
     public ThreeWayMatchDbContext NewContext() => new(_options);
 
+    public static DocumentMatcher NewMatcher(ThreeWayMatchDbContext db) =>
+        new(db, DocumentAssessor.CreateDefault(), new SnapshotLoader(db), new DiscrepancyOptions(),
+            TimeProvider.System, NullLogger<DocumentMatcher>.Instance);
+
     public static DocumentProcessor NewProcessor(ThreeWayMatchDbContext db, IDocumentExtractor extractor) =>
-        new(db, extractor, DocumentAssessor.CreateDefault(), new SnapshotLoader(db), new DiscrepancyOptions(),
-            TimeProvider.System, NullLogger<DocumentProcessor>.Instance);
+        new(db, extractor, NewMatcher(db), TimeProvider.System, NullLogger<DocumentProcessor>.Instance);
 
     /// <summary>The goods arrive late: books the full receipt for the order.</summary>
     public void BookFullReceipt()

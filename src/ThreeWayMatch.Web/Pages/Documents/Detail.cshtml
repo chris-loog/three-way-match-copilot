@@ -1,0 +1,208 @@
+@page "/documents/{id:int}"
+@using System.Globalization
+@model ThreeWayMatch.Web.Pages.Documents.DetailModel
+@using ThreeWayMatch.Web.Pages.Documents
+@{
+    var d = Model.Detail;
+    ViewData["Title"] = (d.Supplier ?? "Document") + " " + (d.Header.FirstOrDefault(h => h.Name == "InvoiceNumber")?.Display ?? "");
+    ViewData["Nav"] = d.Reviewed ? "Reviewed" : d.Status.ToString();
+    var doubt = new ThreeWayMatch.Domain.Rules.DiscrepancyOptions().ConfidenceThreshold;
+    var hasBlock = d.Findings.Any(f => f.Severity == Severity.Block);
+    var hasWarning = d.Findings.Any(f => f.Severity == Severity.Warning);
+    var tone = d.Reviewed || d.Decision == Decision.AutoApproved ? "ok" : hasBlock ? "block" : hasWarning || d.Decision is Decision.OnHold ? "warning" : "";
+    var invoiceNumber = d.Header.FirstOrDefault(h => h.Name == "InvoiceNumber")?.Display;
+}
+
+<a class="back" asp-page="/Index" asp-route-show="@(d.Reviewed ? "Reviewed" : d.Decision?.ToString() ?? "NeedsReview")">Back to the list</a>
+
+<div class="split">
+    <div class="doc-frame">
+        @if (Model.PreviewUrl is null)
+        {
+            <p class="none">The document preview is not available here. The values read from it are on the right.</p>
+        }
+        else if (Model.PreviewIsImage)
+        {
+            <img src="@Model.PreviewUrl" alt="The uploaded document" />
+        }
+        else
+        {
+            <iframe src="@Model.PreviewUrl" title="The uploaded document"></iframe>
+        }
+    </div>
+
+    <div class="stack">
+        <section class="verdict @tone">
+            <h1>@d.Supplier</h1>
+            <p class="sub">@(invoiceNumber ?? "No invoice number")@(d.PurchaseOrder is null ? ", not matched to an order" : ", order " + d.PurchaseOrder)</p>
+            <p class="big">
+                @if (d.Status == DocumentStatus.Failed) { <text>Could not be read</text> }
+                else if (d.Reviewed) { <text>Approved by @d.ReviewedBy</text> }
+                else if (d.Decision == Decision.AutoApproved) { <text>Approved automatically</text> }
+                else if (d.Decision == Decision.OnHold) { <text>Waiting for the goods</text> }
+                else if (d.Decision == Decision.Rejected) { <text>Rejected as a duplicate</text> }
+                else if (d.Decision == Decision.NeedsReview) { <text>Needs a decision</text> }
+                else { <text>@Presentation.Label(d.Status, false)</text> }
+            </p>
+            @if (d.AmountAtStake > 0)
+            {
+                <p class="sub">@Presentation.Money(d.AmountAtStake, d.Currency) at stake</p>
+            }
+            @if (d.Reviewed)
+            {
+                <p class="sub">On @d.ReviewedAt?.ToString("d MMM yyyy HH:mm", CultureInfo.InvariantCulture). Reason: @d.OverrideReason@(d.BankChangeVerified ? " The new bank account was confirmed by phone." : "")</p>
+            }
+            @if (d.Status == DocumentStatus.Failed)
+            {
+                <p class="sub">@d.ErrorMessage</p>
+            }
+        </section>
+
+        @if (d.Findings.Count > 0)
+        {
+            <section class="panel">
+                <h2 class="section-title">What we found</h2>
+                <ul class="findings">
+                    @foreach (var f in d.Findings)
+                    {
+                        <li>
+                            <span><span class="mark @Presentation.Css(f.Severity)">@Presentation.Word(f.Severity)</span> <strong>@Presentation.Title(f.Code)</strong>@(f.LineNumber is { } n ? $" on line {n}" : "")</span>
+                            <span class="amount-small">@(f.AmountAtStake > 0 ? Presentation.Money(f.AmountAtStake, d.Currency) : "")</span>
+                            @if (f.Expected is not null || f.Actual is not null)
+                            {
+                                <span class="finding-detail">
+                                    @if (f.Expected is not null) { <span>Should be: <b>@f.Expected</b></span> }
+                                    @if (f.Actual is not null) { <span>Invoice says: <b>@f.Actual</b></span> }
+                                </span>
+                            }
+                        </li>
+                    }
+                </ul>
+            </section>
+        }
+
+        @if (d.Header.Count > 0)
+        {
+            <section class="panel">
+                <h2 class="section-title">What was read from the document</h2>
+                <dl class="fields">
+                    <dt>Supplier</dt><dd>@d.Supplier</dd>
+                    @foreach (var f in d.Header)
+                    {
+                        <dt>@f.Label</dt>
+                        <dd>
+                            <span class="@(f.Confidence is { } c && c < doubt ? "doubt" : "")">@(f.Display ?? "Not found")</span>
+                            @if (f.Corrected) { <span class="tag">Corrected</span> }
+                            @if (f.Confidence is { } conf && conf < doubt && !f.Corrected) { <span class="note">Hard to read, @Presentation.Percent(conf) sure</span> }
+                            @if (f.Editable && !d.Reviewed && d.Status != DocumentStatus.Failed)
+                            {
+                                <partial name="_EditField" model="new EditFieldModel(d.Id, f.Name, f.EditValue, f.Label.ToLowerInvariant())" />
+                            }
+                        </dd>
+                    }
+                </dl>
+                <p class="note" style="margin-top:10px">Read by @d.ModelId. Amounts are written with a point and dates as yyyy-MM-dd when you correct them.</p>
+            </section>
+        }
+
+        @if (d.Lines.Count > 0)
+        {
+            <section class="panel">
+                <h2 class="section-title">Invoice lines against the order and the delivery</h2>
+                @foreach (var line in d.Lines)
+                {
+                    <article class="line">
+                        <div class="line-head">
+                            <span class="line-title">@line.LineNumber. @(line.Description ?? "No description")</span>
+                            <span class="marks">
+                                @foreach (var f in line.Findings.DistinctBy(f => f.Code))
+                                {
+                                    <span class="mark @Presentation.Css(f.Severity)">@Presentation.Title(f.Code)</span>
+                                }
+                            </span>
+                        </div>
+                        <div class="line-meta">
+                            <span>Code <b>@(line.ItemCode ?? "none")</b></span>
+                            <span>Quantity <b>@(line.Quantity is { } q ? Presentation.Quantity(q) : "?") @line.Unit</b></span>
+                            <span>Unit price <b>@Presentation.Money(line.UnitPrice, d.Currency)</b></span>
+                            <span>Line total <b>@Presentation.Money(line.LineTotal, d.Currency)</b></span>
+                        </div>
+                        @if (line.PoLineNumber is not null)
+                        {
+                            <div class="line-meta">
+                                <span>Order line <b>@line.PoLineNumber</b>, @(line.Method is { } m ? Presentation.Method(m) : "")</span>
+                                <span>Order price <b>@Presentation.Money(line.PoUnitPrice, d.Currency) per @line.PoUnit</b></span>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="line-meta"><span>Not matched to a line on the order.</span></div>
+                        }
+
+                        @if (line.Tally is { } t)
+                        {
+                            var billed = t.InvoicedBefore + t.ThisInvoice;
+                            var okPart = Math.Min(t.ThisInvoice, Math.Max(0, t.Received - t.InvoicedBefore));
+                            <div class="tally" role="img" aria-label="Ordered @Presentation.Quantity(t.Ordered), received @Presentation.Quantity(t.Received), billed @Presentation.Quantity(billed) @t.Unit">
+                                <span class="name">Ordered</span>
+                                <span class="track"><span class="fill" style="width:@Presentation.Pct(t.Ordered, t.Scale)"></span></span>
+                                <span class="qty">@Presentation.Quantity(t.Ordered) @t.Unit</span>
+
+                                <span class="name">Received</span>
+                                <span class="track"><span class="fill" style="width:@Presentation.Pct(t.Received, t.Scale)"></span></span>
+                                <span class="qty">@Presentation.Quantity(t.Received) @t.Unit</span>
+
+                                <span class="name">Billed</span>
+                                <span class="track">
+                                    <span class="fill before" style="width:@Presentation.Pct(t.InvoicedBefore, t.Scale)"></span>
+                                    <span class="fill" style="left:@Presentation.Pct(t.InvoicedBefore, t.Scale);width:@Presentation.Pct(okPart, t.Scale)"></span>
+                                    <span class="over" style="left:@Presentation.Pct(t.InvoicedBefore + okPart, t.Scale);width:@Presentation.Pct(t.ThisInvoice - okPart, t.Scale)"></span>
+                                </span>
+                                <span class="qty @(t.Overshoot > 0 ? "bad" : "")">@Presentation.Quantity(billed) @t.Unit</span>
+                            </div>
+                            <p class="note">Billed counts invoices approved earlier (grey) and this invoice (green; red where it goes beyond what arrived).</p>
+                        }
+
+                        @if (!d.Reviewed && d.Status != DocumentStatus.Failed)
+                        {
+                            <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+                                <partial name="_EditField" model='new EditFieldModel(d.Id, ThreeWayMatch.Infrastructure.Pipeline.CorrectionApplier.LineField(line.LineNumber, "ItemCode"), line.ItemCode, "item code")' />
+                                <partial name="_EditField" model='new EditFieldModel(d.Id, ThreeWayMatch.Infrastructure.Pipeline.CorrectionApplier.LineField(line.LineNumber, "Quantity"), line.Quantity?.ToString(CultureInfo.InvariantCulture), "quantity")' />
+                                <partial name="_EditField" model='new EditFieldModel(d.Id, ThreeWayMatch.Infrastructure.Pipeline.CorrectionApplier.LineField(line.LineNumber, "UnitPrice"), line.UnitPrice?.ToString(CultureInfo.InvariantCulture), "unit price")' />
+                                @if (line.Method == MatchMethod.FuzzyDescription && line.LineMatchId is { } lineMatchId)
+                                {
+                                    <form method="post" asp-page-handler="ConfirmAlias" asp-route-id="@d.Id">
+                                        <input type="hidden" name="lineMatchId" value="@lineMatchId" />
+                                        <button class="btn quiet small" type="submit">The match is right, remember this wording</button>
+                                    </form>
+                                }
+                            </div>
+                        }
+                    </article>
+                }
+            </section>
+        }
+
+        @if (d.CanAct)
+        {
+            <section class="panel">
+                <h2 class="section-title">Approve this invoice</h2>
+                <p class="sub" style="margin-bottom:14px">Your name, the time and your reason are kept in the history.</p>
+                <form method="post" asp-page-handler="Approve" asp-route-id="@d.Id">
+                    @if (d.NeedsBankVerification)
+                    {
+                        <p class="callout">The bank account on this invoice is not the one we have for this supplier. This is how invoice fraud usually looks.</p>
+                        <div class="field">
+                            <label class="check"><input type="checkbox" name="bankVerified" value="true" /> I called the supplier on a phone number we already had, and they confirmed the new account.</label>
+                        </div>
+                    }
+                    <div class="field">
+                        <label for="reason">Why is it right to pay this?</label>
+                        <textarea id="reason" name="reason" required minlength="3"></textarea>
+                    </div>
+                    <button class="btn" type="submit">Approve invoice</button>
+                </form>
+            </section>
+        }
+    </div>
+</div>

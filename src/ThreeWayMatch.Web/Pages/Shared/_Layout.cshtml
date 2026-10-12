@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@(ViewData["Title"] is string title ? title + " - " : "")Invoice matching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="~/lib/htmx/htmx.min.js" defer></script>
+</head>
+<body hx-boost="true">
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="shell">
+        <aside class="rail">
+            @await Component.InvokeAsync("Rail")
+        </aside>
+        <main id="main" class="stage">
+            @if (TempData["Flash"] is string flash)
+            {
+                <p class="flash @(TempData["FlashKind"] ?? "ok")" role="status">@flash</p>
+            }
+            @RenderBody()
+        </main>
+    </div>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

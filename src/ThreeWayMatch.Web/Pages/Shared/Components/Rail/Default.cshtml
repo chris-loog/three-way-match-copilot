@@ -1,0 +1,34 @@
+@model ThreeWayMatch.Web.ViewComponents.RailModel
+@{
+    var nav = ViewContext.ViewData["Nav"] as string ?? "";
+    string Current(string key) => nav == key ? "page" : "false";
+}
+<a class="brand" asp-page="/Index">
+    <span class="brand-name">Näidis Puit</span>
+    <span class="brand-sub">Invoice matching</span>
+</a>
+
+<nav aria-label="Main">
+    <p class="rail-title">Invoices</p>
+    <a asp-page="/Index" asp-route-show="NeedsReview" aria-current="@Current("NeedsReview")">Needs review <span class="count @(Model.Counts.NeedsReview > 0 ? "alert" : "")">@Model.Counts.NeedsReview</span></a>
+    <a asp-page="/Index" asp-route-show="OnHold" aria-current="@Current("OnHold")">On hold <span class="count">@Model.Counts.OnHold</span></a>
+    <a asp-page="/Index" asp-route-show="AutoApproved" aria-current="@Current("AutoApproved")">Approved automatically <span class="count">@Model.Counts.AutoApproved</span></a>
+    <a asp-page="/Index" asp-route-show="Reviewed" aria-current="@Current("Reviewed")">Approved by reviewer <span class="count">@Model.Counts.Reviewed</span></a>
+    <a asp-page="/Index" asp-route-show="Rejected" aria-current="@Current("Rejected")">Rejected <span class="count">@Model.Counts.Rejected</span></a>
+    <a asp-page="/Failed" aria-current="@Current("Failed")">Could not be read <span class="count @(Model.Counts.Failed > 0 ? "alert" : "")">@Model.Counts.Failed</span></a>
+
+    <p class="rail-title">Tools</p>
+    <a asp-page="/Upload" aria-current="@Current("Upload")">Upload documents</a>
+    <a asp-page="/Dashboard" aria-current="@Current("Dashboard")">Dashboard</a>
+</nav>
+
+<div class="rail-foot">
+    <p class="who">@Model.User</p>
+    @if (Model.Demo)
+    {
+        <p class="demo-note">This is a demo with made-up suppliers and invoices.</p>
+        <form method="post" asp-page="/Index" asp-page-handler="ResetDemo" hx-boost="false">
+            <button class="link-button" type="submit">Reset demo data</button>
+        </form>
+    }
+</div>

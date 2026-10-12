@@ -1,0 +1,33 @@
+@page
+@model FailedModel
+@{
+    ViewData["Title"] = "Could not be read";
+    ViewData["Nav"] = "Failed";
+}
+
+<header class="page-head">
+    <h1>Could not be read</h1>
+    <p class="lede">These files stopped during processing. The reason is shown for each. Fix the file and upload it again; it will be processed as a new document.</p>
+</header>
+
+@if (Model.Rows.Count == 0)
+{
+    <p class="empty">Every uploaded file could be read.</p>
+}
+else
+{
+    <table class="plain">
+        <thead><tr><th>File</th><th>Kind</th><th>What went wrong</th><th class="num">Received</th></tr></thead>
+        <tbody>
+        @foreach (var row in Model.Rows)
+        {
+            <tr>
+                <td><a asp-page="/Documents/Detail" asp-route-id="@row.DocumentId">@row.BlobPath.Split('/').Last()</a></td>
+                <td>@(row.Type == DocumentType.Invoice ? "Invoice" : "Delivery note")</td>
+                <td>@row.Error</td>
+                <td class="num">@Presentation.Age(row.ReceivedAt, Model.Now)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

@@ -102,7 +102,7 @@ public class DocumentProcessorTests
 
         world.BookFullReceipt();
         using var db = world.NewContext();
-        var released = await PipelineWorld.NewProcessor(db, new FakeExtractor(PipelineWorld.CleanResult())).RematchOnHoldAsync(CancellationToken.None);
+        var released = await PipelineWorld.NewMatcher(db).RematchOnHoldAsync(CancellationToken.None);
 
         Assert.Equal(1, released);
         using var check = world.NewContext();
