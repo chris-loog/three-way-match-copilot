@@ -24,6 +24,8 @@ builder.Services.AddDocumentIntelligence(new DocumentIntelligenceOptions
 {
     Endpoint = new Uri(Required("THREEWAYMATCH_DI_ENDPOINT")),
     CacheDirectory = Environment.GetEnvironmentVariable("THREEWAYMATCH_DI_CACHE"),
+    // The delivery-note model: the custom model's id once it is trained, prebuilt-layout (text and tables plus rules) until then.
+    DeliveryNoteModelId = Environment.GetEnvironmentVariable("THREEWAYMATCH_DI_DELIVERY_NOTE_MODEL") ?? "prebuilt-layout",
     // Free tier: 3 s between calls. On the paid tier set this to 0.
     MinimumCallInterval = TimeSpan.FromSeconds(double.Parse(
         Environment.GetEnvironmentVariable("THREEWAYMATCH_DI_MIN_INTERVAL_SECONDS") ?? "3", System.Globalization.CultureInfo.InvariantCulture)),

@@ -21,13 +21,15 @@ public static class DocumentIntelligenceRegistration
     public static IDocumentExtractor Create(DocumentIntelligenceOptions options)
     {
         var client = new DocumentIntelligenceClient(options.Endpoint, new DefaultAzureCredential());
-        IAnalysisClient analysis = new AzureAnalysisClient(client, options.InvoiceModelId, options.MinimumCallInterval);
 
-        if (options.CacheDirectory is not null)
-        {
-            analysis = new CachingAnalysisClient(analysis, options.CacheDirectory, options.InvoiceModelId);
-        }
+        return new DocumentIntelligenceExtractor(
+            Analysis(client, options, options.InvoiceModelId, useQueryFields: true), options.InvoiceModelId,
+            Analysis(client, options, options.DeliveryNoteModelId, useQueryFields: false), options.DeliveryNoteModelId);
+    }
 
-        return new DocumentIntelligenceExtractor(analysis, options.InvoiceModelId);
+    private static IAnalysisClient Analysis(DocumentIntelligenceClient client, DocumentIntelligenceOptions options, string modelId, bool useQueryFields)
+    {
+        IAnalysisClient analysis = new AzureAnalysisClient(client, modelId, options.MinimumCallInterval, useQueryFields);
+        return options.CacheDirectory is null ? analysis : new CachingAnalysisClient(analysis, options.CacheDirectory, modelId);
     }
 }

@@ -48,6 +48,38 @@ internal static class ResultMapper
         return entity;
     }
 
+    public static ExtractedDocument ToEntity(ExtractedDeliveryNote note, DateTimeOffset now)
+    {
+        var entity = new ExtractedDocument
+        {
+            ModelId = note.ModelId,
+            RawJson = note.RawJson,
+            SupplierName = note.SupplierName.Value,
+            SupplierVatNumber = note.SupplierVatNumber.Value,
+            DocumentNumber = note.DeliveryNoteNumber.Value,
+            PurchaseOrderReference = note.PurchaseOrderReference.Value,
+            DocumentDate = note.DeliveryDate.Value,
+            MinKeyFieldConfidence = note.MinKeyFieldConfidence(),
+            FieldConfidenceJson = JsonSerializer.Serialize(note.KeyFieldConfidences()),
+            ExtractedAt = now,
+        };
+
+        foreach (var line in note.Lines)
+        {
+            entity.Lines.Add(new ExtractedLine
+            {
+                LineNumber = line.LineNumber,
+                SupplierItemCode = line.ItemCode.Value,
+                Description = line.Description.Value,
+                Quantity = line.Quantity.Value,
+                Unit = line.Unit.Value,
+                Confidence = line.Quantity.Confidence,
+            });
+        }
+
+        return entity;
+    }
+
     /// <summary>
     /// Stores what the rules acted on: the values after any reviewer corrections, with the confidence after the cross-check,
     /// so a reader sees the same document the decision was based on.

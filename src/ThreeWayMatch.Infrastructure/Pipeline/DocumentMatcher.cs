@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ThreeWayMatch.Domain.Ap;
+using ThreeWayMatch.Domain.Matching;
 using ThreeWayMatch.Domain.Rules;
 using ThreeWayMatch.Infrastructure.DocumentIntelligence;
 using ThreeWayMatch.Infrastructure.Persistence;
@@ -86,12 +87,10 @@ public sealed partial class DocumentMatcher(
             throw new InvalidOperationException("A reviewer has already acted on this document; it is not matched again.");
         }
 
-        // Map again from the stored raw result (the same code as on first read, no call to Azure), then put the corrections on top.
-        var corrections = await db.FieldCorrections.AsNoTracking().Where(c => c.ExtractedDocumentId == extracted.Id).ToListAsync(cancellationToken);
-        var invoice = CorrectionApplier.Apply(InvoiceMapper.Map(extracted.RawJson, extracted.ModelId), corrections);
         var snapshot = await snapshotLoader.LoadAsync(documentId, cancellationToken);
-        var processed = await snapshotLoader.LoadProcessedInvoicesAsync(documentId, cancellationToken);
-        var assessment = assessor.AssessInvoice(invoice, document.ContentHash, snapshot, processed, options);
+        var assessment = document.Type == DocumentType.DeliveryNote
+            ? AssessDeliveryNote(extracted, snapshot)
+            : await AssessInvoiceAsync(document, extracted, snapshot, cancellationToken);
 
         await using var transaction = await db.Database.BeginTransactionAsync(cancellationToken);
 
@@ -106,7 +105,7 @@ public sealed partial class DocumentMatcher(
             ResultMapper.ApplyChecked(extracted, checkedInvoice);
         }
 
-        if (assessment.Decision == Decision.AutoApproved)
+        if (document.Type == DocumentType.Invoice && assessment.Decision == Decision.AutoApproved)
         {
             await ClaimPurchaseOrderLinesAsync(assessment, cancellationToken);
         }
@@ -121,6 +120,23 @@ public sealed partial class DocumentMatcher(
         await db.SaveChangesAsync(cancellationToken);
         await transaction.CommitAsync(cancellationToken);
         return document.Status;
+    }
+
+    /// <summary>Maps again from the stored raw result (the same code as on first read, no call to Azure), then puts the corrections on top.</summary>
+    private async Task<Assessment> AssessInvoiceAsync(Document document, ExtractedDocument extracted, MatchingSnapshot snapshot, CancellationToken cancellationToken)
+    {
+        var corrections = await db.FieldCorrections.AsNoTracking().Where(c => c.ExtractedDocumentId == extracted.Id).ToListAsync(cancellationToken);
+        var invoice = CorrectionApplier.Apply(InvoiceMapper.Map(extracted.RawJson, extracted.ModelId), corrections);
+        var processed = await snapshotLoader.LoadProcessedInvoicesAsync(document.Id, cancellationToken);
+        return assessor.AssessInvoice(invoice, document.ContentHash, snapshot, processed, options);
+    }
+
+    /// <summary>A delivery note is compared with the receipt the warehouse booked for it. Reviewer corrections apply to invoices only.</summary>
+    private Assessment AssessDeliveryNote(ExtractedDocument extracted, MatchingSnapshot snapshot)
+    {
+        var note = DeliveryNoteMapper.Map(extracted.RawJson, extracted.ModelId);
+        return assessor.AssessDeliveryNote(
+            MatchInput.FromDeliveryNote(note), note.DeliveryNoteNumber.Value, note.LowConfidenceFields(options.ConfidenceThreshold), snapshot, options);
     }
 
     /// <summary>

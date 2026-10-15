@@ -41,7 +41,7 @@ internal static partial class InvoiceMapper
     }
 
     /// <summary>Reads the result JSON. Accepts both the bare result and the Studio export that wraps it in <c>analyzeResult</c>.</summary>
-    private static AnalyzeResult Read(string rawJson)
+    internal static AnalyzeResult Read(string rawJson)
     {
         using var document = JsonDocument.Parse(rawJson);
         var json = document.RootElement.TryGetProperty("analyzeResult", out var inner) ? inner.GetRawText() : rawJson;
@@ -74,12 +74,12 @@ internal static partial class InvoiceMapper
         return lines;
     }
 
-    private static ExtractedField<string> Text(DocumentFieldDictionary? fields, string name) =>
+    internal static ExtractedField<string> Text(DocumentFieldDictionary? fields, string name) =>
         fields is not null && fields.TryGetValue(name, out var field)
             ? new ExtractedField<string>(field.ValueString ?? field.Content, field.Content, field.Confidence)
             : ExtractedField.Missing<string>();
 
-    private static ExtractedField<DateOnly?> Date(DocumentFieldDictionary? fields, string name)
+    internal static ExtractedField<DateOnly?> Date(DocumentFieldDictionary? fields, string name)
     {
         if (fields is null || !fields.TryGetValue(name, out var field))
         {
@@ -101,7 +101,7 @@ internal static partial class InvoiceMapper
         return new ExtractedField<decimal?>(amount is { } a ? (decimal)a : null, field.Content, field.Confidence);
     }
 
-    private static ExtractedField<decimal?> Number(DocumentFieldDictionary? fields, string name)
+    internal static ExtractedField<decimal?> Number(DocumentFieldDictionary? fields, string name)
     {
         if (fields is null || !fields.TryGetValue(name, out var field))
         {

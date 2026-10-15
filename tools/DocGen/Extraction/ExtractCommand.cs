@@ -8,13 +8,14 @@ using ThreeWayMatch.Infrastructure.DocumentIntelligence;
 namespace DocGen.Extraction;
 
 /// <summary>
-/// Sends dataset invoices to Document Intelligence and compares a few key fields with the ground truth.
+/// Sends dataset invoices (or, with <c>--type delivery-note</c>, delivery notes) to Document Intelligence and compares a few key fields with the ground truth.
 /// Results are cached by content hash in data/di-cache, so running it again costs nothing for documents already read.
 /// This is a quick look, not the evaluation: the real numbers come from step 8.2.
 /// </summary>
 internal static class ExtractCommand
 {
     public const string EndpointVariable = "THREEWAYMATCH_DI_ENDPOINT";
+    public const string DeliveryNoteModelVariable = "THREEWAYMATCH_DI_DELIVERY_NOTE_MODEL";
 
     public static async Task<int> RunAsync(string[] args)
     {
@@ -31,25 +32,33 @@ internal static class ExtractCommand
         var limit = int.Parse(ValueOf(args, "--limit") ?? "10", CultureInfo.InvariantCulture);
         var cacheDirectory = ValueOf(args, "--cache") ?? Path.Combine("data", "di-cache");
         var threshold = new DiscrepancyOptions().ConfidenceThreshold;
+        var deliveryNotes = (ValueOf(args, "--type") ?? "invoice") == "delivery-note";
 
         var rows = ReadManifest(Path.Combine(dataset, "manifest.csv"))
-            .Where(r => r["document_type"] == "Invoice" && string.IsNullOrEmpty(r["duplicate_of"]))
+            .Where(r => r["document_type"] == (deliveryNotes ? "DeliveryNote" : "Invoice") && string.IsNullOrEmpty(r["duplicate_of"]))
             .Where(r => split == "all" || r["split"] == split)
             .Where(r => quality is null || r["quality"] == quality)
             .Take(limit)
             .ToList();
 
-        Console.WriteLine($"Reading {rows.Count} invoices (split={split}, quality={quality ?? "any"}). Free tier: 1 page each, one call every 3 s.");
+        Console.WriteLine($"Reading {rows.Count} {(deliveryNotes ? "delivery notes" : "invoices")} (split={split}, quality={quality ?? "any"}). Free tier: 1 page each, one call every 3 s.");
         var extractor = DocumentIntelligenceRegistration.Create(new DocumentIntelligenceOptions
         {
             Endpoint = new Uri(endpoint),
             CacheDirectory = cacheDirectory,
+            DeliveryNoteModelId = ValueOf(args, "--model") ?? Environment.GetEnvironmentVariable(DeliveryNoteModelVariable) ?? "prebuilt-layout",
         });
 
         var correct = new Dictionary<string, int>();
         foreach (var row in rows)
         {
             await using var stream = File.OpenRead(Path.Combine(dataset, row["file"]));
+            if (deliveryNotes)
+            {
+                await CheckDeliveryNoteAsync(extractor, stream, row, dataset, threshold, correct);
+                continue;
+            }
+
             // Our own reading of the printed text must agree with the model's; where it does not, confidence drops to 0.
             var culture = CultureInfo.GetCultureInfo(row["language"] == "et" ? "et-EE" : "en-GB");
             var invoice = ExtractionCrossCheck.Apply(await extractor.ExtractInvoiceAsync(stream), culture);
@@ -80,6 +89,35 @@ internal static class ExtractCommand
         Console.WriteLine();
         Console.WriteLine("Correct: " + string.Join(", ", correct.Select(c => $"{c.Key} {c.Value}/{rows.Count}")));
         return 0;
+    }
+
+    private static async Task CheckDeliveryNoteAsync(
+        IDocumentExtractor extractor, Stream stream, Dictionary<string, string> row, string dataset, double threshold, Dictionary<string, int> correct)
+    {
+        var note = await extractor.ExtractDeliveryNoteAsync(stream);
+        var truth = JsonDocument.Parse(await File.ReadAllTextAsync(Path.Combine(dataset, "ground_truth", $"{row["document_id"]}.json")));
+        var header = truth.RootElement.GetProperty("header");
+        var lines = truth.RootElement.GetProperty("lines").EnumerateArray().ToList();
+
+        var checks = new (string Name, bool Ok)[]
+        {
+            ("note_no", Same(note.DeliveryNoteNumber.Value, StringOrNull(header, "delivery_note_number"))),
+            ("po_ref", Same(note.PurchaseOrderReference.Value, StringOrNull(header, "po_reference"))),
+            ("vat_no", Same(note.SupplierVatNumber.Value, truth.RootElement.GetProperty("supplier_vat_number").GetString())),
+            ("date", note.DeliveryDate.Value?.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) == StringOrNull(header, "date")),
+            ("lines", note.Lines.Count == lines.Count),
+            ("qty", note.Lines.Count == lines.Count && note.Lines.Zip(lines).All(p => p.First.Quantity.Value == p.Second.GetProperty("quantity").GetDecimal())),
+        };
+
+        foreach (var (name, ok) in checks)
+        {
+            correct[name] = correct.GetValueOrDefault(name) + (ok ? 1 : 0);
+        }
+
+        var low = note.LowConfidenceFields(threshold);
+        Console.WriteLine($"{row["document_id"]} {row["quality"],-10} {row["layout"]} min={note.MinKeyFieldConfidence():0.00} " +
+            $"{string.Join(' ', checks.Select(c => c.Ok ? c.Name : c.Name.ToUpperInvariant() + "!"))}" +
+            (low.Count > 0 ? $"  low: {string.Join(',', low.Take(3))}" : string.Empty));
     }
 
     /// <summary>Spaces and case do not count here: normalisation (step 3.2) handles them properly.</summary>

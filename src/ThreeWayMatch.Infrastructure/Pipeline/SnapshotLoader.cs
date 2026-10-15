@@ -49,7 +49,7 @@ public sealed class SnapshotLoader(ThreeWayMatchDbContext db)
             .ToListAsync(cancellationToken);
 
     /// <summary>
-    /// What approved invoices already billed per PO line, in the PO line's unit. A match counts when the engine
+    /// What approved invoices already billed per PO line, in the PO line's unit (delivery notes bill nothing). A match counts when the engine
     /// auto-approved it or a reviewer acted on it; documents still waiting, on hold, rejected or being re-processed do not.
     /// </summary>
     private async Task<Dictionary<int, decimal>> InvoicedQuantitiesAsync(
@@ -58,6 +58,7 @@ public sealed class SnapshotLoader(ThreeWayMatchDbContext db)
         var approved = await db.LineMatches.AsNoTracking()
             .Where(l => l.PurchaseOrderLineId != null && l.ConvertedQuantity != null
                 && l.MatchResult!.DocumentId != currentDocumentId
+                && l.MatchResult.Document!.Type == DocumentType.Invoice
                 && (l.MatchResult.Decision == Decision.AutoApproved || l.MatchResult.ReviewedAt != null))
             .Select(l => new { PurchaseOrderLineId = l.PurchaseOrderLineId!.Value, SupplierItemId = l.PurchaseOrderLine!.SupplierItemId, Base = l.ConvertedQuantity!.Value })
             .ToListAsync(cancellationToken);

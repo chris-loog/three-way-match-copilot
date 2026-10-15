@@ -54,11 +54,6 @@ public sealed partial class DocumentProcessor(
 
         try
         {
-            if (type != DocumentType.Invoice)
-            {
-                return await FailAsync(document.Id, "Delivery notes cannot be read yet: the delivery-note model comes with step 4.1.", cancellationToken);
-            }
-
             await ExtractAsync(document, content, cancellationToken);
             var status = await matcher.MatchAsync(document.Id, cancellationToken);
             LogProcessed(logger, timer.ElapsedMilliseconds, status);
@@ -106,9 +101,9 @@ public sealed partial class DocumentProcessor(
         }
 
         using var stream = new MemoryStream(content, writable: false);
-        var invoice = await extractor.ExtractInvoiceAsync(stream, cancellationToken);
-
-        document.Extracted = ResultMapper.ToEntity(invoice, clock.GetUtcNow());
+        document.Extracted = document.Type == DocumentType.DeliveryNote
+            ? ResultMapper.ToEntity(await extractor.ExtractDeliveryNoteAsync(stream, cancellationToken), clock.GetUtcNow())
+            : ResultMapper.ToEntity(await extractor.ExtractInvoiceAsync(stream, cancellationToken), clock.GetUtcNow());
         document.Status = DocumentStatus.Extracted;
         document.ErrorMessage = null;
         await db.SaveChangesAsync(cancellationToken);

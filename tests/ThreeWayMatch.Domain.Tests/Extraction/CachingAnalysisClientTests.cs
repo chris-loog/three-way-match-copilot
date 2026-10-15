@@ -20,7 +20,7 @@ public sealed class CachingAnalysisClientTests : IDisposable
     {
         public int Calls { get; private set; }
 
-        public Task<string> AnalyzeInvoiceAsync(ReadOnlyMemory<byte> document, CancellationToken cancellationToken)
+        public Task<string> AnalyzeAsync(ReadOnlyMemory<byte> document, CancellationToken cancellationToken)
         {
             Calls++;
             return Task.FromResult($"{{\"call\":{Calls}}}");
@@ -35,8 +35,8 @@ public sealed class CachingAnalysisClientTests : IDisposable
         var inner = new CountingClient();
         var cache = new CachingAnalysisClient(inner, _directory, "prebuilt-invoice");
 
-        var first = await cache.AnalyzeInvoiceAsync(Bytes("invoice A"), CancellationToken.None);
-        var second = await cache.AnalyzeInvoiceAsync(Bytes("invoice A"), CancellationToken.None);
+        var first = await cache.AnalyzeAsync(Bytes("invoice A"), CancellationToken.None);
+        var second = await cache.AnalyzeAsync(Bytes("invoice A"), CancellationToken.None);
 
         Assert.Equal(1, inner.Calls);
         Assert.Equal(first, second);
@@ -48,8 +48,8 @@ public sealed class CachingAnalysisClientTests : IDisposable
         var inner = new CountingClient();
         var cache = new CachingAnalysisClient(inner, _directory, "prebuilt-invoice");
 
-        await cache.AnalyzeInvoiceAsync(Bytes("invoice A"), CancellationToken.None);
-        await cache.AnalyzeInvoiceAsync(Bytes("invoice B"), CancellationToken.None);
+        await cache.AnalyzeAsync(Bytes("invoice A"), CancellationToken.None);
+        await cache.AnalyzeAsync(Bytes("invoice B"), CancellationToken.None);
 
         Assert.Equal(2, inner.Calls);
     }
@@ -60,7 +60,7 @@ public sealed class CachingAnalysisClientTests : IDisposable
         var cache = new CachingAnalysisClient(new CountingClient(), _directory, "prebuilt-invoice");
         var content = Bytes("invoice A");
 
-        await cache.AnalyzeInvoiceAsync(content, CancellationToken.None);
+        await cache.AnalyzeAsync(content, CancellationToken.None);
 
         var expected = Path.Combine(_directory, $"{ContentHash.Sha256Hex(content)}.prebuilt-invoice.json");
         Assert.True(File.Exists(expected));
@@ -71,8 +71,8 @@ public sealed class CachingAnalysisClientTests : IDisposable
     public async Task A_different_model_does_not_reuse_another_models_result()
     {
         var inner = new CountingClient();
-        await new CachingAnalysisClient(inner, _directory, "prebuilt-invoice").AnalyzeInvoiceAsync(Bytes("invoice A"), CancellationToken.None);
-        await new CachingAnalysisClient(inner, _directory, "delivery-note-neural-v1").AnalyzeInvoiceAsync(Bytes("invoice A"), CancellationToken.None);
+        await new CachingAnalysisClient(inner, _directory, "prebuilt-invoice").AnalyzeAsync(Bytes("invoice A"), CancellationToken.None);
+        await new CachingAnalysisClient(inner, _directory, "delivery-note-neural-v1").AnalyzeAsync(Bytes("invoice A"), CancellationToken.None);
 
         Assert.Equal(2, inner.Calls);
     }
@@ -81,8 +81,8 @@ public sealed class CachingAnalysisClientTests : IDisposable
     public async Task Survives_a_new_instance_because_the_cache_lives_on_disk()
     {
         var inner = new CountingClient();
-        await new CachingAnalysisClient(inner, _directory, "prebuilt-invoice").AnalyzeInvoiceAsync(Bytes("invoice A"), CancellationToken.None);
-        await new CachingAnalysisClient(inner, _directory, "prebuilt-invoice").AnalyzeInvoiceAsync(Bytes("invoice A"), CancellationToken.None);
+        await new CachingAnalysisClient(inner, _directory, "prebuilt-invoice").AnalyzeAsync(Bytes("invoice A"), CancellationToken.None);
+        await new CachingAnalysisClient(inner, _directory, "prebuilt-invoice").AnalyzeAsync(Bytes("invoice A"), CancellationToken.None);
 
         Assert.Equal(1, inner.Calls);
     }

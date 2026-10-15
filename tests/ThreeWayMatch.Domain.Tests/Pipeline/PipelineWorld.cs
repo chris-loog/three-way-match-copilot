@@ -126,7 +126,7 @@ internal sealed class PipelineWorld : IDisposable
 }
 
 /// <summary>Stands in for Document Intelligence: returns a prepared raw result, or throws, and counts the calls.</summary>
-internal sealed class FakeExtractor(string rawJson, Exception? failure = null) : IDocumentExtractor
+internal sealed class FakeExtractor(string rawJson, Exception? failure = null, string? deliveryNoteJson = null) : IDocumentExtractor
 {
     public int Calls { get; private set; }
 
@@ -136,5 +136,13 @@ internal sealed class FakeExtractor(string rawJson, Exception? failure = null) :
         return failure is null
             ? Task.FromResult(InvoiceMapper.Map(rawJson, "prebuilt-invoice"))
             : Task.FromException<ExtractedInvoice>(failure);
+    }
+
+    public Task<ExtractedDeliveryNote> ExtractDeliveryNoteAsync(Stream document, CancellationToken cancellationToken = default)
+    {
+        Calls++;
+        return failure is not null
+            ? Task.FromException<ExtractedDeliveryNote>(failure)
+            : Task.FromResult(DeliveryNoteMapper.Map(deliveryNoteJson ?? throw new InvalidOperationException("No delivery note result prepared."), "prebuilt-layout"));
     }
 }

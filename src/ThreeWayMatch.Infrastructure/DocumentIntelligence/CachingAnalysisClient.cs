@@ -8,7 +8,7 @@ namespace ThreeWayMatch.Infrastructure.DocumentIntelligence;
 /// </summary>
 internal sealed class CachingAnalysisClient(IAnalysisClient inner, string directory, string modelId) : IAnalysisClient
 {
-    public async Task<string> AnalyzeInvoiceAsync(ReadOnlyMemory<byte> document, CancellationToken cancellationToken)
+    public async Task<string> AnalyzeAsync(ReadOnlyMemory<byte> document, CancellationToken cancellationToken)
     {
         Directory.CreateDirectory(directory);
         var path = Path.Combine(directory, $"{ContentHash.Sha256Hex(document.Span)}.{modelId}.json");
@@ -18,7 +18,7 @@ internal sealed class CachingAnalysisClient(IAnalysisClient inner, string direct
             return await File.ReadAllTextAsync(path, cancellationToken);
         }
 
-        var json = await inner.AnalyzeInvoiceAsync(document, cancellationToken);
+        var json = await inner.AnalyzeAsync(document, cancellationToken);
 
         // Write to a unique temporary name first: a crash never leaves half a file that later reads as a result,
         // and two analyses of the same document at once do not write to the same temporary file.

@@ -10,8 +10,9 @@ const string usage = """
       seed [--dry-run]                 Fill the erp schema with the fictional ERP data (--dry-run: build and summarise only)
       generate [--out DIR] [--dry-run] Render invoices and delivery notes with ground truth (default DIR: data/generated)
       check-rules [--verbose]          Run matching and rules over the generated documents (offline); exit 1 on a wrong auto-approval
-      extract [--split dev|test|all] [--quality Q] [--limit N] [--dataset DIR] [--cache DIR]
-                                       Read dataset invoices with Document Intelligence (calls Azure; cached by content hash)
+      extract [--type invoice|delivery-note] [--model ID] [--split dev|test|all] [--quality Q] [--limit N] [--dataset DIR] [--cache DIR]
+                                       Read dataset documents with Document Intelligence (calls Azure; cached by content hash).
+                                       --model: delivery-note model id (default prebuilt-layout, or THREEWAYMATCH_DI_DELIVERY_NOTE_MODEL)
     """;
 
 if (args.Length == 0)

@@ -33,4 +33,16 @@ public sealed record MatchInput(
                 .Select(l => new MatchInputLine(l.LineNumber, l.ItemCode.Value, l.Description.Value, l.Quantity.Value, l.Unit.Value, l.UnitPrice.Value))
                 .ToList());
     }
+
+    public static MatchInput FromDeliveryNote(ExtractedDeliveryNote note)
+    {
+        var vat = note.SupplierVatNumber.Value;
+        return new MatchInput(
+            SupplierVatNumber: vat is not null && Normaliser.TryNormaliseVatNumber(vat, out var normalised) ? normalised : vat,
+            SupplierName: note.SupplierName.Value,
+            PurchaseOrderReference: note.PurchaseOrderReference.Value,
+            Lines: note.Lines
+                .Select(l => new MatchInputLine(l.LineNumber, l.ItemCode.Value, l.Description.Value, l.Quantity.Value, l.Unit.Value, null))
+                .ToList());
+    }
 }

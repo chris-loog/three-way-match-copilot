@@ -7,6 +7,7 @@
     "Storage__blobServiceUri": "https://<storage account name>.blob.core.windows.net",
     "THREEWAYMATCH_SQL": "Server=tcp:<server>.database.windows.net,1433;Database=sqldb-three-way-match;Authentication=Active Directory Default;Encrypt=True",
     "THREEWAYMATCH_DI_ENDPOINT": "https://di-three-way-match.cognitiveservices.azure.com/",
+    "THREEWAYMATCH_DI_DELIVERY_NOTE_MODEL": "prebuilt-layout",
     "THREEWAYMATCH_DI_CACHE": "../../data/di-cache",
     "THREEWAYMATCH_DI_MIN_INTERVAL_SECONDS": "3"
   }

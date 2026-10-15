@@ -8,6 +8,12 @@ public sealed class DocumentIntelligenceOptions
     public string InvoiceModelId { get; init; } = "prebuilt-invoice";
 
     /// <summary>
+    /// The model that reads delivery notes: the custom model's id (for example <c>delivery-note-neural-v1</c>), or
+    /// <c>prebuilt-layout</c>, which reads text and tables and leaves the fields to simple rules in <c>DeliveryNoteMapper</c>.
+    /// </summary>
+    public string DeliveryNoteModelId { get; init; } = "prebuilt-layout";
+
+    /// <summary>
     /// Folder for cached raw results, one file per document content hash and model. Null turns the cache off.
     /// Re-running with the same file never calls Azure again.
     /// </summary>

@@ -4,8 +4,8 @@ using Azure.AI.DocumentIntelligence;
 
 namespace ThreeWayMatch.Infrastructure.DocumentIntelligence;
 
-/// <summary>The only class that calls Azure. Everything it needs to know about the model is in its two constructor arguments.</summary>
-internal sealed class AzureAnalysisClient(DocumentIntelligenceClient client, string modelId, TimeSpan minimumCallInterval) : IAnalysisClient
+/// <summary>The only class that calls Azure. Everything it needs to know about the model is in its constructor arguments.</summary>
+internal sealed class AzureAnalysisClient(DocumentIntelligenceClient client, string modelId, TimeSpan minimumCallInterval, bool useQueryFields = false) : IAnalysisClient
 {
     // The prebuilt invoice model has no field for the bank account or the registry code.
     // The query fields add-on asks the model to find them anyway.
@@ -14,15 +14,18 @@ internal sealed class AzureAnalysisClient(DocumentIntelligenceClient client, str
     private readonly object _slotLock = new();
     private DateTimeOffset _nextSlot = DateTimeOffset.MinValue;
 
-    public async Task<string> AnalyzeInvoiceAsync(ReadOnlyMemory<byte> document, CancellationToken cancellationToken)
+    public async Task<string> AnalyzeAsync(ReadOnlyMemory<byte> document, CancellationToken cancellationToken)
     {
         await WaitForTurnAsync(cancellationToken);
 
         var options = new AnalyzeDocumentOptions(modelId, BinaryData.FromBytes(document));
-        options.Features.Add(DocumentAnalysisFeature.QueryFields);
-        foreach (var name in QueryFieldNames)
+        if (useQueryFields)
         {
-            options.QueryFields.Add(name);
+            options.Features.Add(DocumentAnalysisFeature.QueryFields);
+            foreach (var name in QueryFieldNames)
+            {
+                options.QueryFields.Add(name);
+            }
         }
 
         Operation<AnalyzeResult> operation = await client.AnalyzeDocumentAsync(WaitUntil.Completed, options, cancellationToken);
