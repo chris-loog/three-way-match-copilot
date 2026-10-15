@@ -1,3 +1,5 @@
+using ThreeWayMatch.Domain.Normalisation;
+
 namespace ThreeWayMatch.Domain.Extraction;
 
 /// <summary>An invoice as read from a document. Nothing here is trusted yet: it is checked and matched later.</summary>
@@ -57,9 +59,25 @@ public sealed record ExtractedInvoice
 
     public double MinKeyFieldConfidence() => KeyFieldConfidences().Values.Min();
 
-    /// <summary>The key fields below the threshold, worst first. Empty means the extraction is sure enough.</summary>
-    public IReadOnlyList<string> LowConfidenceFields(double threshold) =>
-        KeyFieldConfidences().Where(f => f.Value < threshold).OrderBy(f => f.Value).Select(f => f.Key).ToList();
+    /// <summary>
+    /// The key fields below the threshold, worst first. Empty means the extraction is sure enough.
+    /// When <paramref name="reconcileTolerance"/> is given and the invoice adds up on its own (see
+    /// <see cref="InvoiceReconciliation"/>), the gross total and the line quantities and prices are not reported: the arithmetic
+    /// backs them. The stored confidences stay as the model gave them.
+    /// </summary>
+    public IReadOnlyList<string> LowConfidenceFields(double threshold, decimal? reconcileTolerance = null)
+    {
+        var reconciles = reconcileTolerance is { } tolerance && InvoiceReconciliation.Reconciles(this, tolerance);
+
+        return KeyFieldConfidences()
+            .Where(f => f.Value < threshold && !(reconciles && IsBackedByArithmetic(f.Key)))
+            .OrderBy(f => f.Value)
+            .Select(f => f.Key)
+            .ToList();
+    }
+
+    private static bool IsBackedByArithmetic(string field) =>
+        field == "GrossTotal" || (field.StartsWith("Line", StringComparison.Ordinal) && (field.EndsWith(".Quantity", StringComparison.Ordinal) || field.EndsWith(".UnitPrice", StringComparison.Ordinal)));
 }
 
 public sealed record ExtractedInvoiceLine(

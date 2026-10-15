@@ -88,7 +88,31 @@ public class DeliveryNoteAndConfidenceTests
     {
         var invoice = TestInvoice.Board().Build() with
         {
+            Iban = new ExtractedField<string>("EE780400150311134947", "EE78 0400 1503 1113 4947", 0.5),
+        };
+
+        var finding = Assess(invoice, _world).Single(DiscrepancyCode.LowConfidence);
+
+        Assert.Contains("Iban", finding.Actual);
+    }
+
+    [Fact]
+    public void A_shaky_po_reference_is_trusted_when_it_exists_and_belongs_to_the_supplier()
+    {
+        var invoice = TestInvoice.Board().Build() with
+        {
             PurchaseOrderReference = new ExtractedField<string>("PO-2026-0001", "PO-2026-0001", 0.5),
+        };
+
+        Assert.DoesNotContain(DiscrepancyCode.LowConfidence, Assess(invoice, _world).Codes());
+    }
+
+    [Fact]
+    public void A_shaky_po_reference_that_matches_no_order_of_the_supplier_stays_flagged()
+    {
+        var invoice = TestInvoice.Board().Build() with
+        {
+            PurchaseOrderReference = new ExtractedField<string>("PO-2026-9999", "PO-2026-9999", 0.5),
         };
 
         var finding = Assess(invoice, _world).Single(DiscrepancyCode.LowConfidence);

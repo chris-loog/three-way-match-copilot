@@ -62,6 +62,27 @@ public class ExtractedInvoiceTests
     }
 
     [Fact]
+    public void An_invoice_that_adds_up_is_not_reported_for_low_gross_total_or_line_confidence()
+    {
+        var unsure = Invoice() with { GrossTotal = Amount(124m, 0.44) };
+        var shakyLine = Invoice(unitPrice: 0.002);
+
+        Assert.Equal(["GrossTotal"], unsure.LowConfidenceFields(0.80));
+        Assert.Empty(unsure.LowConfidenceFields(0.80, reconcileTolerance: 0.05m));
+        Assert.Empty(shakyLine.LowConfidenceFields(0.80, reconcileTolerance: 0.05m));
+    }
+
+    [Fact]
+    public void Arithmetic_does_not_vouch_for_other_fields_or_for_an_invoice_that_does_not_add_up()
+    {
+        var shakyIban = Invoice(iban: 0.55) with { GrossTotal = Amount(124m, 0.44) };
+        var wrongSum = Invoice() with { GrossTotal = Amount(130m, 0.44) };
+
+        Assert.Equal(["Iban"], shakyIban.LowConfidenceFields(0.80, reconcileTolerance: 0.05m));
+        Assert.Equal(["GrossTotal"], wrongSum.LowConfidenceFields(0.80, reconcileTolerance: 0.05m));
+    }
+
+    [Fact]
     public void Low_confidence_fields_are_listed_worst_first_and_only_below_the_threshold()
     {
         var invoice = Invoice(iban: 0.55, unitPrice: 0.70);

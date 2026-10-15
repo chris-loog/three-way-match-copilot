@@ -1,4 +1,5 @@
 using ThreeWayMatch.Domain.Ap;
+using ThreeWayMatch.Domain.Matching;
 
 namespace ThreeWayMatch.Domain.Rules.Rules;
 
@@ -12,8 +13,16 @@ public sealed class LowConfidenceRule : IDiscrepancyRule
     public IEnumerable<Finding> Evaluate(RuleContext context)
     {
         var fields = context.Invoice is { } invoice
-            ? invoice.LowConfidenceFields(context.Options.ConfidenceThreshold).ToList()
+            ? invoice.LowConfidenceFields(context.Options.ConfidenceThreshold, context.Options.TotalsTolerance).ToList()
             : context.LowConfidenceFields.ToList();
+
+        // A printed PO number that exists and belongs to the supplier we identified by VAT number is checked against the ERP,
+        // like a checksum: a shaky reading of it is no reason for doubt. Unknown, foreign or fuzzy-supplier cases stay flagged.
+        if (context.Match.Supplier.Method == SupplierMatchMethod.VatNumber
+            && context.Match.PurchaseOrder.ReferenceStatus == PurchaseOrderReferenceStatus.Matched)
+        {
+            fields.Remove("PurchaseOrderReference");
+        }
 
         if (context.Invoice is { Lines.Count: 0 })
         {

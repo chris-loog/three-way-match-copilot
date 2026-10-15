@@ -71,7 +71,7 @@ internal static class ExtractCommand
                 correct[name] = correct.GetValueOrDefault(name) + (ok ? 1 : 0);
             }
 
-            var low = invoice.LowConfidenceFields(threshold);
+            var low = invoice.LowConfidenceFields(threshold, new DiscrepancyOptions().TotalsTolerance);
             Console.WriteLine($"{row["document_id"]} {row["quality"],-10} {row["layout"]} min={invoice.MinKeyFieldConfidence():0.00} " +
                 $"{string.Join(' ', checks.Select(c => c.Ok ? c.Name : c.Name.ToUpperInvariant() + "!"))}" +
                 (low.Count > 0 ? $"  low: {string.Join(',', low.Take(3))}" : string.Empty));
