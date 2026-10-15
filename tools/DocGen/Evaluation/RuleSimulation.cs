@@ -11,6 +11,21 @@ namespace DocGen.Evaluation;
 internal sealed record SimulatedResult(PlannedDocument Document, Assessment Assessment);
 
 /// <summary>
+/// What replaces the perfect reading for chosen documents. A reader that returns null falls back to the printed text.
+/// Documents in <see cref="Skip"/> (extraction failed) are left out entirely, like a document that ends as Failed in the pipeline.
+/// </summary>
+internal sealed class SimulationInputs
+{
+    public Func<PlannedDocument, ExtractedInvoice?> Invoice { get; init; } = _ => null;
+    public Func<PlannedDocument, ExtractedDeliveryNote?> DeliveryNote { get; init; } = _ => null;
+
+    /// <summary>The content hash of a document's file, for the exact-duplicate check. Null: the id of the document it copies.</summary>
+    public Func<PlannedDocument, string?> Hash { get; init; } = _ => null;
+
+    public ISet<string> Skip { get; init; } = new HashSet<string>();
+}
+
+/// <summary>
 /// Runs the real assessor over every generated document, as if extraction had read the printed text perfectly and the
 /// documents arrived in id order. No Azure and no database: the ERP data is rebuilt from the same seed.
 /// It answers "does the matching and rule logic catch what the generator injected?", separately from "can Document
@@ -20,8 +35,10 @@ internal static class RuleSimulation
 {
     private const double PerfectConfidence = 0.95;
 
-    public static IReadOnlyList<SimulatedResult> Run(ErpData erp, IReadOnlyList<PlannedDocument> documents, DiscrepancyOptions? options = null)
+    public static IReadOnlyList<SimulatedResult> Run(ErpData erp, IReadOnlyList<PlannedDocument> documents, DiscrepancyOptions? options = null, SimulationInputs? inputs = null)
     {
+        inputs ??= new SimulationInputs();
+        options ??= new DiscrepancyOptions();
         LinkEntities(erp);
 
         var invoiced = new Dictionary<int, decimal>();
@@ -39,21 +56,33 @@ internal static class RuleSimulation
 
         foreach (var document in documents.OrderBy(d => d.Kind).ThenBy(d => d.Id, StringComparer.Ordinal))
         {
-            if (document.Kind == DocumentKind.DeliveryNote)
+            if (inputs.Skip.Contains(document.Id))
             {
-                var note = document.DeliveryNote!;
-                var input = new MatchInput(note.Supplier.VatNumber, note.Supplier.Name, note.PoReference,
-                    note.Lines.Select(l => new MatchInputLine(l.LineNumber, l.Code, l.Description, l.Quantity, l.Unit, null)).ToList());
-                results.Add(new SimulatedResult(document, assessor.AssessDeliveryNote(input, note.DeliveryNoteNumber, [], snapshot, options)));
                 continue;
             }
 
-            var invoice = ToExtractedInvoice(document.Invoice!);
-            var hash = $"hash-{(document.ExactCopyOf ?? document).Id}";
+            if (document.Kind == DocumentKind.DeliveryNote)
+            {
+                var read = inputs.DeliveryNote(document);
+                var note = document.DeliveryNote!;
+                var input = read is not null
+                    ? MatchInput.FromDeliveryNote(read)
+                    : new MatchInput(note.Supplier.VatNumber, note.Supplier.Name, note.PoReference,
+                        note.Lines.Select(l => new MatchInputLine(l.LineNumber, l.Code, l.Description, l.Quantity, l.Unit, null)).ToList());
+                results.Add(new SimulatedResult(document, assessor.AssessDeliveryNote(
+                    input, read is not null ? read.DeliveryNoteNumber.Value : note.DeliveryNoteNumber,
+                    read?.LowConfidenceFields(options.ConfidenceThreshold) ?? [], snapshot, options)));
+                continue;
+            }
+
+            var invoice = inputs.Invoice(document) ?? ToExtractedInvoice(document.Invoice!);
+            var hash = inputs.Hash(document) ?? $"hash-{(document.ExactCopyOf ?? document).Id}";
             var assessment = assessor.AssessInvoice(invoice, hash, snapshot, history, options);
             results.Add(new SimulatedResult(document, assessment));
 
-            history.Add(new ProcessedInvoice(hash, document.Supplier.Id, document.Invoice!.InvoiceNumber, document.Invoice.GrossTotal, document.Invoice.InvoiceDate,
+            // What the pipeline stores for later duplicate checks: the supplier it identified and the values it read.
+            var seen = assessment.CheckedInvoice ?? invoice;
+            history.Add(new ProcessedInvoice(hash, assessment.Match.Supplier.Supplier?.Id, seen.InvoiceNumber.Value, seen.GrossTotal.Value, seen.InvoiceDate.Value,
                 assessment.Match.PurchaseOrder.PurchaseOrder?.Id));
             if (assessment.Decision == Decision.AutoApproved)
             {

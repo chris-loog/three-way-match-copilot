@@ -29,7 +29,16 @@ public static class DocumentIntelligenceRegistration
 
     private static IAnalysisClient Analysis(DocumentIntelligenceClient client, DocumentIntelligenceOptions options, string modelId, bool useQueryFields)
     {
-        IAnalysisClient analysis = new AzureAnalysisClient(client, modelId, options.MinimumCallInterval, useQueryFields);
+        IAnalysisClient analysis = options.CacheOnly
+            ? new MissingFromCacheClient(modelId)
+            : new AzureAnalysisClient(client, modelId, options.MinimumCallInterval, useQueryFields);
         return options.CacheDirectory is null ? analysis : new CachingAnalysisClient(analysis, options.CacheDirectory, modelId);
     }
+}
+
+/// <summary>The inner client of a cache-only run: reaching it means the document was never analysed with this model.</summary>
+internal sealed class MissingFromCacheClient(string modelId) : IAnalysisClient
+{
+    public Task<string> AnalyzeAsync(ReadOnlyMemory<byte> document, CancellationToken cancellationToken) =>
+        throw new InvalidOperationException($"This document has no cached result for model '{modelId}', and this run may not call Azure.");
 }

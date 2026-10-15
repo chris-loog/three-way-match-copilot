@@ -5,3 +5,8 @@ augraphy
 opencv-python-headless
 numpy
 pillow
+pandas
+matplotlib
+nbformat
+nbconvert
+ipykernel

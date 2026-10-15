@@ -20,6 +20,12 @@ public sealed class DocumentIntelligenceOptions
     public string? CacheDirectory { get; init; }
 
     /// <summary>
+    /// Never call Azure: a document that is not in the cache fails with an error. For evaluation runs that must not
+    /// touch the service (and need no <c>az login</c>). Needs <see cref="CacheDirectory"/>.
+    /// </summary>
+    public bool CacheOnly { get; init; }
+
+    /// <summary>
     /// The free tier allows 20 calls a minute. Three seconds between calls stays safely under that.
     /// Zero turns throttling off (paid tier).
     /// </summary>
