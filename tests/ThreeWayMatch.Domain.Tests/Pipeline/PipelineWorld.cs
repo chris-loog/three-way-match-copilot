@@ -13,7 +13,7 @@ using ThreeWayMatch.Infrastructure.Pipeline;
 namespace ThreeWayMatch.Domain.Tests.Pipeline;
 
 /// <summary>
-/// A small ERP in an in-memory database that fits the invoice in <c>Fixtures/analyze-result-invoice.json</c>:
+/// A small ERP in an in-memory database that fits the invoice in <c>Fixtures/pipeline-invoice.json</c>:
 /// supplier Baltic Board Supply, order PO-2026-0003 with plywood, MDF and a delivery charge, all fully received.
 /// </summary>
 internal sealed class PipelineWorld : IDisposable
@@ -104,7 +104,7 @@ internal sealed class PipelineWorld : IDisposable
     }
 
     /// <summary>The fixture as the service returned it: one smudged group in the IBAN, so the extraction is not sure.</summary>
-    public static string SmudgedResult() => File.ReadAllText(Path.Combine("Fixtures", "analyze-result-invoice.json"));
+    public static string SmudgedResult() => File.ReadAllText(Path.Combine("Fixtures", "pipeline-invoice.json"));
 
     /// <summary>The same invoice read perfectly: every word at 0.95 or better.</summary>
     public static string CleanResult()

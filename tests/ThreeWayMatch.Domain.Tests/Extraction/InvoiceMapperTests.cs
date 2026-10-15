@@ -5,27 +5,46 @@ using ThreeWayMatch.Infrastructure.DocumentIntelligence;
 namespace ThreeWayMatch.Domain.Tests.Extraction;
 
 /// <summary>
-/// The fixture is a hand-built result in the exact shape the service returns, because tests never call Azure.
-/// Replace it with a result saved from a real run once one exists (the cache folder holds them).
+/// The fixture is a real result saved from Document Intelligence (prebuilt-invoice) for generated invoice inv-0018,
+/// an Estonian-layout clean PDF. Tests never call Azure.
 /// </summary>
 public class InvoiceMapperTests
 {
-    private static string Fixture() => File.ReadAllText(Path.Combine("Fixtures", "analyze-result-invoice.json"));
+    private static string Fixture() => File.ReadAllText(Path.Combine("Fixtures", "real-invoice-inv-0018.json"));
 
     private static ExtractedInvoice Map(string? json = null) => InvoiceMapper.Map(json ?? Fixture(), "prebuilt-invoice");
+
+    private static string WithoutFields(params string[] names)
+    {
+        var json = JsonNode.Parse(Fixture())!;
+        var fields = json["documents"]![0]!["fields"]!.AsObject();
+        foreach (var name in names)
+        {
+            fields.Remove(name);
+        }
+
+        return json.ToJsonString();
+    }
 
     [Fact]
     public void Reads_the_header_fields_with_their_confidence_and_source_text()
     {
         var invoice = Map();
 
-        Assert.Equal("Baltic Board Supply OÜ", invoice.SupplierName.Value);
-        Assert.Equal("EE109532815", invoice.SupplierVatNumber.Value);
-        Assert.Equal(0.93, invoice.SupplierVatNumber.Confidence!.Value, precision: 2);
-        Assert.Equal("BBS/2026/0354", invoice.InvoiceNumber.Value);
-        Assert.Equal("PO-2026-0003", invoice.PurchaseOrderReference.Value);
-        Assert.Equal(new DateOnly(2026, 4, 16), invoice.InvoiceDate.Value);
-        Assert.Equal("16 Apr 2026", invoice.InvoiceDate.RawText);
+        Assert.Equal("EE102412824", invoice.SupplierVatNumber.Value);
+        Assert.Equal(0.945, invoice.SupplierVatNumber.Confidence!.Value, precision: 3);
+        Assert.Equal("A-221", invoice.InvoiceNumber.Value);
+        Assert.Equal("PO-2026-0018", invoice.PurchaseOrderReference.Value);
+        Assert.Equal(0.552, invoice.PurchaseOrderReference.Confidence!.Value, precision: 3);
+        Assert.Equal(new DateOnly(2026, 4, 28), invoice.InvoiceDate.Value);
+        Assert.Equal("28.04.2026", invoice.InvoiceDate.RawText);
+    }
+
+    [Fact]
+    public void Reads_the_supplier_name_as_printed_on_the_page()
+    {
+        // The page footer prints "OU" without the umlaut; the model keeps what it read.
+        Assert.Equal("Sillaotsa Saeveski OU", Map().SupplierName.Value);
     }
 
     [Fact]
@@ -33,50 +52,72 @@ public class InvoiceMapperTests
     {
         var invoice = Map();
 
-        Assert.Equal(16563.00m, invoice.NetTotal.Value);
-        Assert.Equal(3975.12m, invoice.VatTotal.Value);
-        Assert.Equal(20538.12m, invoice.GrossTotal.Value);
+        Assert.Equal(6326.40m, invoice.NetTotal.Value);
+        Assert.Equal(1518.34m, invoice.VatTotal.Value);
+        Assert.Equal(7844.74m, invoice.GrossTotal.Value);
         Assert.Equal("EUR", invoice.Currency.Value);
+        Assert.Equal("7 844,74 EUR", invoice.GrossTotal.RawText);
     }
 
     [Fact]
-    public void Reads_every_line_in_order_with_numbers_units_and_tax_rate()
+    public void Reads_every_line_in_order_with_numbers_and_units_as_printed()
     {
         var invoice = Map();
 
-        Assert.Equal(3, invoice.Lines.Count);
+        Assert.Equal(2, invoice.Lines.Count);
         var first = invoice.Lines[0];
         Assert.Equal(1, first.LineNumber);
-        Assert.Equal("BBS00157", first.ItemCode.Value);
-        Assert.Equal("Spruce plywood 15 mm, 1220x2440", first.Description.Value);
-        Assert.Equal(283m, first.Quantity.Value);
-        Assert.Equal("pcs", first.Unit.Value);
-        Assert.Equal(36.00m, first.UnitPrice.Value);
-        Assert.Equal(10188.00m, first.LineTotal.Value);
-        Assert.Equal(0.24m, first.VatRate.Value);
-        Assert.Equal(3, invoice.Lines[2].LineNumber);
+        Assert.Equal("KS-0259", first.ItemCode.Value);
+        Assert.Equal("Kaselaud 40x120 mm, kamberkuivatatud", first.Description.Value);
+        Assert.Equal(5.62m, first.Quantity.Value);
+        Assert.Equal("m3", first.Unit.Value);
+        Assert.Equal(720.00m, first.UnitPrice.Value);
+        Assert.Equal(4046.40m, first.LineTotal.Value);
+        Assert.Equal(2, invoice.Lines[1].LineNumber);
+        Assert.Equal("pakk", invoice.Lines[1].Unit.Value);
+        Assert.Equal(15m, invoice.Lines[1].Quantity.Value);
+    }
+
+    [Fact]
+    public void Keeps_the_collapsed_table_confidence_the_model_reported()
+    {
+        // The model read every line value correctly but scored the table at about 0.002.
+        // The mapper must not invent confidence; the reconciliation rule decides what to trust.
+        var first = Map().Lines[0];
+
+        Assert.True(first.Quantity.Confidence < 0.01);
+        Assert.True(first.UnitPrice.Confidence < 0.01);
+    }
+
+    [Fact]
+    public void Takes_the_iban_from_the_query_field()
+    {
+        var invoice = Map();
+
+        Assert.Equal("EE25 0400 4927 1129 8646", invoice.Iban.Value);
+        Assert.Equal(0.995, invoice.Iban.Confidence!.Value, precision: 3);
     }
 
     [Fact]
     public void Finds_the_iban_in_the_page_text_when_the_model_returned_none()
     {
-        var invoice = Map();
+        var invoice = Map(WithoutFields("Iban"));
 
-        Assert.Equal("EE78 0400 1503 1113 4947", invoice.Iban.Value);
+        Assert.Equal("EE25 0400 4927 1129 8646", invoice.Iban.Value);
     }
 
     [Fact]
     public void A_text_found_iban_is_only_as_sure_as_its_least_sure_word()
     {
-        // The fixture has one smudged group (0.55) inside the IBAN.
-        Assert.Equal(0.55, Map().Iban.Confidence!.Value, precision: 2);
-        Assert.Contains("Iban", Map().LowConfidenceFields(0.80));
-    }
+        var json = JsonNode.Parse(WithoutFields("Iban"))!;
+        var smudged = json["pages"]!.AsArray().SelectMany(p => p!["words"]!.AsArray())
+            .First(w => w!["content"]!.GetValue<string>() == "4927");
+        smudged!["confidence"] = 0.55;
 
-    [Fact]
-    public void Finds_the_registry_code_in_the_page_text()
-    {
-        Assert.Equal("10776889", Map().SupplierRegistryCode.Value);
+        var invoice = Map(json.ToJsonString());
+
+        Assert.Equal(0.55, invoice.Iban.Confidence!.Value, precision: 2);
+        Assert.Contains("Iban", invoice.LowConfidenceFields(0.80));
     }
 
     [Fact]
@@ -92,11 +133,23 @@ public class InvoiceMapperTests
     }
 
     [Fact]
+    public void Reads_the_registry_code_from_the_query_field()
+    {
+        Assert.Equal("11812518", Map().SupplierRegistryCode.Value);
+    }
+
+    [Fact]
+    public void Finds_the_registry_code_in_the_page_text_when_the_model_returned_none()
+    {
+        Assert.Equal("11812518", Map(WithoutFields("RegistryCode")).SupplierRegistryCode.Value);
+    }
+
+    [Fact]
     public void Accepts_the_studio_export_that_wraps_the_result()
     {
         var wrapped = $$"""{"status":"succeeded","analyzeResult":{{Fixture()}}}""";
 
-        Assert.Equal("BBS/2026/0354", Map(wrapped).InvoiceNumber.Value);
+        Assert.Equal("A-221", Map(wrapped).InvoiceNumber.Value);
     }
 
     [Fact]
