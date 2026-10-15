@@ -94,6 +94,13 @@ public sealed partial class DocumentMatcher(
 
         await using var transaction = await db.Database.BeginTransactionAsync(cancellationToken);
 
+        // A new match makes the stored explanation stale; the reviewer asks for a new one.
+        var staleExplanation = await db.Explanations.FirstOrDefaultAsync(e => e.DocumentId == documentId, cancellationToken);
+        if (staleExplanation is not null)
+        {
+            db.Explanations.Remove(staleExplanation);
+        }
+
         if (document.MatchResult is { } previous)
         {
             db.MatchResults.Remove(previous);

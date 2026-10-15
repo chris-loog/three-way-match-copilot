@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ThreeWayMatch.Infrastructure.Explanation;
 using ThreeWayMatch.Web.Services;
 
 namespace ThreeWayMatch.Web.Pages.Documents;
 
-public sealed partial class DetailModel(ReviewQueries queries, ReviewActions actions, IDocumentStore store, ILogger<DetailModel> logger) : PageModel
+public sealed partial class DetailModel(
+    ReviewQueries queries, ReviewActions actions, ExplanationService explanations, ExplainThrottle throttle, IDocumentStore store, ILogger<DetailModel> logger) : PageModel
 {
     public DocumentDetail Detail { get; private set; } = null!;
 
@@ -46,6 +48,17 @@ public sealed partial class DetailModel(ReviewQueries queries, ReviewActions act
 
     public async Task<IActionResult> OnPostConfirmAliasAsync(int id, int lineMatchId, CancellationToken cancellationToken) =>
         Done(id, await actions.ConfirmAliasAsync(id, lineMatchId, Reviewer, cancellationToken));
+
+    public async Task<IActionResult> OnPostExplainAsync(int id, CancellationToken cancellationToken)
+    {
+        if (!throttle.TryAcquire(HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown"))
+        {
+            return Done(id, new ReviewResult(false, "Too many explanation requests. Try again in a minute."));
+        }
+
+        var outcome = await explanations.GenerateAsync(id, cancellationToken);
+        return Done(id, new ReviewResult(outcome.Succeeded, outcome.Message));
+    }
 
     [LoggerMessage(Level = LogLevel.Warning, Message = "Could not create a preview link for {BlobPath}.")]
     private static partial void LogPreviewFailed(ILogger logger, Exception exception, string blobPath);

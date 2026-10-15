@@ -401,6 +401,72 @@ namespace ThreeWayMatch.Infrastructure.Persistence.Migrations
                     b.ToTable("LineMatch", "ap");
                 });
 
+            modelBuilder.Entity("ThreeWayMatch.Domain.Ap.MatchExplanation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompletionTokens")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DocumentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DraftLanguage")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("DraftMessage")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)");
+
+                    b.Property<DateTimeOffset>("GeneratedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("GuardNotes")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("LikelyCause")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("ModelId")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("PromptTokens")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Source")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("SuggestedAction")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("Summary")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DocumentId")
+                        .IsUnique();
+
+                    b.ToTable("MatchExplanation", "ap");
+                });
+
             modelBuilder.Entity("ThreeWayMatch.Domain.Ap.MatchResult", b =>
                 {
                     b.Property<int>("Id")
@@ -891,6 +957,17 @@ namespace ThreeWayMatch.Infrastructure.Persistence.Migrations
                     b.Navigation("MatchResult");
 
                     b.Navigation("PurchaseOrderLine");
+                });
+
+            modelBuilder.Entity("ThreeWayMatch.Domain.Ap.MatchExplanation", b =>
+                {
+                    b.HasOne("ThreeWayMatch.Domain.Ap.Document", "Document")
+                        .WithOne()
+                        .HasForeignKey("ThreeWayMatch.Domain.Ap.MatchExplanation", "DocumentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Document");
                 });
 
             modelBuilder.Entity("ThreeWayMatch.Domain.Ap.MatchResult", b =>

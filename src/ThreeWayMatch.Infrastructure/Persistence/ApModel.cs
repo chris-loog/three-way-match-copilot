@@ -98,6 +98,21 @@ internal static class ApModel
                 .OnDelete(DeleteBehavior.Cascade);
         });
 
+        modelBuilder.Entity<MatchExplanation>(e =>
+        {
+            e.ToTable("MatchExplanation", Schema);
+            e.Property(x => x.ModelId).HasMaxLength(100);
+            e.Property(x => x.Summary).HasMaxLength(2000);
+            e.Property(x => x.LikelyCause).HasMaxLength(2000);
+            e.Property(x => x.SuggestedAction).HasMaxLength(2000);
+            e.Property(x => x.DraftMessage).HasMaxLength(4000);
+            e.Property(x => x.DraftLanguage).HasMaxLength(30);
+            e.Property(x => x.GuardNotes).HasMaxLength(2000);
+            // One explanation per document; deleting the document deletes it.
+            e.HasIndex(x => x.DocumentId).IsUnique();
+            e.HasOne(x => x.Document).WithOne().HasForeignKey<MatchExplanation>(x => x.DocumentId).OnDelete(DeleteBehavior.Cascade);
+        });
+
         modelBuilder.Entity<ItemAlias>(e =>
         {
             e.ToTable("ItemAlias", Schema);

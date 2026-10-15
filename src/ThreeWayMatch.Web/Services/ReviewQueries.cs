@@ -116,11 +116,16 @@ public sealed class ReviewQueries(ThreeWayMatchDbContext db)
 
         var lines = extracted is null ? [] : await LinesAsync(document, extracted, match, findingsByLineMatch, confidences, cancellationToken);
 
+        var stored = await db.Explanations.AsNoTracking().FirstOrDefaultAsync(e => e.DocumentId == id, cancellationToken);
+        var explanation = stored is null ? null : new ExplanationView(
+            stored.Source, stored.Summary, stored.LikelyCause, stored.SuggestedAction, stored.DraftMessage, stored.DraftLanguage,
+            stored.GeneratedAt, stored.ModelId, stored.GuardNotes);
+
         return new DocumentDetail(
             document.Id, document.BlobPath, document.Type, document.Status, extracted?.ModelId ?? "-", document.ReceivedAt,
             match?.Decision, match?.AmountAtStake ?? 0, match?.Supplier?.Name ?? extracted?.SupplierName, match?.PurchaseOrder?.Number, extracted?.Currency,
             match?.ReviewedAt != null, match?.ReviewedBy, match?.ReviewedAt, match?.OverrideReason, match?.BankChangeVerified ?? false, document.ErrorMessage,
-            header, lines, findings);
+            header, lines, findings, explanation);
     }
 
     private static FieldView HeaderField(ExtractedDocument e, string name, string label, bool editable, Dictionary<string, double> confidences, HashSet<string> corrected)

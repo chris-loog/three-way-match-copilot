@@ -1,4 +1,5 @@
 using DocGen.Evaluation;
+using DocGen.Explanation;
 using DocGen.Extraction;
 using DocGen.Generation;
 using DocGen.Seeding;
@@ -13,6 +14,8 @@ const string usage = """
       extract [--type invoice|delivery-note] [--model ID] [--split dev|test|all] [--quality Q] [--limit N] [--dataset DIR] [--cache DIR]
                                        Read dataset documents with Document Intelligence (calls Azure; cached by content hash).
                                        --model: delivery-note model id (default prebuilt-layout, or THREEWAYMATCH_DI_DELIVERY_NOTE_MODEL)
+      explain [--limit N] [--out FILE] Write an explanation for every document waiting for a decision and a file to score by hand
+                                       (calls Azure OpenAI and the database; needs THREEWAYMATCH_SQL and THREEWAYMATCH_OPENAI_ENDPOINT)
     """;
 
 if (args.Length == 0)
@@ -29,6 +32,8 @@ switch (args[0])
         return GenerateCommand.Run(args[1..]);
     case "check-rules":
         return CheckRulesCommand.Run(args[1..]);
+    case "explain":
+        return await ExplainCommand.RunAsync(args[1..]);
     case "extract":
         return await ExtractCommand.RunAsync(args[1..]);
     default:

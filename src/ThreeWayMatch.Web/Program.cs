@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Identity.Web;
 using ThreeWayMatch.Infrastructure;
+using ThreeWayMatch.Infrastructure.Explanation;
 using ThreeWayMatch.Web;
 using ThreeWayMatch.Web.Auth;
 using ThreeWayMatch.Web.Services;
@@ -19,6 +20,13 @@ builder.Services.AddMatching();
 builder.Services.AddScoped<ReviewQueries>();
 builder.Services.AddScoped<ReviewActions>();
 builder.Services.AddScoped<DemoData>();
+builder.Services.AddSingleton<ExplainThrottle>();
+// Azure OpenAI is optional: without an endpoint the explanation panel shows the standard text built from the findings.
+builder.Services.AddExplanations(new ExplanationOptions
+{
+    Endpoint = Uri.TryCreate(configuration["OpenAI:Endpoint"], UriKind.Absolute, out var openAiEndpoint) ? openAiEndpoint : null,
+    Deployment = configuration["OpenAI:Deployment"] ?? "gpt-4.1-mini",
+});
 builder.Services.AddSingleton(new DemoMode(demo));
 
 if (!string.IsNullOrWhiteSpace(configuration["Storage:BlobServiceUri"]))

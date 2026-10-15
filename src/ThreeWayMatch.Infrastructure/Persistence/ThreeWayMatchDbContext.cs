@@ -27,6 +27,7 @@ public class ThreeWayMatchDbContext(DbContextOptions<ThreeWayMatchDbContext> opt
     public DbSet<Discrepancy> Discrepancies => Set<Discrepancy>();
     public DbSet<FieldCorrection> FieldCorrections => Set<FieldCorrection>();
     public DbSet<ItemAlias> ItemAliases => Set<ItemAlias>();
+    public DbSet<MatchExplanation> Explanations => Set<MatchExplanation>();
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
     {

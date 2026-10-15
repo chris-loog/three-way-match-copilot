@@ -192,3 +192,5 @@ table.plain th.num, table.plain td.num { text-align: right; }
 }
 
 .amount-small { font-family: var(--display); font-weight: 650; text-align: right; }
+
+.draft { white-space: pre-wrap; font-family: inherit; background: var(--paper, #f6f3ec); border: 1px solid var(--rule); border-radius: var(--radius); padding: 12px 14px; margin-top: 8px; }

@@ -31,6 +31,10 @@
     <PackageVersion Include="Microsoft.Identity.Web" Version="4.16.0" />
     <PackageVersion Include="QuestPDF" Version="2026.9.1" />
     <PackageVersion Include="Azure.AI.DocumentIntelligence" Version="1.0.0" />
+    <PackageVersion Include="Azure.AI.OpenAI" Version="2.1.0" />
+    <!-- Azure.AI.OpenAI 2.1.0 pulls in a Pkcs version with known vulnerabilities; pin the patched one. -->
+    <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
+    <PackageVersion Include="System.Security.Cryptography.Xml" Version="10.0.13" />
     <PackageVersion Include="Azure.Identity" Version="1.21.0" />
     <!-- Azure.Identity, Azure.Storage.Blobs and the Document Intelligence SDK ask for different Azure.Core versions; pin the newest for everyone. -->
     <PackageVersion Include="Azure.Core" Version="1.63.0" />

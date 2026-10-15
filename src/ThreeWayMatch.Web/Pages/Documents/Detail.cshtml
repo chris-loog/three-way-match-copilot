@@ -81,6 +81,45 @@
             </section>
         }
 
+        @if (d.CanAct || d.Explanation is not null)
+        {
+            <section class="panel">
+                <h2 class="section-title">Why it was stopped</h2>
+                @if (d.Explanation is { } x)
+                {
+                    <p>@x.Summary</p>
+                    <dl class="fields">
+                        <dt>Likely cause</dt><dd>@x.LikelyCause</dd>
+                        <dt>Suggested next step</dt><dd>@x.SuggestedAction</dd>
+                    </dl>
+                    <details>
+                        <summary>Draft message to the supplier (@x.DraftLanguage)</summary>
+                        <pre class="draft">@x.DraftMessage</pre>
+                    </details>
+                    <p class="note" style="margin-top:10px">
+                        @if (x.Source == ExplanationSource.Model)
+                        {
+                            <text>Written by @x.ModelId and checked against the findings (numbers, codes, blocking findings). It explains; it does not decide.</text>
+                        }
+                        else
+                        {
+                            <text>Standard text built from the findings. The language model was not used: @(x.GuardNotes ?? "it is not set up here").</text>
+                        }
+                    </p>
+                }
+                else
+                {
+                    <p class="note">A short explanation of the findings and a draft message to the supplier. It explains; it does not decide.</p>
+                }
+                @if (d.CanAct)
+                {
+                    <form method="post" asp-page-handler="Explain" asp-route-id="@d.Id" style="margin-top:12px">
+                        <button class="btn" type="submit">@(d.Explanation is null ? "Explain this" : "Explain again")</button>
+                    </form>
+                }
+            </section>
+        }
+
         @if (d.Header.Count > 0)
         {
             <section class="panel">

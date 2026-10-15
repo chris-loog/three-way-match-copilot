@@ -36,11 +36,15 @@ public sealed record LineView(
 
 public sealed record FieldView(string Name, string Label, string? Display, string? EditValue, double? Confidence, bool Corrected, bool Editable);
 
+public sealed record ExplanationView(
+    ExplanationSource Source, string Summary, string LikelyCause, string SuggestedAction, string DraftMessage, string DraftLanguage,
+    DateTimeOffset GeneratedAt, string? ModelId, string? GuardNotes);
+
 public sealed record DocumentDetail(
     int Id, string BlobPath, DocumentType Type, DocumentStatus Status, string ModelId, DateTimeOffset ReceivedAt,
     Decision? Decision, decimal AmountAtStake, string? Supplier, string? PurchaseOrder, string? Currency,
     bool Reviewed, string? ReviewedBy, DateTimeOffset? ReviewedAt, string? OverrideReason, bool BankChangeVerified, string? ErrorMessage,
-    IReadOnlyList<FieldView> Header, IReadOnlyList<LineView> Lines, IReadOnlyList<FindingView> Findings)
+    IReadOnlyList<FieldView> Header, IReadOnlyList<LineView> Lines, IReadOnlyList<FindingView> Findings, ExplanationView? Explanation = null)
 {
     public bool CanAct => !Reviewed && Decision is Domain.Ap.Decision.NeedsReview or Domain.Ap.Decision.OnHold;
     public bool NeedsBankVerification => Findings.Any(f => f.Code == DiscrepancyCode.BankAccountChanged);
