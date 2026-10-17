@@ -1,6 +1,8 @@
 using System.Threading.RateLimiting;
 using Azure.Identity;
+using Microsoft.AspNetCore.DataProtection;
 using Azure.Storage.Blobs;
+using Azure.Storage.Queues;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Identity.Web;
@@ -8,6 +10,7 @@ using ThreeWayMatch.Infrastructure;
 using ThreeWayMatch.Infrastructure.Explanation;
 using ThreeWayMatch.Web;
 using ThreeWayMatch.Web.Auth;
+using ThreeWayMatch.Web.Health;
 using ThreeWayMatch.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,13 +34,30 @@ builder.Services.AddSingleton(new DemoMode(demo));
 
 if (!string.IsNullOrWhiteSpace(configuration["Storage:BlobServiceUri"]))
 {
-    builder.Services.AddSingleton(_ => new BlobServiceClient(new Uri(configuration["Storage:BlobServiceUri"]!), new DefaultAzureCredential()));
+    var credential = new DefaultAzureCredential();
+    builder.Services.AddSingleton(_ => new BlobServiceClient(new Uri(configuration["Storage:BlobServiceUri"]!), credential));
     builder.Services.AddSingleton<IDocumentStore, BlobDocumentStore>();
+
+    // The app scales to zero and may run on several instances. Anti-forgery tokens and cookies are protected with keys, so the keys
+    // must outlive an instance: without this, a form opened before a cold start fails after it.
+    if (!builder.Environment.IsDevelopment())
+    {
+        builder.Services.AddDataProtection()
+            .SetApplicationName("three-way-match")
+            .PersistKeysToAzureBlobStorage(new Uri($"{configuration["Storage:BlobServiceUri"]!.TrimEnd('/')}/dataprotection/keys.xml"), credential);
+    }
 }
 else
 {
     builder.Services.AddSingleton<IDocumentStore, NoDocumentStore>();
 }
+
+if (!string.IsNullOrWhiteSpace(configuration["Storage:QueueServiceUri"]))
+{
+    builder.Services.AddSingleton(_ => new QueueServiceClient(new Uri(configuration["Storage:QueueServiceUri"]!), new DefaultAzureCredential()));
+}
+
+builder.Services.AddReadinessChecks();
 
 // Demo mode: one fixed reviewer, no sign-in. Otherwise Entra ID, with the Reviewer app role.
 if (demo)
@@ -81,6 +101,7 @@ app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapReadiness();
 app.MapStaticAssets();
 app.MapRazorPages().WithStaticAssets();
 
