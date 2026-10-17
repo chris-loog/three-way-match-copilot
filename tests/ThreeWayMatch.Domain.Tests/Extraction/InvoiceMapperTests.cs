@@ -145,6 +145,15 @@ public class InvoiceMapperTests
     }
 
     [Fact]
+    public void Finds_the_purchase_order_reference_in_the_page_text_when_the_model_returned_none()
+    {
+        var invoice = Map(WithoutFields("PurchaseOrder"));
+
+        Assert.Equal("PO-2026-0018", invoice.PurchaseOrderReference.Value);
+        Assert.True(invoice.PurchaseOrderReference.Confidence > 0.9);
+    }
+
+    [Fact]
     public void Accepts_the_studio_export_that_wraps_the_result()
     {
         var wrapped = $$"""{"status":"succeeded","analyzeResult":{{Fixture()}}}""";

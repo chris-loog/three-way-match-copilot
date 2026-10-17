@@ -341,7 +341,8 @@ public static partial class Normaliser
 
     private static readonly Dictionary<string, UnitCode> UnitSpellings = new(StringComparer.OrdinalIgnoreCase)
     {
-        ["m3"] = UnitCode.CubicMetre, ["m³"] = UnitCode.CubicMetre, ["tm"] = UnitCode.CubicMetre, ["tihumeeter"] = UnitCode.CubicMetre,
+        // On scans and photos the OCR reads the superscript 3 of m³ as the ordinal sign ª or º. No real unit is spelled that way.
+        ["m3"] = UnitCode.CubicMetre, ["m³"] = UnitCode.CubicMetre, ["mª"] = UnitCode.CubicMetre, ["mº"] = UnitCode.CubicMetre, ["tm"] = UnitCode.CubicMetre, ["tihumeeter"] = UnitCode.CubicMetre,
         ["rm"] = UnitCode.StackedCubicMetre, ["ruumimeeter"] = UnitCode.StackedCubicMetre,
         ["jm"] = UnitCode.RunningMetre, ["jooksev meeter"] = UnitCode.RunningMetre, ["running metre"] = UnitCode.RunningMetre,
         ["m2"] = UnitCode.SquareMetre, ["m²"] = UnitCode.SquareMetre,

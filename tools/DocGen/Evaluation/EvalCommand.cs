@@ -26,7 +26,7 @@ internal static class EvalCommand
     private static readonly string[] ResultColumns =
     [
         "document_id", "kind", "split", "layout", "held_out", "quality", "supplier", "extract_model", "pages",
-        "expected_decision", "decision", "correct_decision", "injected_codes", "found_codes", "min_conf", "low_fields", "amount_at_stake",
+        "expected_decision", "decision", "correct_decision", "injected_codes", "found_codes", "concerns", "min_conf", "low_fields", "amount_at_stake",
         "real_problem", "wrong_auto_approval", "false_alarm",
         "f_number", "f_po_reference", "f_supplier_vat", "f_date", "f_net", "f_vat", "f_gross", "f_iban", "f_line_count", "f_quantities",
         "n_lines", "lines_matched_ok", "error",
@@ -221,6 +221,7 @@ internal static class EvalCommand
             ["correct_decision"] = assessment.Decision == document.ExpectedDecision,
             ["injected_codes"] = Codes(document.Injected.Select(i => i.Code)),
             ["found_codes"] = Codes(assessment.Findings.Select(f => f.Code)),
+            ["concerns"] = string.Join(';', assessment.Concerns.Select(c => c.Kind).Distinct()),
             ["min_conf"] = checkedInvoice?.MinKeyFieldConfidence() ?? note?.MinKeyFieldConfidence(),
             ["low_fields"] = string.Join(';', invoice is not null
                 ? checkedInvoice!.LowConfidenceFields(0.80, new DiscrepancyOptions().TotalsTolerance)

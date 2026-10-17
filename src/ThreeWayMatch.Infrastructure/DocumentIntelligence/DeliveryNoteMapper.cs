@@ -271,8 +271,8 @@ internal static partial class DeliveryNoteMapper
 
     private sealed record Cell(int Row, int Column, string Content, List<Span> Spans);
 
-    // "Saatelehe nr: 2959", "Delivery note no.: 3398"
-    [GeneratedRegex(@"(?:saatelehe\s*nr|delivery\s*note\s*no)\b\.?\s*:?\s*(?<value>[A-Za-z0-9][A-Za-z0-9\-/]*)", RegexOptions.IgnoreCase)]
+    // "Saatelehe nr: 2959", "Delivery note no.: 3398". The OCR sometimes puts a space before the dot or colon: "no .: 3399".
+    [GeneratedRegex(@"(?:saatelehe\s*nr|delivery\s*note\s*no)\b(?:\s*[.:])*\s*(?<value>[A-Za-z0-9][A-Za-z0-9\-/]*)", RegexOptions.IgnoreCase)]
     private static partial Regex NumberAfterLabel();
 
     // The first "Tarnekuupäev"/"Delivery date" with a date after it; the signature box at the bottom repeats the label with nothing after it.

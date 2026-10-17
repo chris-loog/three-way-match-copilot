@@ -8,6 +8,8 @@ public class UnitTests
     [InlineData("m3", UnitCode.CubicMetre)]
     [InlineData("m³", UnitCode.CubicMetre)]
     [InlineData("M3", UnitCode.CubicMetre)]
+    [InlineData("mª", UnitCode.CubicMetre)]
+    [InlineData("mº", UnitCode.CubicMetre)]
     [InlineData("tm", UnitCode.CubicMetre)]
     [InlineData("tihumeeter", UnitCode.CubicMetre)]
     [InlineData("rm", UnitCode.StackedCubicMetre)]

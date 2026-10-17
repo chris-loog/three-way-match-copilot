@@ -83,6 +83,20 @@ public class DeliveryNoteMapperTests
         Assert.Equal(15m, note.Lines.Single().Quantity.Value);
     }
 
+    [Theory]
+    [InlineData("Delivery note no .: 3399")]
+    [InlineData("Delivery note no. : 3399")]
+    [InlineData("Delivery note no.: 3399")]
+    [InlineData("Saatelehe nr : 3399")]
+    public void The_number_is_found_when_the_ocr_puts_a_space_before_the_dot_or_colon(string label)
+    {
+        var json = LayoutResultBuilder.Build(
+            $"DELIVERY NOTE Nordic Pack Solutions OÜ\n{label}\nDelivery date: 14/04/2026\nVAT no. EE101657339",
+            [["Item", "Qty"], ["NPS-624", "80"]], "Nordic Pack Solutions OÜ · VAT no. EE101657339 · 1 / 1");
+
+        Assert.Equal("3399", Map(json).DeliveryNoteNumber.Value);
+    }
+
     [Fact]
     public void A_space_as_thousand_separator_is_read_as_one_number()
     {

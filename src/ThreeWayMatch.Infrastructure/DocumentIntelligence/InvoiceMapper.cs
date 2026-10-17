@@ -29,7 +29,8 @@ internal static partial class InvoiceMapper
             SupplierVatNumber = Text(fields, "VendorTaxId"),
             SupplierRegistryCode = Prefer(Text(fields, "RegistryCode"), () => FindByRegex(result, RegistryCodePattern())),
             InvoiceNumber = Text(fields, "InvoiceId"),
-            PurchaseOrderReference = Text(fields, "PurchaseOrder"),
+            // The model sometimes leaves the field out although the number is printed ("Tellimus nr: PO-2026-0083"): look in the page text.
+            PurchaseOrderReference = Prefer(Text(fields, "PurchaseOrder"), () => FindByRegex(result, PurchaseOrderPattern())),
             InvoiceDate = Date(fields, "InvoiceDate"),
             NetTotal = money("SubTotal"),
             VatTotal = money("TotalTax"),
@@ -175,4 +176,8 @@ internal static partial class InvoiceMapper
     // "Registrikood 11812518", "Reg. code 10776889", "Reg. 10000001": an eight digit number after a registry label.
     [GeneratedRegex(@"(?:registrikood|reg\.?\s*code|reg\.?(?:\s*no\.?)?)\s*[:.]?\s*(?<value>\d{8})\b", RegexOptions.IgnoreCase)]
     private static partial Regex RegistryCodePattern();
+
+    // "PO-2026-0083", and "P0-" for a misread letter O. Our own order numbers have this shape on every supplier's documents.
+    [GeneratedRegex(@"\b(?<value>P[O0]-\d{4}-\d{3,5})\b")]
+    private static partial Regex PurchaseOrderPattern();
 }
