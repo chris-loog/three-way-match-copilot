@@ -43,10 +43,16 @@ internal static partial class DeliveryNoteMapper
         DeliveryNoteNumber = InvoiceMapper.Text(fields, "DeliveryNoteNumber"),
         PurchaseOrderReference = InvoiceMapper.Text(fields, "PONumber"),
         DeliveryDate = InvoiceMapper.Date(fields, "DeliveryDate"),
-        Lines = ModelLines(fields),
+        Lines = ModelLines(fields, WordsOf(rawJson)),
     };
 
-    private static List<ExtractedDeliveryNoteLine> ModelLines(DocumentFieldDictionary fields)
+    private static List<Word> WordsOf(string rawJson)
+    {
+        using var document = JsonDocument.Parse(rawJson);
+        return ReadWords(document.RootElement.TryGetProperty("analyzeResult", out var inner) ? inner : document.RootElement);
+    }
+
+    private static List<ExtractedDeliveryNoteLine> ModelLines(DocumentFieldDictionary fields, IReadOnlyList<Word> words)
     {
         var lines = new List<ExtractedDeliveryNoteLine>();
         if (!fields.TryGetValue("Lines", out var items) || items.ValueList is null)
@@ -60,7 +66,10 @@ internal static partial class DeliveryNoteMapper
             var quantity = InvoiceMapper.Number(line, "Quantity");
             if (!quantity.HasValue && line is not null && line.TryGetValue("Quantity", out var raw))
             {
-                quantity = ParsedQuantity(raw.Content, raw.Confidence);
+                // The model's own score for a cell is low even when the digits are read right (0 for the template model);
+                // the lowest word confidence in the cell is what the layout path uses too.
+                var wordConfidence = MinConfidence(raw.Spans.Select(x => new Span(x.Offset, x.Length)), words);
+                quantity = ParsedQuantity(raw.Content, wordConfidence ?? raw.Confidence);
             }
 
             lines.Add(new ExtractedDeliveryNoteLine(
