@@ -1,0 +1,2208 @@
+{
+	"status": "succeeded",
+	"createdDateTime": "2026-10-19T13:03:07Z",
+	"lastUpdatedDateTime": "2026-10-19T13:03:10Z",
+	"analyzeResult": {
+		"apiVersion": "2024-11-30",
+		"modelId": "prebuilt-layout",
+		"stringIndexType": "utf16CodeUnit",
+		"content": "Veokas Logistika OÜ\nVeokite tee 3 74001 Maardu KMKR w EE105492166 Registriood 12198122\nSAATELEHT Saatelehe nr: 2841 Tarnekuupdev: 23.4.2026 Tellimuse number: PO-2026-0007\nSara Näidis Puit O0 Tehase 12. 11415 Talinn KMKR EE100000001 - Reg. 10000001\nNr\nArtikkel\nKirjeidkus\nKogus Ühik\n1\nVL319\nKirkohaletoimetamine Harjumaal\n3 reis\nTarnekuuplev:\nKauba vastu vöttis:\nViskas (nghtika O0 - KMKR ov EE105492166-1/1",
+		"pages": [
+			{
+				"pageNumber": 1,
+				"angle": -0.8525000214576721,
+				"width": 1550,
+				"height": 2018,
+				"unit": "pixel",
+				"words": [
+					{
+						"content": "Veokas",
+						"polygon": [
+							189,
+							240,
+							287,
+							237,
+							288,
+							272,
+							190,
+							273
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 0,
+							"length": 6
+						}
+					},
+					{
+						"content": "Logistika",
+						"polygon": [
+							295,
+							236,
+							411,
+							232,
+							413,
+							268,
+							296,
+							272
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 7,
+							"length": 9
+						}
+					},
+					{
+						"content": "OÜ",
+						"polygon": [
+							419,
+							231,
+							467,
+							229,
+							469,
+							266,
+							420,
+							268
+						],
+						"confidence": 0.963,
+						"span": {
+							"offset": 17,
+							"length": 2
+						}
+					},
+					{
+						"content": "Veokite",
+						"polygon": [
+							191,
+							276,
+							251,
+							274,
+							252,
+							294,
+							191,
+							295
+						],
+						"confidence": 0.829,
+						"span": {
+							"offset": 20,
+							"length": 7
+						}
+					},
+					{
+						"content": "tee",
+						"polygon": [
+							257,
+							274,
+							281,
+							274,
+							282,
+							294,
+							257,
+							294
+						],
+						"confidence": 0.882,
+						"span": {
+							"offset": 28,
+							"length": 3
+						}
+					},
+					{
+						"content": "3",
+						"polygon": [
+							287,
+							274,
+							301,
+							274,
+							301,
+							294,
+							288,
+							294
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 32,
+							"length": 1
+						}
+					},
+					{
+						"content": "74001",
+						"polygon": [
+							192,
+							297,
+							243,
+							296,
+							244,
+							316,
+							192,
+							316
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 34,
+							"length": 5
+						}
+					},
+					{
+						"content": "Maardu",
+						"polygon": [
+							249,
+							296,
+							313,
+							296,
+							313,
+							315,
+							250,
+							316
+						],
+						"confidence": 0.916,
+						"span": {
+							"offset": 40,
+							"length": 6
+						}
+					},
+					{
+						"content": "KMKR",
+						"polygon": [
+							192,
+							319,
+							244,
+							319,
+							245,
+							338,
+							192,
+							339
+						],
+						"confidence": 0.977,
+						"span": {
+							"offset": 47,
+							"length": 4
+						}
+					},
+					{
+						"content": "w",
+						"polygon": [
+							250,
+							318,
+							265,
+							318,
+							265,
+							338,
+							250,
+							338
+						],
+						"confidence": 0.094,
+						"span": {
+							"offset": 52,
+							"length": 1
+						}
+					},
+					{
+						"content": "EE105492166",
+						"polygon": [
+							270,
+							318,
+							387,
+							315,
+							387,
+							335,
+							271,
+							338
+						],
+						"confidence": 0.91,
+						"span": {
+							"offset": 54,
+							"length": 11
+						}
+					},
+					{
+						"content": "Registriood",
+						"polygon": [
+							192,
+							342,
+							291,
+							340,
+							291,
+							360,
+							193,
+							362
+						],
+						"confidence": 0.793,
+						"span": {
+							"offset": 66,
+							"length": 11
+						}
+					},
+					{
+						"content": "12198122",
+						"polygon": [
+							298,
+							340,
+							382,
+							338,
+							382,
+							358,
+							298,
+							360
+						],
+						"confidence": 0.96,
+						"span": {
+							"offset": 78,
+							"length": 8
+						}
+					},
+					{
+						"content": "SAATELEHT",
+						"polygon": [
+							1034,
+							215,
+							1272,
+							208,
+							1273,
+							249,
+							1035,
+							257
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 87,
+							"length": 9
+						}
+					},
+					{
+						"content": "Saatelehe",
+						"polygon": [
+							1109,
+							260,
+							1193,
+							257,
+							1193,
+							278,
+							1110,
+							280
+						],
+						"confidence": 0.686,
+						"span": {
+							"offset": 97,
+							"length": 9
+						}
+					},
+					{
+						"content": "nr:",
+						"polygon": [
+							1198,
+							257,
+							1222,
+							257,
+							1223,
+							278,
+							1199,
+							278
+						],
+						"confidence": 0.577,
+						"span": {
+							"offset": 107,
+							"length": 3
+						}
+					},
+					{
+						"content": "2841",
+						"polygon": [
+							1226,
+							256,
+							1272,
+							255,
+							1272,
+							276,
+							1227,
+							278
+						],
+						"confidence": 0.986,
+						"span": {
+							"offset": 111,
+							"length": 4
+						}
+					},
+					{
+						"content": "Tarnekuupdev:",
+						"polygon": [
+							1055,
+							284,
+							1176,
+							281,
+							1176,
+							302,
+							1056,
+							305
+						],
+						"confidence": 0.611,
+						"span": {
+							"offset": 116,
+							"length": 13
+						}
+					},
+					{
+						"content": "23.4.2026",
+						"polygon": [
+							1183,
+							281,
+							1274,
+							278,
+							1274,
+							299,
+							1184,
+							302
+						],
+						"confidence": 0.961,
+						"span": {
+							"offset": 130,
+							"length": 9
+						}
+					},
+					{
+						"content": "Tellimuse",
+						"polygon": [
+							984,
+							309,
+							1062,
+							307,
+							1062,
+							328,
+							984,
+							330
+						],
+						"confidence": 0.757,
+						"span": {
+							"offset": 140,
+							"length": 9
+						}
+					},
+					{
+						"content": "number:",
+						"polygon": [
+							1067,
+							307,
+							1133,
+							305,
+							1133,
+							326,
+							1067,
+							328
+						],
+						"confidence": 0.841,
+						"span": {
+							"offset": 150,
+							"length": 7
+						}
+					},
+					{
+						"content": "PO-2026-0007",
+						"polygon": [
+							1141,
+							305,
+							1274,
+							301,
+							1274,
+							323,
+							1141,
+							326
+						],
+						"confidence": 0.956,
+						"span": {
+							"offset": 158,
+							"length": 12
+						}
+					},
+					{
+						"content": "Sara",
+						"polygon": [
+							194,
+							410,
+							235,
+							409,
+							235,
+							428,
+							194,
+							428
+						],
+						"confidence": 0.138,
+						"span": {
+							"offset": 171,
+							"length": 4
+						}
+					},
+					{
+						"content": "Näidis",
+						"polygon": [
+							194,
+							428,
+							245,
+							427,
+							245,
+							448,
+							195,
+							449
+						],
+						"confidence": 0.649,
+						"span": {
+							"offset": 176,
+							"length": 6
+						}
+					},
+					{
+						"content": "Puit",
+						"polygon": [
+							249,
+							427,
+							280,
+							426,
+							280,
+							448,
+							250,
+							448
+						],
+						"confidence": 0.859,
+						"span": {
+							"offset": 183,
+							"length": 4
+						}
+					},
+					{
+						"content": "O0",
+						"polygon": [
+							285,
+							426,
+							316,
+							426,
+							316,
+							447,
+							285,
+							448
+						],
+						"confidence": 0.602,
+						"span": {
+							"offset": 188,
+							"length": 2
+						}
+					},
+					{
+						"content": "Tehase",
+						"polygon": [
+							195,
+							450,
+							250,
+							449,
+							251,
+							470,
+							195,
+							471
+						],
+						"confidence": 0.983,
+						"span": {
+							"offset": 191,
+							"length": 6
+						}
+					},
+					{
+						"content": "12.",
+						"polygon": [
+							257,
+							449,
+							279,
+							448,
+							279,
+							469,
+							257,
+							470
+						],
+						"confidence": 0.941,
+						"span": {
+							"offset": 198,
+							"length": 3
+						}
+					},
+					{
+						"content": "11415",
+						"polygon": [
+							285,
+							448,
+							335,
+							447,
+							336,
+							468,
+							286,
+							469
+						],
+						"confidence": 0.97,
+						"span": {
+							"offset": 202,
+							"length": 5
+						}
+					},
+					{
+						"content": "Talinn",
+						"polygon": [
+							340,
+							447,
+							393,
+							446,
+							393,
+							467,
+							341,
+							468
+						],
+						"confidence": 0.609,
+						"span": {
+							"offset": 208,
+							"length": 6
+						}
+					},
+					{
+						"content": "KMKR",
+						"polygon": [
+							195,
+							472,
+							248,
+							472,
+							248,
+							493,
+							195,
+							493
+						],
+						"confidence": 0.981,
+						"span": {
+							"offset": 215,
+							"length": 4
+						}
+					},
+					{
+						"content": "EE100000001",
+						"polygon": [
+							254,
+							471,
+							363,
+							469,
+							364,
+							491,
+							254,
+							492
+						],
+						"confidence": 0.963,
+						"span": {
+							"offset": 220,
+							"length": 11
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							367,
+							469,
+							375,
+							469,
+							375,
+							491,
+							368,
+							491
+						],
+						"confidence": 0.574,
+						"span": {
+							"offset": 232,
+							"length": 1
+						}
+					},
+					{
+						"content": "Reg.",
+						"polygon": [
+							380,
+							469,
+							412,
+							468,
+							412,
+							490,
+							380,
+							491
+						],
+						"confidence": 0.843,
+						"span": {
+							"offset": 234,
+							"length": 4
+						}
+					},
+					{
+						"content": "10000001",
+						"polygon": [
+							419,
+							468,
+							503,
+							466,
+							503,
+							488,
+							420,
+							490
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 239,
+							"length": 8
+						}
+					},
+					{
+						"content": "Nr",
+						"polygon": [
+							204,
+							528,
+							229,
+							528,
+							229,
+							548,
+							204,
+							548
+						],
+						"confidence": 0.754,
+						"span": {
+							"offset": 248,
+							"length": 2
+						}
+					},
+					{
+						"content": "Artikkel",
+						"polygon": [
+							254,
+							527,
+							325,
+							526,
+							325,
+							546,
+							254,
+							547
+						],
+						"confidence": 0.585,
+						"span": {
+							"offset": 251,
+							"length": 8
+						}
+					},
+					{
+						"content": "Kirjeidkus",
+						"polygon": [
+							409,
+							524,
+							485,
+							523,
+							485,
+							544,
+							409,
+							544
+						],
+						"confidence": 0.487,
+						"span": {
+							"offset": 260,
+							"length": 10
+						}
+					},
+					{
+						"content": "Kogus",
+						"polygon": [
+							1121,
+							510,
+							1178,
+							508,
+							1179,
+							530,
+							1122,
+							532
+						],
+						"confidence": 0.912,
+						"span": {
+							"offset": 271,
+							"length": 5
+						}
+					},
+					{
+						"content": "Ühik",
+						"polygon": [
+							1193,
+							507,
+							1236,
+							507,
+							1236,
+							529,
+							1193,
+							530
+						],
+						"confidence": 0.61,
+						"span": {
+							"offset": 277,
+							"length": 4
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							207,
+							567,
+							221,
+							567,
+							221,
+							587,
+							207,
+							587
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 282,
+							"length": 1
+						}
+					},
+					{
+						"content": "VL319",
+						"polygon": [
+							256,
+							564,
+							314,
+							564,
+							314,
+							585,
+							256,
+							586
+						],
+						"confidence": 0.933,
+						"span": {
+							"offset": 284,
+							"length": 5
+						}
+					},
+					{
+						"content": "Kirkohaletoimetamine",
+						"polygon": [
+							409,
+							561,
+							590,
+							559,
+							591,
+							581,
+							409,
+							582
+						],
+						"confidence": 0.621,
+						"span": {
+							"offset": 290,
+							"length": 20
+						}
+					},
+					{
+						"content": "Harjumaal",
+						"polygon": [
+							595,
+							559,
+							680,
+							558,
+							680,
+							580,
+							596,
+							581
+						],
+						"confidence": 0.916,
+						"span": {
+							"offset": 311,
+							"length": 9
+						}
+					},
+					{
+						"content": "3",
+						"polygon": [
+							1164,
+							549,
+							1180,
+							548,
+							1180,
+							568,
+							1164,
+							568
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 321,
+							"length": 1
+						}
+					},
+					{
+						"content": "reis",
+						"polygon": [
+							1193,
+							551,
+							1227,
+							550,
+							1227,
+							568,
+							1193,
+							568
+						],
+						"confidence": 0.955,
+						"span": {
+							"offset": 323,
+							"length": 4
+						}
+					},
+					{
+						"content": "Tarnekuuplev:",
+						"polygon": [
+							788,
+							693,
+							911,
+							693,
+							911,
+							716,
+							788,
+							716
+						],
+						"confidence": 0.637,
+						"span": {
+							"offset": 328,
+							"length": 13
+						}
+					},
+					{
+						"content": "Kauba",
+						"polygon": [
+							200,
+							702,
+							250,
+							701,
+							250,
+							723,
+							201,
+							723
+						],
+						"confidence": 0.824,
+						"span": {
+							"offset": 342,
+							"length": 5
+						}
+					},
+					{
+						"content": "vastu",
+						"polygon": [
+							255,
+							701,
+							298,
+							701,
+							298,
+							723,
+							255,
+							723
+						],
+						"confidence": 0.949,
+						"span": {
+							"offset": 348,
+							"length": 5
+						}
+					},
+					{
+						"content": "vöttis:",
+						"polygon": [
+							303,
+							701,
+							353,
+							702,
+							353,
+							723,
+							303,
+							723
+						],
+						"confidence": 0.833,
+						"span": {
+							"offset": 354,
+							"length": 7
+						}
+					},
+					{
+						"content": "Viskas",
+						"polygon": [
+							573,
+							1799,
+							619,
+							1800,
+							619,
+							1822,
+							573,
+							1820
+						],
+						"confidence": 0.413,
+						"span": {
+							"offset": 362,
+							"length": 6
+						}
+					},
+					{
+						"content": "(nghtika",
+						"polygon": [
+							623,
+							1800,
+							683,
+							1802,
+							683,
+							1824,
+							623,
+							1822
+						],
+						"confidence": 0.24,
+						"span": {
+							"offset": 369,
+							"length": 8
+						}
+					},
+					{
+						"content": "O0",
+						"polygon": [
+							688,
+							1802,
+							708,
+							1803,
+							707,
+							1824,
+							687,
+							1824
+						],
+						"confidence": 0.27,
+						"span": {
+							"offset": 378,
+							"length": 2
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							712,
+							1803,
+							716,
+							1803,
+							716,
+							1825,
+							712,
+							1825
+						],
+						"confidence": 0.24,
+						"span": {
+							"offset": 381,
+							"length": 1
+						}
+					},
+					{
+						"content": "KMKR",
+						"polygon": [
+							721,
+							1803,
+							766,
+							1805,
+							765,
+							1826,
+							720,
+							1825
+						],
+						"confidence": 0.488,
+						"span": {
+							"offset": 383,
+							"length": 4
+						}
+					},
+					{
+						"content": "ov",
+						"polygon": [
+							771,
+							1805,
+							784,
+							1805,
+							783,
+							1827,
+							770,
+							1827
+						],
+						"confidence": 0.144,
+						"span": {
+							"offset": 388,
+							"length": 2
+						}
+					},
+					{
+						"content": "EE105492166-1/1",
+						"polygon": [
+							788,
+							1806,
+							934,
+							1811,
+							934,
+							1833,
+							788,
+							1827
+						],
+						"confidence": 0.616,
+						"span": {
+							"offset": 391,
+							"length": 15
+						}
+					}
+				],
+				"lines": [
+					{
+						"content": "Veokas Logistika OÜ",
+						"polygon": [
+							189,
+							240,
+							467,
+							229,
+							468,
+							265,
+							190,
+							273
+						],
+						"spans": [
+							{
+								"offset": 0,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "Veokite tee 3",
+						"polygon": [
+							191,
+							275,
+							300,
+							274,
+							300,
+							293,
+							191,
+							295
+						],
+						"spans": [
+							{
+								"offset": 20,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "74001 Maardu",
+						"polygon": [
+							192,
+							297,
+							313,
+							295,
+							313,
+							315,
+							192,
+							316
+						],
+						"spans": [
+							{
+								"offset": 34,
+								"length": 12
+							}
+						]
+					},
+					{
+						"content": "KMKR w EE105492166",
+						"polygon": [
+							192,
+							319,
+							386,
+							315,
+							386,
+							335,
+							192,
+							339
+						],
+						"spans": [
+							{
+								"offset": 47,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Registriood 12198122",
+						"polygon": [
+							192,
+							342,
+							381,
+							338,
+							381,
+							358,
+							193,
+							362
+						],
+						"spans": [
+							{
+								"offset": 66,
+								"length": 20
+							}
+						]
+					},
+					{
+						"content": "SAATELEHT",
+						"polygon": [
+							1034,
+							215,
+							1271,
+							207,
+							1273,
+							249,
+							1035,
+							256
+						],
+						"spans": [
+							{
+								"offset": 87,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "Saatelehe nr: 2841",
+						"polygon": [
+							1109,
+							259,
+							1271,
+							255,
+							1271,
+							276,
+							1110,
+							280
+						],
+						"spans": [
+							{
+								"offset": 97,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Tarnekuupdev: 23.4.2026",
+						"polygon": [
+							1055,
+							284,
+							1273,
+							278,
+							1274,
+							299,
+							1056,
+							305
+						],
+						"spans": [
+							{
+								"offset": 116,
+								"length": 23
+							}
+						]
+					},
+					{
+						"content": "Tellimuse number: PO-2026-0007",
+						"polygon": [
+							984,
+							308,
+							1273,
+							300,
+							1274,
+							323,
+							984,
+							330
+						],
+						"spans": [
+							{
+								"offset": 140,
+								"length": 30
+							}
+						]
+					},
+					{
+						"content": "Sara",
+						"polygon": [
+							194,
+							409,
+							235,
+							409,
+							235,
+							427,
+							194,
+							428
+						],
+						"spans": [
+							{
+								"offset": 171,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "Näidis Puit O0",
+						"polygon": [
+							194,
+							428,
+							315,
+							425,
+							316,
+							447,
+							195,
+							449
+						],
+						"spans": [
+							{
+								"offset": 176,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Tehase 12. 11415 Talinn",
+						"polygon": [
+							195,
+							450,
+							392,
+							446,
+							393,
+							467,
+							195,
+							471
+						],
+						"spans": [
+							{
+								"offset": 191,
+								"length": 23
+							}
+						]
+					},
+					{
+						"content": "KMKR EE100000001 - Reg. 10000001",
+						"polygon": [
+							195,
+							472,
+							502,
+							466,
+							503,
+							488,
+							195,
+							493
+						],
+						"spans": [
+							{
+								"offset": 215,
+								"length": 32
+							}
+						]
+					},
+					{
+						"content": "Nr",
+						"polygon": [
+							204,
+							528,
+							229,
+							528,
+							229,
+							548,
+							204,
+							548
+						],
+						"spans": [
+							{
+								"offset": 248,
+								"length": 2
+							}
+						]
+					},
+					{
+						"content": "Artikkel",
+						"polygon": [
+							254,
+							526,
+							324,
+							525,
+							324,
+							546,
+							254,
+							547
+						],
+						"spans": [
+							{
+								"offset": 251,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "Kirjeidkus",
+						"polygon": [
+							409,
+							524,
+							485,
+							523,
+							485,
+							543,
+							409,
+							544
+						],
+						"spans": [
+							{
+								"offset": 260,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "Kogus Ühik",
+						"polygon": [
+							1121,
+							510,
+							1236,
+							506,
+							1236,
+							528,
+							1122,
+							532
+						],
+						"spans": [
+							{
+								"offset": 271,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "1",
+						"polygon": [
+							207,
+							567,
+							220,
+							567,
+							220,
+							587,
+							207,
+							587
+						],
+						"spans": [
+							{
+								"offset": 282,
+								"length": 1
+							}
+						]
+					},
+					{
+						"content": "VL319",
+						"polygon": [
+							255,
+							564,
+							313,
+							564,
+							314,
+							585,
+							256,
+							586
+						],
+						"spans": [
+							{
+								"offset": 284,
+								"length": 5
+							}
+						]
+					},
+					{
+						"content": "Kirkohaletoimetamine Harjumaal",
+						"polygon": [
+							409,
+							561,
+							680,
+							558,
+							680,
+							580,
+							409,
+							582
+						],
+						"spans": [
+							{
+								"offset": 290,
+								"length": 30
+							}
+						]
+					},
+					{
+						"content": "3",
+						"polygon": [
+							1164,
+							549,
+							1180,
+							549,
+							1180,
+							568,
+							1164,
+							568
+						],
+						"spans": [
+							{
+								"offset": 321,
+								"length": 1
+							}
+						]
+					},
+					{
+						"content": "reis",
+						"polygon": [
+							1187,
+							550,
+							1226,
+							550,
+							1226,
+							568,
+							1187,
+							568
+						],
+						"spans": [
+							{
+								"offset": 323,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "Tarnekuuplev:",
+						"polygon": [
+							788,
+							693,
+							910,
+							693,
+							910,
+							716,
+							788,
+							716
+						],
+						"spans": [
+							{
+								"offset": 328,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "Kauba vastu vöttis:",
+						"polygon": [
+							200,
+							701,
+							352,
+							701,
+							352,
+							723,
+							200,
+							723
+						],
+						"spans": [
+							{
+								"offset": 342,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "Viskas (nghtika O0 - KMKR ov EE105492166-1/1",
+						"polygon": [
+							572,
+							1798,
+							934,
+							1810,
+							933,
+							1832,
+							571,
+							1820
+						],
+						"spans": [
+							{
+								"offset": 362,
+								"length": 44
+							}
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 0,
+						"length": 406
+					}
+				]
+			}
+		],
+		"tables": [
+			{
+				"rowCount": 2,
+				"columnCount": 4,
+				"cells": [
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 0,
+						"content": "Nr",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									189,
+									519,
+									242,
+									518,
+									244,
+									554,
+									192,
+									555
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 248,
+								"length": 2
+							}
+						],
+						"elements": [
+							"/paragraphs/4"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 1,
+						"content": "Artikkel",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									242,
+									518,
+									365,
+									515,
+									366,
+									552,
+									244,
+									554
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 251,
+								"length": 8
+							}
+						],
+						"elements": [
+							"/paragraphs/5"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 2,
+						"content": "Kirjeidkus",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									365,
+									515,
+									835,
+									506,
+									836,
+									543,
+									366,
+									552
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 260,
+								"length": 10
+							}
+						],
+						"elements": [
+							"/paragraphs/6"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 3,
+						"content": "Kogus Ühik",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									835,
+									506,
+									1264,
+									499,
+									1266,
+									534,
+									836,
+									543
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 271,
+								"length": 10
+							}
+						],
+						"elements": [
+							"/paragraphs/7"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 0,
+						"content": "1",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									192,
+									555,
+									244,
+									554,
+									246,
+									593,
+									194,
+									594
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 282,
+								"length": 1
+							}
+						],
+						"elements": [
+							"/paragraphs/8"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 1,
+						"content": "VL319",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									244,
+									554,
+									366,
+									552,
+									368,
+									590,
+									246,
+									593
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 284,
+								"length": 5
+							}
+						],
+						"elements": [
+							"/paragraphs/9"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 2,
+						"content": "Kirkohaletoimetamine Harjumaal",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									366,
+									552,
+									836,
+									543,
+									837,
+									579,
+									368,
+									590
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 290,
+								"length": 30
+							}
+						],
+						"elements": [
+							"/paragraphs/10"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 3,
+						"content": "3 reis",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									836,
+									543,
+									1266,
+									534,
+									1267,
+									570,
+									837,
+									579
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 321,
+								"length": 6
+							}
+						],
+						"elements": [
+							"/paragraphs/11"
+						]
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							197,
+							505,
+							1273,
+							494,
+							1275,
+							576,
+							199,
+							587
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 248,
+						"length": 79
+					}
+				]
+			}
+		],
+		"paragraphs": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 19
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							189,
+							240,
+							467,
+							229,
+							468,
+							265,
+							190,
+							276
+						]
+					}
+				],
+				"role": "title",
+				"content": "Veokas Logistika OÜ"
+			},
+			{
+				"spans": [
+					{
+						"offset": 20,
+						"length": 66
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							190,
+							275,
+							385,
+							271,
+							387,
+							358,
+							192,
+							362
+						]
+					}
+				],
+				"content": "Veokite tee 3 74001 Maardu KMKR w EE105492166 Registriood 12198122"
+			},
+			{
+				"spans": [
+					{
+						"offset": 87,
+						"length": 83
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							981,
+							215,
+							1272,
+							207,
+							1275,
+							322,
+							984,
+							330
+						]
+					}
+				],
+				"content": "SAATELEHT Saatelehe nr: 2841 Tarnekuupdev: 23.4.2026 Tellimuse number: PO-2026-0007"
+			},
+			{
+				"spans": [
+					{
+						"offset": 171,
+						"length": 76
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							194,
+							409,
+							502,
+							404,
+							503,
+							488,
+							195,
+							493
+						]
+					}
+				],
+				"content": "Sara Näidis Puit O0 Tehase 12. 11415 Talinn KMKR EE100000001 - Reg. 10000001"
+			},
+			{
+				"spans": [
+					{
+						"offset": 248,
+						"length": 2
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							189,
+							519,
+							242,
+							518,
+							244,
+							554,
+							192,
+							555
+						]
+					}
+				],
+				"content": "Nr"
+			},
+			{
+				"spans": [
+					{
+						"offset": 251,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							242,
+							518,
+							365,
+							515,
+							366,
+							552,
+							244,
+							554
+						]
+					}
+				],
+				"content": "Artikkel"
+			},
+			{
+				"spans": [
+					{
+						"offset": 260,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							365,
+							515,
+							835,
+							506,
+							836,
+							543,
+							366,
+							552
+						]
+					}
+				],
+				"content": "Kirjeidkus"
+			},
+			{
+				"spans": [
+					{
+						"offset": 271,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							835,
+							506,
+							1264,
+							499,
+							1266,
+							534,
+							836,
+							543
+						]
+					}
+				],
+				"content": "Kogus Ühik"
+			},
+			{
+				"spans": [
+					{
+						"offset": 282,
+						"length": 1
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							192,
+							555,
+							244,
+							554,
+							246,
+							593,
+							194,
+							594
+						]
+					}
+				],
+				"content": "1"
+			},
+			{
+				"spans": [
+					{
+						"offset": 284,
+						"length": 5
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							244,
+							554,
+							366,
+							552,
+							368,
+							590,
+							246,
+							593
+						]
+					}
+				],
+				"content": "VL319"
+			},
+			{
+				"spans": [
+					{
+						"offset": 290,
+						"length": 30
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							366,
+							552,
+							836,
+							543,
+							837,
+							579,
+							368,
+							590
+						]
+					}
+				],
+				"content": "Kirkohaletoimetamine Harjumaal"
+			},
+			{
+				"spans": [
+					{
+						"offset": 321,
+						"length": 6
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							836,
+							543,
+							1266,
+							534,
+							1267,
+							570,
+							837,
+							579
+						]
+					}
+				],
+				"content": "3 reis"
+			},
+			{
+				"spans": [
+					{
+						"offset": 328,
+						"length": 13
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							788,
+							693,
+							910,
+							693,
+							910,
+							716,
+							788,
+							716
+						]
+					}
+				],
+				"content": "Tarnekuuplev:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 342,
+						"length": 19
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							200,
+							701,
+							352,
+							701,
+							352,
+							723,
+							200,
+							723
+						]
+					}
+				],
+				"content": "Kauba vastu vöttis:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 362,
+						"length": 44
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							572,
+							1798,
+							934,
+							1810,
+							933,
+							1832,
+							571,
+							1820
+						]
+					}
+				],
+				"role": "pageFooter",
+				"content": "Viskas (nghtika O0 - KMKR ov EE105492166-1/1"
+			}
+		],
+		"styles": [],
+		"contentFormat": "text",
+		"sections": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 361
+					}
+				],
+				"elements": [
+					"/paragraphs/0",
+					"/paragraphs/1",
+					"/paragraphs/2",
+					"/paragraphs/3",
+					"/figures/0",
+					"/tables/0",
+					"/paragraphs/12",
+					"/paragraphs/13"
+				]
+			}
+		],
+		"figures": [
+			{
+				"id": "1.1",
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							196,
+							498,
+							1276,
+							495,
+							1278,
+							586,
+							199,
+							589
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 247,
+						"length": 0
+					}
+				]
+			}
+		]
+	}
+}

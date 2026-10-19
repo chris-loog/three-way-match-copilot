@@ -1,0 +1,76 @@
+{
+	"$schema": "https://schema.cognitiveservices.azure.com/formrecognizer/2021-03-01/fields.json",
+	"fields": [
+		{
+			"fieldKey": "DeliveryNoteNumber",
+			"fieldType": "string",
+			"fieldFormat": "not-specified",
+			"groupIndex": 0
+		},
+		{
+			"fieldKey": "PONumber",
+			"fieldType": "string",
+			"fieldFormat": "not-specified",
+			"groupIndex": 0
+		},
+		{
+			"fieldKey": "DeliveryDate",
+			"fieldType": "date",
+			"fieldFormat": "dmy",
+			"groupIndex": 0
+		},
+		{
+			"fieldKey": "SupplierName",
+			"fieldType": "string",
+			"fieldFormat": "not-specified",
+			"groupIndex": 0
+		},
+		{
+			"fieldKey": "SupplierVatNumber",
+			"fieldType": "string",
+			"fieldFormat": "not-specified",
+			"groupIndex": 0
+		},
+		{
+			"fieldKey": "Lines",
+			"fieldType": "array",
+			"fieldFormat": "not-specified",
+			"itemType": "Lines_object",
+			"groupIndex": 0
+		}
+	],
+	"definitions": {
+		"Lines_object": {
+			"fieldKey": "Lines_object",
+			"fieldType": "object",
+			"fieldFormat": "not-specified",
+			"fields": [
+				{
+					"fieldKey": "ItemCode",
+					"fieldType": "string",
+					"fieldFormat": "not-specified",
+					"groupIndex": 0
+				},
+				{
+					"fieldKey": "Description",
+					"fieldType": "string",
+					"fieldFormat": "not-specified",
+					"groupIndex": 0
+				},
+				{
+					"fieldKey": "Quantity",
+					"fieldType": "string",
+					"fieldFormat": "not-specified",
+					"groupIndex": 0
+				},
+				{
+					"fieldKey": "Unit",
+					"fieldType": "string",
+					"fieldFormat": "not-specified",
+					"groupIndex": 0
+				}
+			],
+			"groupIndex": 0
+		}
+	}
+}

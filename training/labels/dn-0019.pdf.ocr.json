@@ -1,0 +1,2698 @@
+{
+	"status": "succeeded",
+	"createdDateTime": "2026-10-19T13:20:02Z",
+	"lastUpdatedDateTime": "2026-10-19T13:20:05Z",
+	"analyzeResult": {
+		"apiVersion": "2024-11-30",
+		"modelId": "prebuilt-layout",
+		"stringIndexType": "utf16CodeUnit",
+		"content": "DELIVERY NOTE Delivery note no .: 3399 Delivery date: 29 Apr 2026 Your order: PO-2026-0019\nBaltic Board Supply OÜ Sadama 25 10111 Tallinn VAT no. EE109532815 Reg. code 10776889\nDeliver to\nNäidis Puit OÜ\nTehase 12, 11415 Tallinn\nKMKR EE100000001 . Reg. 10000001\nPos\nItem code\nDescription\nUnit\nQty\n1\nBBS00300\nOak veneered MDF 19 mm, 2440x1220\npcs\n214\nGoods received by:\nDelivery date:\nBaltic Board Supply OU . VAT no. EE109532815 . 1 / 1",
+		"pages": [
+			{
+				"pageNumber": 1,
+				"angle": 0.012330899946391582,
+				"width": 8.2639,
+				"height": 11.6944,
+				"unit": "inch",
+				"words": [
+					{
+						"content": "DELIVERY",
+						"polygon": [
+							0.478,
+							0.5232,
+							1.7723,
+							0.522,
+							1.7717,
+							0.7751,
+							0.478,
+							0.7763
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 0,
+							"length": 8
+						}
+					},
+					{
+						"content": "NOTE",
+						"polygon": [
+							1.8428,
+							0.5214,
+							2.5985,
+							0.519,
+							2.5985,
+							0.7766,
+							1.8422,
+							0.7761
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 9,
+							"length": 4
+						}
+					},
+					{
+						"content": "Delivery",
+						"polygon": [
+							0.471,
+							0.8239,
+							0.9287,
+							0.824,
+							0.9282,
+							0.9571,
+							0.4705,
+							0.956
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 14,
+							"length": 8
+						}
+					},
+					{
+						"content": "note",
+						"polygon": [
+							0.9611,
+							0.8242,
+							1.205,
+							0.8231,
+							1.2047,
+							0.9547,
+							0.9607,
+							0.9566
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 23,
+							"length": 4
+						}
+					},
+					{
+						"content": "no",
+						"polygon": [
+							1.2461,
+							0.8233,
+							1.3432,
+							0.8229,
+							1.343,
+							0.9537,
+							1.2458,
+							0.9543
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 28,
+							"length": 2
+						}
+					},
+					{
+						"content": ".:",
+						"polygon": [
+							1.3691,
+							0.8224,
+							1.436,
+							0.822,
+							1.4354,
+							0.9527,
+							1.3688,
+							0.9536
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 31,
+							"length": 2
+						}
+					},
+					{
+						"content": "3399",
+						"polygon": [
+							1.4749,
+							0.8221,
+							1.7704,
+							0.8193,
+							1.7704,
+							0.9501,
+							1.4741,
+							0.952
+						],
+						"confidence": 0.99,
+						"span": {
+							"offset": 34,
+							"length": 4
+						}
+					},
+					{
+						"content": "Delivery",
+						"polygon": [
+							0.4698,
+							0.9707,
+							0.9281,
+							0.97,
+							0.928,
+							1.1063,
+							0.4695,
+							1.1059
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 39,
+							"length": 8
+						}
+					},
+					{
+						"content": "date:",
+						"polygon": [
+							0.9573,
+							0.9702,
+							1.2224,
+							0.9687,
+							1.2224,
+							1.1061,
+							0.9572,
+							1.1063
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 48,
+							"length": 5
+						}
+					},
+					{
+						"content": "29",
+						"polygon": [
+							1.265,
+							0.9689,
+							1.4043,
+							0.969,
+							1.4042,
+							1.1062,
+							1.2649,
+							1.1062
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 54,
+							"length": 2
+						}
+					},
+					{
+						"content": "Apr",
+						"polygon": [
+							1.4313,
+							0.9689,
+							1.638,
+							0.9678,
+							1.6376,
+							1.1052,
+							1.4312,
+							1.1061
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 57,
+							"length": 3
+						}
+					},
+					{
+						"content": "2026",
+						"polygon": [
+							1.6672,
+							0.9675,
+							1.9646,
+							0.9654,
+							1.9646,
+							1.1033,
+							1.6668,
+							1.1052
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 61,
+							"length": 4
+						}
+					},
+					{
+						"content": "Your",
+						"polygon": [
+							0.4644,
+							1.1191,
+							0.7209,
+							1.1198,
+							0.7209,
+							1.25,
+							0.4645,
+							1.2505
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 66,
+							"length": 4
+						}
+					},
+					{
+						"content": "order:",
+						"polygon": [
+							0.7508,
+							1.1196,
+							1.0714,
+							1.1191,
+							1.0714,
+							1.248,
+							0.7508,
+							1.2499
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 71,
+							"length": 6
+						}
+					},
+					{
+						"content": "PO-2026-0019",
+						"polygon": [
+							1.1163,
+							1.1189,
+							1.9646,
+							1.1153,
+							1.9646,
+							1.2462,
+							1.1162,
+							1.2478
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 78,
+							"length": 12
+						}
+					},
+					{
+						"content": "Baltic",
+						"polygon": [
+							5.6105,
+							0.4973,
+							6.1358,
+							0.4973,
+							6.1357,
+							0.7229,
+							5.6103,
+							0.7215
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 91,
+							"length": 6
+						}
+					},
+					{
+						"content": "Board",
+						"polygon": [
+							6.2028,
+							0.4969,
+							6.7318,
+							0.4983,
+							6.732,
+							0.7252,
+							6.2028,
+							0.7234
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 98,
+							"length": 5
+						}
+					},
+					{
+						"content": "Supply",
+						"polygon": [
+							6.7989,
+							0.4982,
+							7.421,
+							0.4965,
+							7.4227,
+							0.7234,
+							6.799,
+							0.7252
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 104,
+							"length": 6
+						}
+					},
+					{
+						"content": "OÜ",
+						"polygon": [
+							7.4694,
+							0.4963,
+							7.7899,
+							0.4891,
+							7.7899,
+							0.7213,
+							7.4714,
+							0.7232
+						],
+						"confidence": 0.307,
+						"span": {
+							"offset": 111,
+							"length": 2
+						}
+					},
+					{
+						"content": "Sadama",
+						"polygon": [
+							7.1801,
+							0.7371,
+							7.6082,
+							0.7367,
+							7.6083,
+							0.8639,
+							7.1801,
+							0.8646
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 114,
+							"length": 6
+						}
+					},
+					{
+						"content": "25",
+						"polygon": [
+							7.6456,
+							0.7366,
+							7.7952,
+							0.7346,
+							7.7952,
+							0.8637,
+							7.6456,
+							0.864
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 121,
+							"length": 2
+						}
+					},
+					{
+						"content": "10111",
+						"polygon": [
+							7.0484,
+							0.8858,
+							7.407,
+							0.8864,
+							7.4068,
+							1.0117,
+							7.0481,
+							1.0101
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 124,
+							"length": 5
+						}
+					},
+					{
+						"content": "Tallinn",
+						"polygon": [
+							7.4379,
+							0.8866,
+							7.7956,
+							0.8857,
+							7.7956,
+							1.0136,
+							7.4377,
+							1.0121
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 130,
+							"length": 7
+						}
+					},
+					{
+						"content": "VAT",
+						"polygon": [
+							6.5254,
+							1.0381,
+							6.7488,
+							1.0381,
+							6.7489,
+							1.1688,
+							6.5255,
+							1.1706
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 138,
+							"length": 3
+						}
+					},
+					{
+						"content": "no.",
+						"polygon": [
+							6.7746,
+							1.0381,
+							6.9572,
+							1.0363,
+							6.9573,
+							1.1678,
+							6.7747,
+							1.1685
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 142,
+							"length": 3
+						}
+					},
+					{
+						"content": "EE109532815",
+						"polygon": [
+							7.0002,
+							1.0363,
+							7.7956,
+							1.0354,
+							7.7956,
+							1.1665,
+							7.0004,
+							1.1676
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 146,
+							"length": 11
+						}
+					},
+					{
+						"content": "Reg.",
+						"polygon": [
+							6.6394,
+							1.1905,
+							6.8745,
+							1.1902,
+							6.8747,
+							1.325,
+							6.6394,
+							1.3291
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 158,
+							"length": 4
+						}
+					},
+					{
+						"content": "code",
+						"polygon": [
+							6.9122,
+							1.1898,
+							7.1738,
+							1.1879,
+							7.1739,
+							1.3223,
+							6.9123,
+							1.3243
+						],
+						"confidence": 0.99,
+						"span": {
+							"offset": 163,
+							"length": 4
+						}
+					},
+					{
+						"content": "10776889",
+						"polygon": [
+							7.2182,
+							1.1878,
+							7.7899,
+							1.1816,
+							7.7899,
+							1.3178,
+							7.2182,
+							1.3218
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 168,
+							"length": 8
+						}
+					},
+					{
+						"content": "Deliver",
+						"polygon": [
+							0.467,
+							1.6379,
+							0.8207,
+							1.6384,
+							0.8206,
+							1.753,
+							0.467,
+							1.7521
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 177,
+							"length": 7
+						}
+					},
+					{
+						"content": "to",
+						"polygon": [
+							0.8472,
+							1.6385,
+							0.9588,
+							1.6383,
+							0.9587,
+							1.753,
+							0.847,
+							1.753
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 185,
+							"length": 2
+						}
+					},
+					{
+						"content": "Näidis",
+						"polygon": [
+							0.4679,
+							1.7731,
+							0.8087,
+							1.7734,
+							0.8091,
+							1.9044,
+							0.4683,
+							1.9032
+						],
+						"confidence": 0.629,
+						"span": {
+							"offset": 188,
+							"length": 6
+						}
+					},
+					{
+						"content": "Puit",
+						"polygon": [
+							0.8494,
+							1.7732,
+							1.0595,
+							1.7715,
+							1.06,
+							1.9033,
+							0.8498,
+							1.904
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 195,
+							"length": 4
+						}
+					},
+					{
+						"content": "OÜ",
+						"polygon": [
+							1.0959,
+							1.7714,
+							1.2907,
+							1.7685,
+							1.2907,
+							1.9027,
+							1.0964,
+							1.9033
+						],
+						"confidence": 0.952,
+						"span": {
+							"offset": 200,
+							"length": 2
+						}
+					},
+					{
+						"content": "Tehase",
+						"polygon": [
+							0.4688,
+							1.9224,
+							0.8451,
+							1.924,
+							0.8451,
+							2.0574,
+							0.4687,
+							2.0561
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 203,
+							"length": 6
+						}
+					},
+					{
+						"content": "12,",
+						"polygon": [
+							0.887,
+							1.9239,
+							1.0476,
+							1.9233,
+							1.0476,
+							2.0577,
+							0.8869,
+							2.0578
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 210,
+							"length": 3
+						}
+					},
+					{
+						"content": "11415",
+						"polygon": [
+							1.0916,
+							1.9233,
+							1.4393,
+							1.9234,
+							1.4391,
+							2.0582,
+							1.0915,
+							2.0578
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 214,
+							"length": 5
+						}
+					},
+					{
+						"content": "Tallinn",
+						"polygon": [
+							1.4723,
+							1.9234,
+							1.8332,
+							1.9231,
+							1.8332,
+							2.0575,
+							1.472,
+							2.0581
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 220,
+							"length": 7
+						}
+					},
+					{
+						"content": "KMKR",
+						"polygon": [
+							0.4689,
+							2.0758,
+							0.8272,
+							2.0755,
+							0.8273,
+							2.2092,
+							0.4692,
+							2.21
+						],
+						"confidence": 0.99,
+						"span": {
+							"offset": 228,
+							"length": 4
+						}
+					},
+					{
+						"content": "EE100000001",
+						"polygon": [
+							0.8697,
+							2.0752,
+							1.6533,
+							2.075,
+							1.6532,
+							2.2125,
+							0.8698,
+							2.2092
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 233,
+							"length": 11
+						}
+					},
+					{
+						"content": ".",
+						"polygon": [
+							1.6936,
+							2.0749,
+							1.7204,
+							2.0749,
+							1.7203,
+							2.2127,
+							1.6934,
+							2.2127
+						],
+						"confidence": 0.39,
+						"span": {
+							"offset": 245,
+							"length": 1
+						}
+					},
+					{
+						"content": "Reg.",
+						"polygon": [
+							1.763,
+							2.075,
+							1.9869,
+							2.0748,
+							1.9869,
+							2.2133,
+							1.763,
+							2.2128
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 247,
+							"length": 4
+						}
+					},
+					{
+						"content": "10000001",
+						"polygon": [
+							2.0294,
+							2.0747,
+							2.6042,
+							2.0722,
+							2.6042,
+							2.211,
+							2.0294,
+							2.2131
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 252,
+							"length": 8
+						}
+					},
+					{
+						"content": "Pos",
+						"polygon": [
+							0.5245,
+							2.4595,
+							0.7367,
+							2.4618,
+							0.7367,
+							2.5735,
+							0.5246,
+							2.5733
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 261,
+							"length": 3
+						}
+					},
+					{
+						"content": "Item",
+						"polygon": [
+							0.8777,
+							2.4552,
+							1.1352,
+							2.4558,
+							1.1354,
+							2.578,
+							0.8778,
+							2.5781
+						],
+						"confidence": 0.987,
+						"span": {
+							"offset": 265,
+							"length": 4
+						}
+					},
+					{
+						"content": "code",
+						"polygon": [
+							1.1674,
+							2.4555,
+							1.4449,
+							2.4556,
+							1.4449,
+							2.5792,
+							1.1675,
+							2.5778
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 270,
+							"length": 4
+						}
+					},
+					{
+						"content": "Description",
+						"polygon": [
+							1.9699,
+							2.4515,
+							2.6271,
+							2.4524,
+							2.6271,
+							2.5891,
+							1.9699,
+							2.5869
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 275,
+							"length": 11
+						}
+					},
+					{
+						"content": "Unit",
+						"polygon": [
+							6.5084,
+							2.4511,
+							6.7676,
+							2.4515,
+							6.7676,
+							2.5718,
+							6.5082,
+							2.5713
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 287,
+							"length": 4
+						}
+					},
+					{
+						"content": "Qty",
+						"polygon": [
+							7.5205,
+							2.4575,
+							7.7442,
+							2.4617,
+							7.7442,
+							2.59,
+							7.5195,
+							2.5864
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 292,
+							"length": 3
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							0.5275,
+							2.7159,
+							0.6053,
+							2.7177,
+							0.6053,
+							2.825,
+							0.5275,
+							2.825
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 296,
+							"length": 1
+						}
+					},
+					{
+						"content": "BBS00300",
+						"polygon": [
+							0.8836,
+							2.7068,
+							1.4879,
+							2.7078,
+							1.4875,
+							2.8322,
+							0.8836,
+							2.8317
+						],
+						"confidence": 0.985,
+						"span": {
+							"offset": 298,
+							"length": 8
+						}
+					},
+					{
+						"content": "Oak",
+						"polygon": [
+							1.9645,
+							2.7066,
+							2.1944,
+							2.7066,
+							2.1942,
+							2.84,
+							1.9642,
+							2.8404
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 307,
+							"length": 3
+						}
+					},
+					{
+						"content": "veneered",
+						"polygon": [
+							2.221,
+							2.7066,
+							2.7251,
+							2.7054,
+							2.7245,
+							2.8401,
+							2.2208,
+							2.8399
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 311,
+							"length": 8
+						}
+					},
+					{
+						"content": "MDF",
+						"polygon": [
+							2.7715,
+							2.7053,
+							3.0456,
+							2.7047,
+							3.0448,
+							2.8406,
+							2.7709,
+							2.8401
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 320,
+							"length": 3
+						}
+					},
+					{
+						"content": "19",
+						"polygon": [
+							3.0832,
+							2.7046,
+							3.2159,
+							2.7041,
+							3.2148,
+							2.8395,
+							3.0823,
+							2.8405
+						],
+						"confidence": 0.987,
+						"span": {
+							"offset": 324,
+							"length": 2
+						}
+					},
+					{
+						"content": "mm,",
+						"polygon": [
+							3.2579,
+							2.7043,
+							3.5033,
+							2.7041,
+							3.5027,
+							2.8389,
+							3.2568,
+							2.8394
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 327,
+							"length": 3
+						}
+					},
+					{
+						"content": "2440x1220",
+						"polygon": [
+							3.5298,
+							2.704,
+							4.1691,
+							2.7015,
+							4.1691,
+							2.8387,
+							3.5293,
+							2.8389
+						],
+						"confidence": 0.949,
+						"span": {
+							"offset": 331,
+							"length": 9
+						}
+					},
+					{
+						"content": "pcs",
+						"polygon": [
+							6.5061,
+							2.7349,
+							6.7048,
+							2.733,
+							6.7048,
+							2.8372,
+							6.5063,
+							2.8403
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 341,
+							"length": 3
+						}
+					},
+					{
+						"content": "214",
+						"polygon": [
+							7.5119,
+							2.7096,
+							7.7442,
+							2.7103,
+							7.7442,
+							2.8283,
+							7.5116,
+							2.8298
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 345,
+							"length": 3
+						}
+					},
+					{
+						"content": "Goods",
+						"polygon": [
+							0.4659,
+							3.6347,
+							0.824,
+							3.6369,
+							0.8231,
+							3.7739,
+							0.4658,
+							3.7732
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 349,
+							"length": 5
+						}
+					},
+					{
+						"content": "received",
+						"polygon": [
+							0.8648,
+							3.6365,
+							1.3158,
+							3.6384,
+							1.3139,
+							3.7772,
+							0.8639,
+							3.7741
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 355,
+							"length": 8
+						}
+					},
+					{
+						"content": "by:",
+						"polygon": [
+							1.3566,
+							3.6379,
+							1.5306,
+							3.6384,
+							1.5306,
+							3.7777,
+							1.3546,
+							3.7779
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 364,
+							"length": 3
+						}
+					},
+					{
+						"content": "Delivery",
+						"polygon": [
+							4.5448,
+							3.6334,
+							5.0071,
+							3.637,
+							5.0065,
+							3.7758,
+							4.5445,
+							3.7742
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 368,
+							"length": 8
+						}
+					},
+					{
+						"content": "date:",
+						"polygon": [
+							5.0369,
+							3.6369,
+							5.317,
+							3.6374,
+							5.317,
+							3.7778,
+							5.0362,
+							3.776
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 377,
+							"length": 5
+						}
+					},
+					{
+						"content": "Baltic",
+						"polygon": [
+							2.8758,
+							11.1004,
+							3.1355,
+							11.1004,
+							3.1345,
+							11.2249,
+							2.8751,
+							11.2235
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 383,
+							"length": 6
+						}
+					},
+					{
+						"content": "Board",
+						"polygon": [
+							3.1685,
+							11.1003,
+							3.4304,
+							11.0988,
+							3.4293,
+							11.2255,
+							3.1675,
+							11.225
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 390,
+							"length": 5
+						}
+					},
+					{
+						"content": "Supply",
+						"polygon": [
+							3.4633,
+							11.0986,
+							3.7705,
+							11.0982,
+							3.7699,
+							11.2259,
+							3.4624,
+							11.2254
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 396,
+							"length": 6
+						}
+					},
+					{
+						"content": "OU",
+						"polygon": [
+							3.7953,
+							11.0981,
+							3.9478,
+							11.0976,
+							3.9471,
+							11.2256,
+							3.7946,
+							11.2258
+						],
+						"confidence": 0.645,
+						"span": {
+							"offset": 403,
+							"length": 2
+						}
+					},
+					{
+						"content": ".",
+						"polygon": [
+							3.9829,
+							11.0977,
+							4.0035,
+							11.0977,
+							4.0027,
+							11.2253,
+							3.9821,
+							11.2254
+						],
+						"confidence": 0.7,
+						"span": {
+							"offset": 406,
+							"length": 1
+						}
+					},
+					{
+						"content": "VAT",
+						"polygon": [
+							4.0283,
+							11.0977,
+							4.2035,
+							11.0979,
+							4.2025,
+							11.2243,
+							4.0274,
+							11.2251
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 408,
+							"length": 3
+						}
+					},
+					{
+						"content": "no.",
+						"polygon": [
+							4.2282,
+							11.0979,
+							4.3808,
+							11.0979,
+							4.3798,
+							11.2238,
+							4.2272,
+							11.2242
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 412,
+							"length": 3
+						}
+					},
+					{
+						"content": "EE109532815",
+						"polygon": [
+							4.4179,
+							11.0979,
+							5.0612,
+							11.0972,
+							5.0603,
+							11.2222,
+							4.4169,
+							11.2238
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 416,
+							"length": 11
+						}
+					},
+					{
+						"content": ".",
+						"polygon": [
+							5.0859,
+							11.0971,
+							5.1271,
+							11.0971,
+							5.1263,
+							11.2222,
+							5.0851,
+							11.2222
+						],
+						"confidence": 0.642,
+						"span": {
+							"offset": 428,
+							"length": 1
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							5.1601,
+							11.0971,
+							5.2137,
+							11.0971,
+							5.213,
+							11.2222,
+							5.1594,
+							11.2222
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 430,
+							"length": 1
+						}
+					},
+					{
+						"content": "/",
+						"polygon": [
+							5.2447,
+							11.0974,
+							5.288,
+							11.0977,
+							5.2874,
+							11.2218,
+							5.244,
+							11.222
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 432,
+							"length": 1
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							5.3251,
+							11.098,
+							5.391,
+							11.0985,
+							5.3906,
+							11.2212,
+							5.3246,
+							11.2216
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 434,
+							"length": 1
+						}
+					}
+				],
+				"lines": [
+					{
+						"content": "DELIVERY NOTE",
+						"polygon": [
+							0.478,
+							0.5174,
+							2.5956,
+							0.517,
+							2.5956,
+							0.7739,
+							0.4781,
+							0.7742
+						],
+						"spans": [
+							{
+								"offset": 0,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "Delivery note no .: 3399",
+						"polygon": [
+							0.47,
+							0.8239,
+							1.7657,
+							0.8186,
+							1.7662,
+							0.9514,
+							0.4705,
+							0.9567
+						],
+						"spans": [
+							{
+								"offset": 14,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "Delivery date: 29 Apr 2026",
+						"polygon": [
+							0.4691,
+							0.9691,
+							1.9623,
+							0.965,
+							1.9627,
+							1.1024,
+							0.4695,
+							1.1066
+						],
+						"spans": [
+							{
+								"offset": 39,
+								"length": 26
+							}
+						]
+					},
+					{
+						"content": "Your order: PO-2026-0019",
+						"polygon": [
+							0.4641,
+							1.1191,
+							1.9612,
+							1.1144,
+							1.9616,
+							1.2446,
+							0.4645,
+							1.2493
+						],
+						"spans": [
+							{
+								"offset": 66,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "Baltic Board Supply OÜ",
+						"polygon": [
+							5.6095,
+							0.4973,
+							7.7861,
+							0.4892,
+							7.787,
+							0.7202,
+							5.6103,
+							0.7252
+						],
+						"spans": [
+							{
+								"offset": 91,
+								"length": 22
+							}
+						]
+					},
+					{
+						"content": "Sadama 25",
+						"polygon": [
+							7.1797,
+							0.7366,
+							7.7908,
+							0.7346,
+							7.7912,
+							0.8616,
+							7.1801,
+							0.8635
+						],
+						"spans": [
+							{
+								"offset": 114,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "10111 Tallinn",
+						"polygon": [
+							7.0484,
+							0.8851,
+							7.7947,
+							0.8857,
+							7.7943,
+							1.0115,
+							7.048,
+							1.0093
+						],
+						"spans": [
+							{
+								"offset": 124,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "VAT no. EE109532815",
+						"polygon": [
+							6.5251,
+							1.0375,
+							7.7936,
+							1.0335,
+							7.794,
+							1.1649,
+							6.5255,
+							1.1689
+						],
+						"spans": [
+							{
+								"offset": 138,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "Reg. code 10776889",
+						"polygon": [
+							6.6384,
+							1.1905,
+							7.7893,
+							1.1816,
+							7.7899,
+							1.318,
+							6.6394,
+							1.3268
+						],
+						"spans": [
+							{
+								"offset": 158,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Deliver to",
+						"polygon": [
+							0.467,
+							1.6368,
+							0.9563,
+							1.6383,
+							0.956,
+							1.753,
+							0.4666,
+							1.7517
+						],
+						"spans": [
+							{
+								"offset": 177,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "Näidis Puit OÜ",
+						"polygon": [
+							0.4677,
+							1.7719,
+							1.2857,
+							1.7684,
+							1.2863,
+							1.9004,
+							0.4683,
+							1.9039
+						],
+						"spans": [
+							{
+								"offset": 188,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Tehase 12, 11415 Tallinn",
+						"polygon": [
+							0.4687,
+							1.9224,
+							1.8325,
+							1.9227,
+							1.8324,
+							2.0564,
+							0.4687,
+							2.0561
+						],
+						"spans": [
+							{
+								"offset": 203,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "KMKR EE100000001 . Reg. 10000001",
+						"polygon": [
+							0.4689,
+							2.0753,
+							2.6033,
+							2.0722,
+							2.6036,
+							2.2102,
+							0.4691,
+							2.2133
+						],
+						"spans": [
+							{
+								"offset": 228,
+								"length": 32
+							}
+						]
+					},
+					{
+						"content": "Pos",
+						"polygon": [
+							0.5245,
+							2.4587,
+							0.7338,
+							2.4592,
+							0.7335,
+							2.5719,
+							0.5242,
+							2.5714
+						],
+						"spans": [
+							{
+								"offset": 261,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "Item code",
+						"polygon": [
+							0.8777,
+							2.4552,
+							1.4448,
+							2.4556,
+							1.4448,
+							2.5772,
+							0.8776,
+							2.5767
+						],
+						"spans": [
+							{
+								"offset": 265,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "Description",
+						"polygon": [
+							1.9699,
+							2.4503,
+							2.6216,
+							2.4519,
+							2.6213,
+							2.5876,
+							1.9695,
+							2.586
+						],
+						"spans": [
+							{
+								"offset": 275,
+								"length": 11
+							}
+						]
+					},
+					{
+						"content": "Unit",
+						"polygon": [
+							6.5084,
+							2.4503,
+							6.7627,
+							2.4513,
+							6.7623,
+							2.5705,
+							6.508,
+							2.5695
+						],
+						"spans": [
+							{
+								"offset": 287,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "Qty",
+						"polygon": [
+							7.5205,
+							2.4575,
+							7.7427,
+							2.4614,
+							7.7405,
+							2.5882,
+							7.5183,
+							2.5843
+						],
+						"spans": [
+							{
+								"offset": 292,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "1",
+						"polygon": [
+							0.5275,
+							2.7158,
+							0.6006,
+							2.7158,
+							0.6006,
+							2.8235,
+							0.5275,
+							2.8234
+						],
+						"spans": [
+							{
+								"offset": 296,
+								"length": 1
+							}
+						]
+					},
+					{
+						"content": "BBS00300",
+						"polygon": [
+							0.8836,
+							2.7068,
+							1.4853,
+							2.7078,
+							1.4851,
+							2.8317,
+							0.8834,
+							2.8306
+						],
+						"spans": [
+							{
+								"offset": 298,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "Oak veneered MDF 19 mm, 2440x1220",
+						"polygon": [
+							1.964,
+							2.7054,
+							4.1679,
+							2.7015,
+							4.1681,
+							2.8364,
+							1.9643,
+							2.8404
+						],
+						"spans": [
+							{
+								"offset": 307,
+								"length": 33
+							}
+						]
+					},
+					{
+						"content": "pcs",
+						"polygon": [
+							6.5052,
+							2.7349,
+							6.7028,
+							2.7328,
+							6.704,
+							2.8373,
+							6.5063,
+							2.8394
+						],
+						"spans": [
+							{
+								"offset": 341,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "214",
+						"polygon": [
+							7.5119,
+							2.7096,
+							7.7422,
+							2.7101,
+							7.7419,
+							2.829,
+							7.5116,
+							2.8284
+						],
+						"spans": [
+							{
+								"offset": 345,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "Goods received by:",
+						"polygon": [
+							0.4659,
+							3.6347,
+							1.5262,
+							3.6375,
+							1.5259,
+							3.7766,
+							0.4655,
+							3.7738
+						],
+						"spans": [
+							{
+								"offset": 349,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Delivery date:",
+						"polygon": [
+							4.5448,
+							3.6328,
+							5.315,
+							3.6371,
+							5.3142,
+							3.7761,
+							4.544,
+							3.7719
+						],
+						"spans": [
+							{
+								"offset": 368,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Baltic Board Supply OU . VAT no. EE109532815 . 1 / 1",
+						"polygon": [
+							2.8749,
+							11.099,
+							5.3861,
+							11.0951,
+							5.3863,
+							11.2212,
+							2.8751,
+							11.2252
+						],
+						"spans": [
+							{
+								"offset": 383,
+								"length": 52
+							}
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 0,
+						"length": 435
+					}
+				]
+			}
+		],
+		"tables": [
+			{
+				"rowCount": 2,
+				"columnCount": 5,
+				"cells": [
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 0,
+						"content": "Pos",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.4295,
+									2.3783,
+									0.7982,
+									2.3783,
+									0.7982,
+									2.6345,
+									0.4295,
+									2.6345
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 261,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/6"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 1,
+						"content": "Item code",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.7982,
+									2.3783,
+									1.716,
+									2.3783,
+									1.716,
+									2.6345,
+									0.7982,
+									2.6345
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 265,
+								"length": 9
+							}
+						],
+						"elements": [
+							"/paragraphs/7"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 2,
+						"content": "Description",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1.716,
+									2.3783,
+									5.3048,
+									2.3783,
+									5.3048,
+									2.6345,
+									1.716,
+									2.6345
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 275,
+								"length": 11
+							}
+						],
+						"elements": [
+							"/paragraphs/8"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 3,
+						"content": "Unit",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									5.3048,
+									2.3783,
+									7.1406,
+									2.3783,
+									7.1406,
+									2.627,
+									5.3048,
+									2.6345
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 287,
+								"length": 4
+							}
+						],
+						"elements": [
+							"/paragraphs/9"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 4,
+						"content": "Qty",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									7.1406,
+									2.3783,
+									7.8102,
+									2.3783,
+									7.8102,
+									2.627,
+									7.1406,
+									2.627
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 292,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/10"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 0,
+						"content": "1",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.4295,
+									2.6345,
+									0.7982,
+									2.6345,
+									0.7906,
+									2.8832,
+									0.4295,
+									2.8832
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 296,
+								"length": 1
+							}
+						],
+						"elements": [
+							"/paragraphs/11"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 1,
+						"content": "BBS00300",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.7982,
+									2.6345,
+									1.716,
+									2.6345,
+									1.716,
+									2.8832,
+									0.7906,
+									2.8832
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 298,
+								"length": 8
+							}
+						],
+						"elements": [
+							"/paragraphs/12"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 2,
+						"content": "Oak veneered MDF 19 mm, 2440x1220",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1.716,
+									2.6345,
+									5.3048,
+									2.6345,
+									5.3123,
+									2.8832,
+									1.716,
+									2.8832
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 307,
+								"length": 33
+							}
+						],
+						"elements": [
+							"/paragraphs/13"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 3,
+						"content": "pcs",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									5.3048,
+									2.6345,
+									7.1406,
+									2.627,
+									7.1406,
+									2.8832,
+									5.3123,
+									2.8832
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 341,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/14"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 4,
+						"content": "214",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									7.1406,
+									2.627,
+									7.8102,
+									2.627,
+									7.8102,
+									2.8832,
+									7.1406,
+									2.8832
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 345,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/15"
+						]
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4556,
+							2.3523,
+							7.7907,
+							2.3515,
+							7.7942,
+							2.9045,
+							0.4591,
+							2.9054
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 261,
+						"length": 87
+					}
+				]
+			}
+		],
+		"paragraphs": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 90
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.464,
+							0.5174,
+							2.5956,
+							0.517,
+							2.5957,
+							1.2489,
+							0.4641,
+							1.2493
+						]
+					}
+				],
+				"content": "DELIVERY NOTE Delivery note no .: 3399 Delivery date: 29 Apr 2026 Your order: PO-2026-0019"
+			},
+			{
+				"spans": [
+					{
+						"offset": 91,
+						"length": 85
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							5.6095,
+							0.4973,
+							7.7932,
+							0.4892,
+							7.7963,
+							1.3226,
+							5.6126,
+							1.3306
+						]
+					}
+				],
+				"content": "Baltic Board Supply OÜ Sadama 25 10111 Tallinn VAT no. EE109532815 Reg. code 10776889"
+			},
+			{
+				"spans": [
+					{
+						"offset": 177,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.467,
+							1.6368,
+							0.9563,
+							1.6383,
+							0.956,
+							1.753,
+							0.4666,
+							1.7517
+						]
+					}
+				],
+				"content": "Deliver to"
+			},
+			{
+				"spans": [
+					{
+						"offset": 188,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4677,
+							1.7719,
+							1.2857,
+							1.7684,
+							1.2863,
+							1.9004,
+							0.4683,
+							1.9039
+						]
+					}
+				],
+				"content": "Näidis Puit OÜ"
+			},
+			{
+				"spans": [
+					{
+						"offset": 203,
+						"length": 24
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4687,
+							1.9224,
+							1.8325,
+							1.9227,
+							1.8324,
+							2.0564,
+							0.4687,
+							2.0561
+						]
+					}
+				],
+				"content": "Tehase 12, 11415 Tallinn"
+			},
+			{
+				"spans": [
+					{
+						"offset": 228,
+						"length": 32
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4689,
+							2.0753,
+							2.6033,
+							2.0722,
+							2.6036,
+							2.2102,
+							0.4691,
+							2.2133
+						]
+					}
+				],
+				"content": "KMKR EE100000001 . Reg. 10000001"
+			},
+			{
+				"spans": [
+					{
+						"offset": 261,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4295,
+							2.3783,
+							0.7982,
+							2.3783,
+							0.7982,
+							2.6345,
+							0.4295,
+							2.6345
+						]
+					}
+				],
+				"content": "Pos"
+			},
+			{
+				"spans": [
+					{
+						"offset": 265,
+						"length": 9
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.7982,
+							2.3783,
+							1.716,
+							2.3783,
+							1.716,
+							2.6345,
+							0.7982,
+							2.6345
+						]
+					}
+				],
+				"content": "Item code"
+			},
+			{
+				"spans": [
+					{
+						"offset": 275,
+						"length": 11
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.716,
+							2.3783,
+							5.3048,
+							2.3783,
+							5.3048,
+							2.6345,
+							1.716,
+							2.6345
+						]
+					}
+				],
+				"content": "Description"
+			},
+			{
+				"spans": [
+					{
+						"offset": 287,
+						"length": 4
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							5.3048,
+							2.3783,
+							7.1406,
+							2.3783,
+							7.1406,
+							2.627,
+							5.3048,
+							2.6345
+						]
+					}
+				],
+				"content": "Unit"
+			},
+			{
+				"spans": [
+					{
+						"offset": 292,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							7.1406,
+							2.3783,
+							7.8102,
+							2.3783,
+							7.8102,
+							2.627,
+							7.1406,
+							2.627
+						]
+					}
+				],
+				"content": "Qty"
+			},
+			{
+				"spans": [
+					{
+						"offset": 296,
+						"length": 1
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4295,
+							2.6345,
+							0.7982,
+							2.6345,
+							0.7906,
+							2.8832,
+							0.4295,
+							2.8832
+						]
+					}
+				],
+				"content": "1"
+			},
+			{
+				"spans": [
+					{
+						"offset": 298,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.7982,
+							2.6345,
+							1.716,
+							2.6345,
+							1.716,
+							2.8832,
+							0.7906,
+							2.8832
+						]
+					}
+				],
+				"content": "BBS00300"
+			},
+			{
+				"spans": [
+					{
+						"offset": 307,
+						"length": 33
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.716,
+							2.6345,
+							5.3048,
+							2.6345,
+							5.3123,
+							2.8832,
+							1.716,
+							2.8832
+						]
+					}
+				],
+				"content": "Oak veneered MDF 19 mm, 2440x1220"
+			},
+			{
+				"spans": [
+					{
+						"offset": 341,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							5.3048,
+							2.6345,
+							7.1406,
+							2.627,
+							7.1406,
+							2.8832,
+							5.3123,
+							2.8832
+						]
+					}
+				],
+				"content": "pcs"
+			},
+			{
+				"spans": [
+					{
+						"offset": 345,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							7.1406,
+							2.627,
+							7.8102,
+							2.627,
+							7.8102,
+							2.8832,
+							7.1406,
+							2.8832
+						]
+					}
+				],
+				"content": "214"
+			},
+			{
+				"spans": [
+					{
+						"offset": 349,
+						"length": 18
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4659,
+							3.6347,
+							1.5262,
+							3.6375,
+							1.5259,
+							3.7766,
+							0.4655,
+							3.7738
+						]
+					}
+				],
+				"content": "Goods received by:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 368,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							4.5448,
+							3.6328,
+							5.315,
+							3.6371,
+							5.3142,
+							3.7761,
+							4.544,
+							3.7719
+						]
+					}
+				],
+				"content": "Delivery date:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 383,
+						"length": 52
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.8749,
+							11.099,
+							5.3861,
+							11.0951,
+							5.3863,
+							11.2212,
+							2.8751,
+							11.2252
+						]
+					}
+				],
+				"role": "pageFooter",
+				"content": "Baltic Board Supply OU . VAT no. EE109532815 . 1 / 1"
+			}
+		],
+		"styles": [],
+		"contentFormat": "text",
+		"sections": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 382
+					}
+				],
+				"elements": [
+					"/paragraphs/0",
+					"/paragraphs/1",
+					"/paragraphs/2",
+					"/paragraphs/3",
+					"/paragraphs/4",
+					"/paragraphs/5",
+					"/tables/0",
+					"/paragraphs/16",
+					"/paragraphs/17"
+				]
+			}
+		]
+	}
+}

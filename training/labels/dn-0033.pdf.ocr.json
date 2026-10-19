@@ -1,0 +1,2427 @@
+{
+	"status": "succeeded",
+	"createdDateTime": "2026-10-19T13:23:47Z",
+	"lastUpdatedDateTime": "2026-10-19T13:23:49Z",
+	"analyzeResult": {
+		"apiVersion": "2024-11-30",
+		"modelId": "prebuilt-layout",
+		"stringIndexType": "utf16CodeUnit",
+		"content": "DELIVERY NOTE Delivery note no .: 1863 Delivery date: 21/05/2026 PO ref: PO-2026-0029\nNordic Pack Solutions OÜ Kopli 90 10412 Tallinn VAT no. EE101657339 Reg. code 10229276\nDeliver to\nNäidis Puit OÜ\nTehase 12, 11415 Tallinn\nKMKR EE100000001 . Reg. 10000001\nItem\nDescription\nUnit\nQty\nNPS-649\nStretch film 500 mm\npcs\n79\nGoods received by:\nDelivery date:\nNordic Pack Solutions OU . VAT no. EE101657339 . 1 / 1",
+		"pages": [
+			{
+				"pageNumber": 1,
+				"angle": 0.024859150871634483,
+				"width": 8.2639,
+				"height": 11.6944,
+				"unit": "inch",
+				"words": [
+					{
+						"content": "DELIVERY",
+						"polygon": [
+							0.4764,
+							0.5256,
+							1.7721,
+							0.5252,
+							1.7715,
+							0.7729,
+							0.4764,
+							0.7737
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 0,
+							"length": 8
+						}
+					},
+					{
+						"content": "NOTE",
+						"polygon": [
+							1.8452,
+							0.5246,
+							2.5985,
+							0.522,
+							2.5985,
+							0.7751,
+							1.8446,
+							0.7739
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 9,
+							"length": 4
+						}
+					},
+					{
+						"content": "Delivery",
+						"polygon": [
+							0.4712,
+							0.8257,
+							0.9146,
+							0.826,
+							0.9142,
+							0.9558,
+							0.4708,
+							0.9543
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 14,
+							"length": 8
+						}
+					},
+					{
+						"content": "note",
+						"polygon": [
+							0.9419,
+							0.826,
+							1.2045,
+							0.8256,
+							1.2044,
+							0.9535,
+							0.9415,
+							0.9556
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 23,
+							"length": 4
+						}
+					},
+					{
+						"content": "no",
+						"polygon": [
+							1.2444,
+							0.8258,
+							1.3369,
+							0.8256,
+							1.3368,
+							0.9528,
+							1.2444,
+							0.9533
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 28,
+							"length": 2
+						}
+					},
+					{
+						"content": ".:",
+						"polygon": [
+							1.3621,
+							0.8251,
+							1.4356,
+							0.8244,
+							1.4353,
+							0.9522,
+							1.362,
+							0.9528
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 31,
+							"length": 2
+						}
+					},
+					{
+						"content": "1863",
+						"polygon": [
+							1.4776,
+							0.8245,
+							1.7739,
+							0.8228,
+							1.7736,
+							0.9488,
+							1.4772,
+							0.9517
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 34,
+							"length": 4
+						}
+					},
+					{
+						"content": "Delivery",
+						"polygon": [
+							0.4706,
+							0.9719,
+							0.928,
+							0.9705,
+							0.9279,
+							1.1021,
+							0.4704,
+							1.1021
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 39,
+							"length": 8
+						}
+					},
+					{
+						"content": "date:",
+						"polygon": [
+							0.9584,
+							0.9708,
+							1.2228,
+							0.9694,
+							1.2228,
+							1.1016,
+							0.9582,
+							1.1021
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 48,
+							"length": 5
+						}
+					},
+					{
+						"content": "21/05/2026",
+						"polygon": [
+							1.264,
+							0.9695,
+							1.9646,
+							0.9661,
+							1.9646,
+							1.0981,
+							1.264,
+							1.1014
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 54,
+							"length": 10
+						}
+					},
+					{
+						"content": "PO",
+						"polygon": [
+							0.4696,
+							1.1203,
+							0.6407,
+							1.1215,
+							0.6408,
+							1.2448,
+							0.4697,
+							1.2448
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 65,
+							"length": 2
+						}
+					},
+					{
+						"content": "ref:",
+						"polygon": [
+							0.6814,
+							1.1213,
+							0.8545,
+							1.1205,
+							0.8544,
+							1.2446,
+							0.6814,
+							1.2448
+						],
+						"confidence": 0.986,
+						"span": {
+							"offset": 68,
+							"length": 4
+						}
+					},
+					{
+						"content": "PO-2026-0029",
+						"polygon": [
+							0.8993,
+							1.1205,
+							1.7476,
+							1.1183,
+							1.7476,
+							1.2426,
+							0.8992,
+							1.2441
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 73,
+							"length": 12
+						}
+					},
+					{
+						"content": "Nordic",
+						"polygon": [
+							5.3779,
+							0.5017,
+							6.0062,
+							0.5029,
+							6.0064,
+							0.7097,
+							5.3777,
+							0.712
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 86,
+							"length": 6
+						}
+					},
+					{
+						"content": "Pack",
+						"polygon": [
+							6.0745,
+							0.5028,
+							6.5048,
+							0.5016,
+							6.5052,
+							0.709,
+							6.0747,
+							0.7094
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 93,
+							"length": 4
+						}
+					},
+					{
+						"content": "Solutions",
+						"polygon": [
+							6.556,
+							0.5016,
+							7.4096,
+							0.496,
+							7.411,
+							0.7028,
+							6.5564,
+							0.7091
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 98,
+							"length": 9
+						}
+					},
+					{
+						"content": "OÜ",
+						"polygon": [
+							7.4711,
+							0.495,
+							7.7954,
+							0.4885,
+							7.7956,
+							0.703,
+							7.4724,
+							0.7028
+						],
+						"confidence": 0.267,
+						"span": {
+							"offset": 108,
+							"length": 2
+						}
+					},
+					{
+						"content": "Kopli",
+						"polygon": [
+							7.3306,
+							0.7394,
+							7.6078,
+							0.7377,
+							7.6077,
+							0.8669,
+							7.3307,
+							0.8679
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 111,
+							"length": 5
+						}
+					},
+					{
+						"content": "90",
+						"polygon": [
+							7.6483,
+							0.7368,
+							7.7997,
+							0.7342,
+							7.7997,
+							0.8667,
+							7.6482,
+							0.8667
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 117,
+							"length": 2
+						}
+					},
+					{
+						"content": "10412",
+						"polygon": [
+							7.0489,
+							0.8855,
+							7.4081,
+							0.886,
+							7.4078,
+							1.0118,
+							7.0485,
+							1.011
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 120,
+							"length": 5
+						}
+					},
+					{
+						"content": "Tallinn",
+						"polygon": [
+							7.437,
+							0.8864,
+							7.8004,
+							0.8852,
+							7.8,
+							1.0132,
+							7.4367,
+							1.0121
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 126,
+							"length": 7
+						}
+					},
+					{
+						"content": "VAT",
+						"polygon": [
+							6.5254,
+							1.0389,
+							6.7622,
+							1.0394,
+							6.762,
+							1.1679,
+							6.5253,
+							1.17
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 134,
+							"length": 3
+						}
+					},
+					{
+						"content": "no.",
+						"polygon": [
+							6.796,
+							1.0394,
+							6.9567,
+							1.0377,
+							6.9567,
+							1.167,
+							6.7959,
+							1.1675
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 138,
+							"length": 3
+						}
+					},
+					{
+						"content": "EE101657339",
+						"polygon": [
+							6.9989,
+							1.0377,
+							7.7938,
+							1.0363,
+							7.7932,
+							1.1656,
+							6.999,
+							1.1669
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 142,
+							"length": 11
+						}
+					},
+					{
+						"content": "Reg.",
+						"polygon": [
+							6.6391,
+							1.1919,
+							6.8758,
+							1.1913,
+							6.8761,
+							1.3245,
+							6.6391,
+							1.3282
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 154,
+							"length": 4
+						}
+					},
+					{
+						"content": "code",
+						"polygon": [
+							6.9131,
+							1.1909,
+							7.174,
+							1.189,
+							7.1741,
+							1.322,
+							6.9133,
+							1.3238
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 159,
+							"length": 4
+						}
+					},
+					{
+						"content": "10229276",
+						"polygon": [
+							7.2178,
+							1.1889,
+							7.7956,
+							1.1824,
+							7.7956,
+							1.3174,
+							7.2179,
+							1.3215
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 164,
+							"length": 8
+						}
+					},
+					{
+						"content": "Deliver",
+						"polygon": [
+							0.4677,
+							1.6392,
+							0.8204,
+							1.6396,
+							0.8201,
+							1.753,
+							0.4676,
+							1.751
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 173,
+							"length": 7
+						}
+					},
+					{
+						"content": "to",
+						"polygon": [
+							0.8464,
+							1.6396,
+							0.9577,
+							1.6394,
+							0.9576,
+							1.753,
+							0.8461,
+							1.753
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 181,
+							"length": 2
+						}
+					},
+					{
+						"content": "Näidis",
+						"polygon": [
+							0.4679,
+							1.7745,
+							0.8078,
+							1.7747,
+							0.8082,
+							1.9036,
+							0.4682,
+							1.9024
+						],
+						"confidence": 0.63,
+						"span": {
+							"offset": 184,
+							"length": 6
+						}
+					},
+					{
+						"content": "Puit",
+						"polygon": [
+							0.8479,
+							1.7744,
+							1.059,
+							1.7728,
+							1.0596,
+							1.9027,
+							0.8483,
+							1.9033
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 191,
+							"length": 4
+						}
+					},
+					{
+						"content": "OÜ",
+						"polygon": [
+							1.0949,
+							1.7726,
+							1.2869,
+							1.7693,
+							1.2873,
+							1.9015,
+							1.0954,
+							1.9027
+						],
+						"confidence": 0.918,
+						"span": {
+							"offset": 196,
+							"length": 2
+						}
+					},
+					{
+						"content": "Tehase",
+						"polygon": [
+							0.4692,
+							1.9239,
+							0.8445,
+							1.9258,
+							0.8445,
+							2.0572,
+							0.4689,
+							2.0559
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 199,
+							"length": 6
+						}
+					},
+					{
+						"content": "12,",
+						"polygon": [
+							0.8857,
+							1.9257,
+							1.0484,
+							1.9248,
+							1.0484,
+							2.0577,
+							0.8857,
+							2.0577
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 206,
+							"length": 3
+						}
+					},
+					{
+						"content": "11415",
+						"polygon": [
+							1.0918,
+							1.9249,
+							1.4389,
+							1.9247,
+							1.4387,
+							2.0577,
+							1.0917,
+							2.0578
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 210,
+							"length": 5
+						}
+					},
+					{
+						"content": "Tallinn",
+						"polygon": [
+							1.4714,
+							1.9247,
+							1.8332,
+							1.9241,
+							1.8332,
+							2.0565,
+							1.4712,
+							2.0576
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 216,
+							"length": 7
+						}
+					},
+					{
+						"content": "KMKR",
+						"polygon": [
+							0.4687,
+							2.0771,
+							0.8292,
+							2.077,
+							0.8292,
+							2.2088,
+							0.469,
+							2.2099
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 224,
+							"length": 4
+						}
+					},
+					{
+						"content": "EE100000001",
+						"polygon": [
+							0.869,
+							2.0768,
+							1.6452,
+							2.0765,
+							1.645,
+							2.212,
+							0.869,
+							2.2088
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 229,
+							"length": 11
+						}
+					},
+					{
+						"content": ".",
+						"polygon": [
+							1.6717,
+							2.0764,
+							1.7204,
+							2.0763,
+							1.7202,
+							2.2123,
+							1.6715,
+							2.2122
+						],
+						"confidence": 0.397,
+						"span": {
+							"offset": 241,
+							"length": 1
+						}
+					},
+					{
+						"content": "Reg.",
+						"polygon": [
+							1.7624,
+							2.0763,
+							1.9857,
+							2.076,
+							1.9856,
+							2.2127,
+							1.7623,
+							2.2124
+						],
+						"confidence": 0.988,
+						"span": {
+							"offset": 243,
+							"length": 4
+						}
+					},
+					{
+						"content": "10000001",
+						"polygon": [
+							2.03,
+							2.0759,
+							2.6042,
+							2.0725,
+							2.6042,
+							2.2093,
+							2.0298,
+							2.2124
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 248,
+							"length": 8
+						}
+					},
+					{
+						"content": "Item",
+						"polygon": [
+							0.5204,
+							2.4589,
+							0.7871,
+							2.4618,
+							0.7866,
+							2.5744,
+							0.5202,
+							2.5727
+						],
+						"confidence": 0.963,
+						"span": {
+							"offset": 257,
+							"length": 4
+						}
+					},
+					{
+						"content": "Description",
+						"polygon": [
+							1.6088,
+							2.4545,
+							2.2673,
+							2.4538,
+							2.2673,
+							2.5885,
+							1.6089,
+							2.5877
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 262,
+							"length": 11
+						}
+					},
+					{
+						"content": "Unit",
+						"polygon": [
+							6.508,
+							2.4523,
+							6.7654,
+							2.4528,
+							6.7649,
+							2.5715,
+							6.5078,
+							2.5713
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 274,
+							"length": 4
+						}
+					},
+					{
+						"content": "Qty",
+						"polygon": [
+							7.5206,
+							2.4588,
+							7.7442,
+							2.4623,
+							7.7434,
+							2.5867,
+							7.5197,
+							2.5861
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 279,
+							"length": 3
+						}
+					},
+					{
+						"content": "NPS-649",
+						"polygon": [
+							0.5246,
+							2.706,
+							1.0337,
+							2.7057,
+							1.0337,
+							2.8322,
+							0.5246,
+							2.8313
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 283,
+							"length": 7
+						}
+					},
+					{
+						"content": "Stretch",
+						"polygon": [
+							1.6037,
+							2.7061,
+							1.9944,
+							2.707,
+							1.994,
+							2.8361,
+							1.6036,
+							2.8354
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 291,
+							"length": 7
+						}
+					},
+					{
+						"content": "film",
+						"polygon": [
+							2.0348,
+							2.7071,
+							2.2344,
+							2.7077,
+							2.2338,
+							2.8375,
+							2.0344,
+							2.8364
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 299,
+							"length": 4
+						}
+					},
+					{
+						"content": "500",
+						"polygon": [
+							2.2768,
+							2.7081,
+							2.4892,
+							2.7089,
+							2.4884,
+							2.838,
+							2.2761,
+							2.8378
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 304,
+							"length": 3
+						}
+					},
+					{
+						"content": "mm",
+						"polygon": [
+							2.5274,
+							2.7088,
+							2.7356,
+							2.7084,
+							2.7356,
+							2.838,
+							2.5267,
+							2.838
+						],
+						"confidence": 0.999,
+						"span": {
+							"offset": 308,
+							"length": 2
+						}
+					},
+					{
+						"content": "pcs",
+						"polygon": [
+							6.5063,
+							2.7347,
+							6.7048,
+							2.7329,
+							6.7048,
+							2.8368,
+							6.5066,
+							2.8404
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 311,
+							"length": 3
+						}
+					},
+					{
+						"content": "79",
+						"polygon": [
+							7.5871,
+							2.7072,
+							7.7385,
+							2.7093,
+							7.7385,
+							2.8247,
+							7.5867,
+							2.8257
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 315,
+							"length": 2
+						}
+					},
+					{
+						"content": "Goods",
+						"polygon": [
+							0.4658,
+							3.6356,
+							0.8223,
+							3.6377,
+							0.8216,
+							3.7737,
+							0.4658,
+							3.7735
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 318,
+							"length": 5
+						}
+					},
+					{
+						"content": "received",
+						"polygon": [
+							0.8652,
+							3.6372,
+							1.3165,
+							3.6389,
+							1.3147,
+							3.7771,
+							0.8644,
+							3.774
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 324,
+							"length": 8
+						}
+					},
+					{
+						"content": "by:",
+						"polygon": [
+							1.3572,
+							3.6383,
+							1.5306,
+							3.6387,
+							1.5295,
+							3.7775,
+							1.3552,
+							3.7777
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 333,
+							"length": 3
+						}
+					},
+					{
+						"content": "Delivery",
+						"polygon": [
+							4.5448,
+							3.6343,
+							5.0052,
+							3.6372,
+							5.0044,
+							3.7759,
+							4.5446,
+							3.7742
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 337,
+							"length": 8
+						}
+					},
+					{
+						"content": "date:",
+						"polygon": [
+							5.0348,
+							3.6371,
+							5.317,
+							3.6378,
+							5.317,
+							3.7767,
+							5.0341,
+							3.7759
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 346,
+							"length": 5
+						}
+					},
+					{
+						"content": "Nordic",
+						"polygon": [
+							2.8161,
+							11.101,
+							3.1235,
+							11.1013,
+							3.1225,
+							11.2175,
+							2.8153,
+							11.2178
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 352,
+							"length": 6
+						}
+					},
+					{
+						"content": "Pack",
+						"polygon": [
+							3.1466,
+							11.1014,
+							3.3752,
+							11.1015,
+							3.3741,
+							11.2184,
+							3.1456,
+							11.2175
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 359,
+							"length": 4
+						}
+					},
+					{
+						"content": "Solutions",
+						"polygon": [
+							3.4021,
+							11.1013,
+							3.821,
+							11.1006,
+							3.8202,
+							11.2177,
+							3.4011,
+							11.2182
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 364,
+							"length": 9
+						}
+					},
+					{
+						"content": "OU",
+						"polygon": [
+							3.8518,
+							11.1007,
+							4.0036,
+							11.1009,
+							4.0028,
+							11.2178,
+							3.8509,
+							11.2178
+						],
+						"confidence": 0.568,
+						"span": {
+							"offset": 374,
+							"length": 2
+						}
+					},
+					{
+						"content": ".",
+						"polygon": [
+							4.0401,
+							11.1008,
+							4.0612,
+							11.1008,
+							4.0604,
+							11.2176,
+							4.0393,
+							11.2177
+						],
+						"confidence": 0.784,
+						"span": {
+							"offset": 377,
+							"length": 1
+						}
+					},
+					{
+						"content": "VAT",
+						"polygon": [
+							4.0843,
+							11.1008,
+							4.2611,
+							11.1003,
+							4.2601,
+							11.2177,
+							4.0835,
+							11.2175
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 379,
+							"length": 3
+						}
+					},
+					{
+						"content": "no.",
+						"polygon": [
+							4.2841,
+							11.1002,
+							4.4379,
+							11.1004,
+							4.4368,
+							11.2179,
+							4.2831,
+							11.2178
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 383,
+							"length": 3
+						}
+					},
+					{
+						"content": "EE101657339",
+						"polygon": [
+							4.4724,
+							11.1005,
+							5.1277,
+							11.101,
+							5.1266,
+							11.2189,
+							4.4715,
+							11.2179
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 387,
+							"length": 11
+						}
+					},
+					{
+						"content": ".",
+						"polygon": [
+							5.1604,
+							11.101,
+							5.1834,
+							11.1011,
+							5.1824,
+							11.2191,
+							5.1593,
+							11.219
+						],
+						"confidence": 0.644,
+						"span": {
+							"offset": 399,
+							"length": 1
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							5.2161,
+							11.1011,
+							5.2661,
+							11.1012,
+							5.2652,
+							11.2192,
+							5.2151,
+							11.2191
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 401,
+							"length": 1
+						}
+					},
+					{
+						"content": "/",
+						"polygon": [
+							5.2987,
+							11.1013,
+							5.3448,
+							11.1014,
+							5.344,
+							11.2192,
+							5.2979,
+							11.2192
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 403,
+							"length": 1
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							5.3775,
+							11.1015,
+							5.4426,
+							11.1017,
+							5.4426,
+							11.2192,
+							5.3767,
+							11.2192
+						],
+						"confidence": 0.973,
+						"span": {
+							"offset": 405,
+							"length": 1
+						}
+					}
+				],
+				"lines": [
+					{
+						"content": "DELIVERY NOTE",
+						"polygon": [
+							0.4764,
+							0.5203,
+							2.5966,
+							0.5201,
+							2.5966,
+							0.7722,
+							0.4764,
+							0.7724
+						],
+						"spans": [
+							{
+								"offset": 0,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "Delivery note no .: 1863",
+						"polygon": [
+							0.4705,
+							0.8257,
+							1.7705,
+							0.8223,
+							1.7709,
+							0.9513,
+							0.4708,
+							0.955
+						],
+						"spans": [
+							{
+								"offset": 14,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "Delivery date: 21/05/2026",
+						"polygon": [
+							0.4699,
+							0.9702,
+							1.9643,
+							0.9655,
+							1.9646,
+							1.0975,
+							0.4704,
+							1.1021
+						],
+						"spans": [
+							{
+								"offset": 39,
+								"length": 25
+							}
+						]
+					},
+					{
+						"content": "PO ref: PO-2026-0029",
+						"polygon": [
+							0.4694,
+							1.1201,
+							1.7432,
+							1.1177,
+							1.7434,
+							1.2416,
+							0.4697,
+							1.2441
+						],
+						"spans": [
+							{
+								"offset": 65,
+								"length": 20
+							}
+						]
+					},
+					{
+						"content": "Nordic Pack Solutions OÜ",
+						"polygon": [
+							5.3766,
+							0.5017,
+							7.7897,
+							0.4885,
+							7.7909,
+							0.6997,
+							5.3778,
+							0.7129
+						],
+						"spans": [
+							{
+								"offset": 86,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "Kopli 90",
+						"polygon": [
+							7.3299,
+							0.7371,
+							7.7963,
+							0.7342,
+							7.7971,
+							0.8645,
+							7.3307,
+							0.8674
+						],
+						"spans": [
+							{
+								"offset": 111,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "10412 Tallinn",
+						"polygon": [
+							7.0485,
+							0.8849,
+							7.796,
+							0.8852,
+							7.7959,
+							1.0111,
+							7.0485,
+							1.0107
+						],
+						"spans": [
+							{
+								"offset": 120,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "VAT no. EE101657339",
+						"polygon": [
+							6.5249,
+							1.0389,
+							7.7917,
+							1.0348,
+							7.7921,
+							1.1637,
+							6.5253,
+							1.1679
+						],
+						"spans": [
+							{
+								"offset": 134,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "Reg. code 10229276",
+						"polygon": [
+							6.638,
+							1.1919,
+							7.7944,
+							1.1824,
+							7.7955,
+							1.3165,
+							6.6391,
+							1.3259
+						],
+						"spans": [
+							{
+								"offset": 154,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Deliver to",
+						"polygon": [
+							0.4677,
+							1.638,
+							0.9557,
+							1.6394,
+							0.9554,
+							1.7522,
+							0.4674,
+							1.7508
+						],
+						"spans": [
+							{
+								"offset": 173,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "Näidis Puit OÜ",
+						"polygon": [
+							0.4674,
+							1.7745,
+							1.2847,
+							1.7693,
+							1.2855,
+							1.8994,
+							0.4682,
+							1.9047
+						],
+						"spans": [
+							{
+								"offset": 184,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Tehase 12, 11415 Tallinn",
+						"polygon": [
+							0.4689,
+							1.9239,
+							1.8319,
+							1.9236,
+							1.8319,
+							2.0559,
+							0.4689,
+							2.0563
+						],
+						"spans": [
+							{
+								"offset": 199,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "KMKR EE100000001 . Reg. 10000001",
+						"polygon": [
+							0.4687,
+							2.077,
+							2.6036,
+							2.0725,
+							2.6039,
+							2.2092,
+							0.469,
+							2.2136
+						],
+						"spans": [
+							{
+								"offset": 224,
+								"length": 32
+							}
+						]
+					},
+					{
+						"content": "Item",
+						"polygon": [
+							0.5204,
+							2.4589,
+							0.7846,
+							2.4609,
+							0.7838,
+							2.573,
+							0.5197,
+							2.571
+						],
+						"spans": [
+							{
+								"offset": 257,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "Description",
+						"polygon": [
+							1.6088,
+							2.4516,
+							2.2619,
+							2.4531,
+							2.2616,
+							2.587,
+							1.6085,
+							2.5855
+						],
+						"spans": [
+							{
+								"offset": 262,
+								"length": 11
+							}
+						]
+					},
+					{
+						"content": "Unit",
+						"polygon": [
+							6.508,
+							2.4518,
+							6.7627,
+							2.4522,
+							6.7625,
+							2.57,
+							6.5078,
+							2.5695
+						],
+						"spans": [
+							{
+								"offset": 274,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "Qty",
+						"polygon": [
+							7.5206,
+							2.4582,
+							7.7431,
+							2.4616,
+							7.7412,
+							2.5867,
+							7.5187,
+							2.584
+						],
+						"spans": [
+							{
+								"offset": 279,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "NPS-649",
+						"polygon": [
+							0.5246,
+							2.7048,
+							1.0286,
+							2.7057,
+							1.0284,
+							2.8317,
+							0.5244,
+							2.8309
+						],
+						"spans": [
+							{
+								"offset": 283,
+								"length": 7
+							}
+						]
+					},
+					{
+						"content": "Stretch film 500 mm",
+						"polygon": [
+							1.6037,
+							2.7061,
+							2.7345,
+							2.7085,
+							2.7343,
+							2.8377,
+							1.6035,
+							2.8354
+						],
+						"spans": [
+							{
+								"offset": 291,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "pcs",
+						"polygon": [
+							6.5056,
+							2.7347,
+							6.7031,
+							2.7328,
+							6.7041,
+							2.8375,
+							6.5066,
+							2.8395
+						],
+						"spans": [
+							{
+								"offset": 311,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "79",
+						"polygon": [
+							7.5871,
+							2.7072,
+							7.7354,
+							2.7078,
+							7.7349,
+							2.8245,
+							7.5866,
+							2.8239
+						],
+						"spans": [
+							{
+								"offset": 315,
+								"length": 2
+							}
+						]
+					},
+					{
+						"content": "Goods received by:",
+						"polygon": [
+							0.4658,
+							3.6356,
+							1.526,
+							3.6379,
+							1.5257,
+							3.7762,
+							0.4655,
+							3.7739
+						],
+						"spans": [
+							{
+								"offset": 318,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Delivery date:",
+						"polygon": [
+							4.5448,
+							3.6338,
+							5.3149,
+							3.6375,
+							5.3142,
+							3.7756,
+							4.5442,
+							3.7719
+						],
+						"spans": [
+							{
+								"offset": 337,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Nordic Pack Solutions OU . VAT no. EE101657339 . 1 / 1",
+						"polygon": [
+							2.8153,
+							11.0992,
+							5.4409,
+							11.1004,
+							5.4408,
+							11.2174,
+							2.8153,
+							11.2162
+						],
+						"spans": [
+							{
+								"offset": 352,
+								"length": 54
+							}
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 0,
+						"length": 406
+					}
+				]
+			}
+		],
+		"tables": [
+			{
+				"rowCount": 2,
+				"columnCount": 4,
+				"cells": [
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 0,
+						"content": "Item",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.435,
+									2.3736,
+									1.3147,
+									2.3736,
+									1.3147,
+									2.6362,
+									0.435,
+									2.6362
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 257,
+								"length": 4
+							}
+						],
+						"elements": [
+							"/paragraphs/6"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 1,
+						"content": "Description",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1.3147,
+									2.3736,
+									4.5549,
+									2.3736,
+									4.5549,
+									2.6362,
+									1.3147,
+									2.6362
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 262,
+								"length": 11
+							}
+						],
+						"elements": [
+							"/paragraphs/7"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 2,
+						"content": "Unit",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									4.5549,
+									2.3736,
+									7.1336,
+									2.3736,
+									7.1336,
+									2.6287,
+									4.5549,
+									2.6362
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 274,
+								"length": 4
+							}
+						],
+						"elements": [
+							"/paragraphs/8"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 3,
+						"content": "Qty",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									7.1336,
+									2.3736,
+									7.8103,
+									2.3736,
+									7.8103,
+									2.6362,
+									7.1336,
+									2.6287
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 279,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/9"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 0,
+						"content": "NPS-649",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.435,
+									2.6362,
+									1.3147,
+									2.6362,
+									1.3222,
+									2.8988,
+									0.435,
+									2.8988
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 283,
+								"length": 7
+							}
+						],
+						"elements": [
+							"/paragraphs/10"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 1,
+						"content": "Stretch film 500 mm",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1.3147,
+									2.6362,
+									4.5549,
+									2.6362,
+									4.5549,
+									2.8988,
+									1.3222,
+									2.8988
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 291,
+								"length": 19
+							}
+						],
+						"elements": [
+							"/paragraphs/11"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 2,
+						"content": "pcs",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									4.5549,
+									2.6362,
+									7.1336,
+									2.6287,
+									7.1336,
+									2.8988,
+									4.5549,
+									2.8988
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 311,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/12"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 3,
+						"content": "79",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									7.1336,
+									2.6287,
+									7.8103,
+									2.6362,
+									7.8103,
+									2.8988,
+									7.1336,
+									2.8988
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 315,
+								"length": 2
+							}
+						],
+						"elements": [
+							"/paragraphs/13"
+						]
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.462,
+							2.3593,
+							7.788,
+							2.3586,
+							7.7909,
+							2.9022,
+							0.4647,
+							2.9029
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 257,
+						"length": 60
+					}
+				]
+			}
+		],
+		"paragraphs": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 85
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4694,
+							0.5203,
+							2.5966,
+							0.5201,
+							2.5966,
+							1.2439,
+							0.4695,
+							1.2441
+						]
+					}
+				],
+				"content": "DELIVERY NOTE Delivery note no .: 1863 Delivery date: 21/05/2026 PO ref: PO-2026-0029"
+			},
+			{
+				"spans": [
+					{
+						"offset": 86,
+						"length": 86
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							5.3766,
+							0.5017,
+							7.7951,
+							0.4885,
+							7.7996,
+							1.3196,
+							5.3812,
+							1.3328
+						]
+					}
+				],
+				"content": "Nordic Pack Solutions OÜ Kopli 90 10412 Tallinn VAT no. EE101657339 Reg. code 10229276"
+			},
+			{
+				"spans": [
+					{
+						"offset": 173,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4677,
+							1.638,
+							0.9557,
+							1.6394,
+							0.9554,
+							1.7522,
+							0.4674,
+							1.7508
+						]
+					}
+				],
+				"content": "Deliver to"
+			},
+			{
+				"spans": [
+					{
+						"offset": 184,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4674,
+							1.7745,
+							1.2847,
+							1.7693,
+							1.2855,
+							1.8994,
+							0.4682,
+							1.9047
+						]
+					}
+				],
+				"content": "Näidis Puit OÜ"
+			},
+			{
+				"spans": [
+					{
+						"offset": 199,
+						"length": 24
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4689,
+							1.9239,
+							1.8319,
+							1.9236,
+							1.8319,
+							2.0559,
+							0.4689,
+							2.0563
+						]
+					}
+				],
+				"content": "Tehase 12, 11415 Tallinn"
+			},
+			{
+				"spans": [
+					{
+						"offset": 224,
+						"length": 32
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4687,
+							2.077,
+							2.6036,
+							2.0725,
+							2.6039,
+							2.2092,
+							0.469,
+							2.2136
+						]
+					}
+				],
+				"content": "KMKR EE100000001 . Reg. 10000001"
+			},
+			{
+				"spans": [
+					{
+						"offset": 257,
+						"length": 4
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.435,
+							2.3736,
+							1.3147,
+							2.3736,
+							1.3147,
+							2.6362,
+							0.435,
+							2.6362
+						]
+					}
+				],
+				"content": "Item"
+			},
+			{
+				"spans": [
+					{
+						"offset": 262,
+						"length": 11
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.3147,
+							2.3736,
+							4.5549,
+							2.3736,
+							4.5549,
+							2.6362,
+							1.3147,
+							2.6362
+						]
+					}
+				],
+				"content": "Description"
+			},
+			{
+				"spans": [
+					{
+						"offset": 274,
+						"length": 4
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							4.5549,
+							2.3736,
+							7.1336,
+							2.3736,
+							7.1336,
+							2.6287,
+							4.5549,
+							2.6362
+						]
+					}
+				],
+				"content": "Unit"
+			},
+			{
+				"spans": [
+					{
+						"offset": 279,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							7.1336,
+							2.3736,
+							7.8103,
+							2.3736,
+							7.8103,
+							2.6362,
+							7.1336,
+							2.6287
+						]
+					}
+				],
+				"content": "Qty"
+			},
+			{
+				"spans": [
+					{
+						"offset": 283,
+						"length": 7
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.435,
+							2.6362,
+							1.3147,
+							2.6362,
+							1.3222,
+							2.8988,
+							0.435,
+							2.8988
+						]
+					}
+				],
+				"content": "NPS-649"
+			},
+			{
+				"spans": [
+					{
+						"offset": 291,
+						"length": 19
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.3147,
+							2.6362,
+							4.5549,
+							2.6362,
+							4.5549,
+							2.8988,
+							1.3222,
+							2.8988
+						]
+					}
+				],
+				"content": "Stretch film 500 mm"
+			},
+			{
+				"spans": [
+					{
+						"offset": 311,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							4.5549,
+							2.6362,
+							7.1336,
+							2.6287,
+							7.1336,
+							2.8988,
+							4.5549,
+							2.8988
+						]
+					}
+				],
+				"content": "pcs"
+			},
+			{
+				"spans": [
+					{
+						"offset": 315,
+						"length": 2
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							7.1336,
+							2.6287,
+							7.8103,
+							2.6362,
+							7.8103,
+							2.8988,
+							7.1336,
+							2.8988
+						]
+					}
+				],
+				"content": "79"
+			},
+			{
+				"spans": [
+					{
+						"offset": 318,
+						"length": 18
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4658,
+							3.6356,
+							1.526,
+							3.6379,
+							1.5257,
+							3.7762,
+							0.4655,
+							3.7739
+						]
+					}
+				],
+				"content": "Goods received by:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 337,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							4.5448,
+							3.6338,
+							5.3149,
+							3.6375,
+							5.3142,
+							3.7756,
+							4.5442,
+							3.7719
+						]
+					}
+				],
+				"content": "Delivery date:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 352,
+						"length": 54
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.8153,
+							11.0992,
+							5.4409,
+							11.1004,
+							5.4408,
+							11.2174,
+							2.8153,
+							11.2162
+						]
+					}
+				],
+				"role": "pageFooter",
+				"content": "Nordic Pack Solutions OU . VAT no. EE101657339 . 1 / 1"
+			}
+		],
+		"styles": [],
+		"contentFormat": "text",
+		"sections": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 351
+					}
+				],
+				"elements": [
+					"/paragraphs/0",
+					"/paragraphs/1",
+					"/paragraphs/2",
+					"/paragraphs/3",
+					"/paragraphs/4",
+					"/paragraphs/5",
+					"/tables/0",
+					"/paragraphs/14",
+					"/paragraphs/15"
+				]
+			}
+		]
+	}
+}

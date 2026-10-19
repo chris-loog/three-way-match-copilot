@@ -1,0 +1,2893 @@
+{
+	"status": "succeeded",
+	"createdDateTime": "2026-10-19T13:00:10Z",
+	"lastUpdatedDateTime": "2026-10-19T13:00:12Z",
+	"analyzeResult": {
+		"apiVersion": "2024-11-30",
+		"modelId": "prebuilt-layout",
+		"stringIndexType": "utf16CodeUnit",
+		"content": "Sillaotsa Saeveski OÜ Saeveski tee 4 65501 Võru KMKR nr EE102412824 Registrikood 11812518\nSAATELEHT Saatelehe nr: 2959 Tarnekuupäev: 07.04.2026 Tellimus nr: PO-2026-0001\nSaaja Näidis Puit OÜ Tehase 12, 11415 Tallinn KMKR EE100000001 · Reg. 10000001\nNr\nKood\nNimetus\nKogus\nÜhik\n1\nKS-0253\nKaselaud 25x100 mm, kamberkuivatatud\n13,53\nm3\n2\nKS-0297\nTammelaud 27 mm, kuivatatud\n24,81\nm3\nKauba vastu võttis:\nTarnekuupäev:\nSillaotsa Saeveski OU . KMKR nr EE102412824 . 1 / 1",
+		"pages": [
+			{
+				"pageNumber": 1,
+				"angle": -0.03999999910593033,
+				"width": 8.2639,
+				"height": 11.6944,
+				"unit": "inch",
+				"words": [
+					{
+						"content": "Sillaotsa",
+						"polygon": [
+							0.4653,
+							0.507,
+							1.2285,
+							0.5028,
+							1.2282,
+							0.7081,
+							0.4649,
+							0.7067
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 0,
+							"length": 9
+						}
+					},
+					{
+						"content": "Saeveski",
+						"polygon": [
+							1.2901,
+							0.5023,
+							2.0805,
+							0.4918,
+							2.0803,
+							0.7052,
+							1.2898,
+							0.7081
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 10,
+							"length": 8
+						}
+					},
+					{
+						"content": "OÜ",
+						"polygon": [
+							2.1455,
+							0.4896,
+							2.4672,
+							0.4815,
+							2.4672,
+							0.7026,
+							2.1453,
+							0.7057
+						],
+						"confidence": 0.942,
+						"span": {
+							"offset": 19,
+							"length": 2
+						}
+					},
+					{
+						"content": "Saeveski",
+						"polygon": [
+							0.4665,
+							0.7392,
+							0.9359,
+							0.7396,
+							0.9353,
+							0.8649,
+							0.4659,
+							0.8646
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 22,
+							"length": 8
+						}
+					},
+					{
+						"content": "tee",
+						"polygon": [
+							0.9728,
+							0.7397,
+							1.1471,
+							0.7396,
+							1.1462,
+							0.8639,
+							0.9722,
+							0.8647
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 31,
+							"length": 3
+						}
+					},
+					{
+						"content": "4",
+						"polygon": [
+							1.1799,
+							0.7395,
+							1.2621,
+							0.7386,
+							1.2621,
+							0.8637,
+							1.179,
+							0.8639
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 35,
+							"length": 1
+						}
+					},
+					{
+						"content": "65501",
+						"polygon": [
+							0.471,
+							0.8877,
+							0.8282,
+							0.8884,
+							0.8277,
+							1.0107,
+							0.4707,
+							1.01
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 37,
+							"length": 5
+						}
+					},
+					{
+						"content": "Võru",
+						"polygon": [
+							0.8583,
+							0.8886,
+							1.1308,
+							0.8896,
+							1.1308,
+							1.0107,
+							0.8578,
+							1.0107
+						],
+						"confidence": 0.973,
+						"span": {
+							"offset": 43,
+							"length": 4
+						}
+					},
+					{
+						"content": "KMKR",
+						"polygon": [
+							0.4702,
+							1.0402,
+							0.8281,
+							1.0391,
+							0.8279,
+							1.167,
+							0.4699,
+							1.167
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 48,
+							"length": 4
+						}
+					},
+					{
+						"content": "nr",
+						"polygon": [
+							0.866,
+							1.0391,
+							0.9776,
+							1.039,
+							0.9775,
+							1.1671,
+							0.8658,
+							1.1672
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 53,
+							"length": 2
+						}
+					},
+					{
+						"content": "EE102412824",
+						"polygon": [
+							1.0134,
+							1.0385,
+							1.8161,
+							1.0359,
+							1.8161,
+							1.1647,
+							1.0133,
+							1.1671
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 56,
+							"length": 11
+						}
+					},
+					{
+						"content": "Registrikood",
+						"polygon": [
+							0.4695,
+							1.1897,
+							1.1468,
+							1.1871,
+							1.1466,
+							1.322,
+							0.4695,
+							1.3248
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 68,
+							"length": 12
+						}
+					},
+					{
+						"content": "11812518",
+						"polygon": [
+							1.1908,
+							1.1872,
+							1.7704,
+							1.1844,
+							1.7704,
+							1.3161,
+							1.1906,
+							1.3222
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 81,
+							"length": 8
+						}
+					},
+					{
+						"content": "SAATELEHT",
+						"polygon": [
+							6.257,
+							0.5226,
+							7.7956,
+							0.5183,
+							7.7956,
+							0.7709,
+							6.2561,
+							0.7709
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 90,
+							"length": 9
+						}
+					},
+					{
+						"content": "Saatelehe",
+						"polygon": [
+							6.7511,
+							0.8244,
+							7.2876,
+							0.8237,
+							7.2871,
+							0.9497,
+							6.7508,
+							0.9512
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 100,
+							"length": 9
+						}
+					},
+					{
+						"content": "nr:",
+						"polygon": [
+							7.3249,
+							0.8237,
+							7.4636,
+							0.8233,
+							7.463,
+							0.9497,
+							7.3244,
+							0.9494
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 110,
+							"length": 3
+						}
+					},
+					{
+						"content": "2959",
+						"polygon": [
+							7.5009,
+							0.823,
+							7.795,
+							0.8202,
+							7.7942,
+							0.948,
+							7.5002,
+							0.9498
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 114,
+							"length": 4
+						}
+					},
+					{
+						"content": "Tarnekuupäev:",
+						"polygon": [
+							6.3148,
+							0.9714,
+							7.1119,
+							0.969,
+							7.1116,
+							1.1029,
+							6.3138,
+							1.1043
+						],
+						"confidence": 0.991,
+						"span": {
+							"offset": 119,
+							"length": 13
+						}
+					},
+					{
+						"content": "07.04.2026",
+						"polygon": [
+							7.1513,
+							0.9692,
+							7.7956,
+							0.9672,
+							7.7956,
+							1.1006,
+							7.151,
+							1.1031
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 133,
+							"length": 10
+						}
+					},
+					{
+						"content": "Tellimus",
+						"polygon": [
+							6.2829,
+							1.1202,
+							6.7171,
+							1.1197,
+							6.7171,
+							1.2474,
+							6.2825,
+							1.2496
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 144,
+							"length": 8
+						}
+					},
+					{
+						"content": "nr:",
+						"polygon": [
+							6.7422,
+							1.1199,
+							6.9029,
+							1.1207,
+							6.9029,
+							1.2467,
+							6.7421,
+							1.2473
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 153,
+							"length": 3
+						}
+					},
+					{
+						"content": "PO-2026-0001",
+						"polygon": [
+							6.9468,
+							1.1208,
+							7.7899,
+							1.1177,
+							7.7899,
+							1.2464,
+							6.9468,
+							1.2465
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 157,
+							"length": 12
+						}
+					},
+					{
+						"content": "Saaja",
+						"polygon": [
+							0.4664,
+							1.6443,
+							0.731,
+							1.6444,
+							0.731,
+							1.7587,
+							0.4659,
+							1.7583
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 170,
+							"length": 5
+						}
+					},
+					{
+						"content": "Näidis",
+						"polygon": [
+							0.4687,
+							1.7743,
+							0.8074,
+							1.7742,
+							0.8076,
+							1.9046,
+							0.469,
+							1.9028
+						],
+						"confidence": 0.629,
+						"span": {
+							"offset": 176,
+							"length": 6
+						}
+					},
+					{
+						"content": "Puit",
+						"polygon": [
+							0.8479,
+							1.7738,
+							1.0587,
+							1.7726,
+							1.0591,
+							1.9033,
+							0.8482,
+							1.9041
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 183,
+							"length": 4
+						}
+					},
+					{
+						"content": "OÜ",
+						"polygon": [
+							1.095,
+							1.7721,
+							1.285,
+							1.7685,
+							1.285,
+							1.9024,
+							1.0953,
+							1.9035
+						],
+						"confidence": 0.96,
+						"span": {
+							"offset": 188,
+							"length": 2
+						}
+					},
+					{
+						"content": "Tehase",
+						"polygon": [
+							0.47,
+							1.9236,
+							0.8443,
+							1.9243,
+							0.8443,
+							2.0568,
+							0.4698,
+							2.0558
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 191,
+							"length": 6
+						}
+					},
+					{
+						"content": "12,",
+						"polygon": [
+							0.8859,
+							1.9241,
+							1.0479,
+							1.9234,
+							1.0478,
+							2.0575,
+							0.8859,
+							2.0572
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 198,
+							"length": 3
+						}
+					},
+					{
+						"content": "11415",
+						"polygon": [
+							1.0917,
+							1.9234,
+							1.4398,
+							1.9235,
+							1.4395,
+							2.0578,
+							1.0915,
+							2.0576
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 202,
+							"length": 5
+						}
+					},
+					{
+						"content": "Tallinn",
+						"polygon": [
+							1.4726,
+							1.9235,
+							1.8332,
+							1.923,
+							1.8332,
+							2.057,
+							1.4722,
+							2.0577
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 208,
+							"length": 7
+						}
+					},
+					{
+						"content": "KMKR",
+						"polygon": [
+							0.4693,
+							2.0769,
+							0.8275,
+							2.0762,
+							0.8275,
+							2.2088,
+							0.4694,
+							2.2096
+						],
+						"confidence": 0.99,
+						"span": {
+							"offset": 216,
+							"length": 4
+						}
+					},
+					{
+						"content": "EE100000001",
+						"polygon": [
+							0.8697,
+							2.0759,
+							1.644,
+							2.0755,
+							1.6438,
+							2.2123,
+							0.8697,
+							2.2088
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 221,
+							"length": 11
+						}
+					},
+					{
+						"content": "·",
+						"polygon": [
+							1.6707,
+							2.0754,
+							1.7196,
+							2.0753,
+							1.7195,
+							2.2126,
+							1.6705,
+							2.2125
+						],
+						"confidence": 0.541,
+						"span": {
+							"offset": 233,
+							"length": 1
+						}
+					},
+					{
+						"content": "Reg.",
+						"polygon": [
+							1.7619,
+							2.0752,
+							1.9866,
+							2.075,
+							1.9865,
+							2.213,
+							1.7618,
+							2.2126
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 235,
+							"length": 4
+						}
+					},
+					{
+						"content": "10000001",
+						"polygon": [
+							2.0289,
+							2.075,
+							2.6042,
+							2.0721,
+							2.6042,
+							2.21,
+							2.0287,
+							2.2128
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 240,
+							"length": 8
+						}
+					},
+					{
+						"content": "Nr",
+						"polygon": [
+							0.524,
+							2.4575,
+							0.6796,
+							2.4598,
+							0.6796,
+							2.5696,
+							0.5239,
+							2.5696
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 249,
+							"length": 2
+						}
+					},
+					{
+						"content": "Kood",
+						"polygon": [
+							0.8818,
+							2.453,
+							1.1922,
+							2.4514,
+							1.1918,
+							2.575,
+							0.8819,
+							2.5749
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 252,
+							"length": 4
+						}
+					},
+					{
+						"content": "Nimetus",
+						"polygon": [
+							1.9674,
+							2.4554,
+							2.45,
+							2.4569,
+							2.45,
+							2.5751,
+							1.9672,
+							2.5735
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 257,
+							"length": 7
+						}
+					},
+					{
+						"content": "Kogus",
+						"polygon": [
+							6.8017,
+							2.454,
+							7.1559,
+							2.4593,
+							7.1559,
+							2.586,
+							6.8016,
+							2.5849
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 265,
+							"length": 5
+						}
+					},
+					{
+						"content": "Ühik",
+						"polygon": [
+							7.2632,
+							2.445,
+							7.5329,
+							2.4468,
+							7.5329,
+							2.574,
+							7.2629,
+							2.5726
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 271,
+							"length": 4
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							0.5283,
+							2.7165,
+							0.5997,
+							2.7177,
+							0.5997,
+							2.8248,
+							0.5281,
+							2.8242
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 276,
+							"length": 1
+						}
+					},
+					{
+						"content": "KS-0253",
+						"polygon": [
+							0.8813,
+							2.7075,
+							1.3798,
+							2.7061,
+							1.3795,
+							2.8322,
+							0.8815,
+							2.8321
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 278,
+							"length": 7
+						}
+					},
+					{
+						"content": "Kaselaud",
+						"polygon": [
+							1.9638,
+							2.7048,
+							2.4617,
+							2.704,
+							2.4613,
+							2.8421,
+							1.9638,
+							2.8414
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 286,
+							"length": 8
+						}
+					},
+					{
+						"content": "25x100",
+						"polygon": [
+							2.5003,
+							2.7041,
+							2.9095,
+							2.704,
+							2.9092,
+							2.8437,
+							2.4999,
+							2.8424
+						],
+						"confidence": 0.973,
+						"span": {
+							"offset": 295,
+							"length": 6
+						}
+					},
+					{
+						"content": "mm,",
+						"polygon": [
+							2.9368,
+							2.7039,
+							3.1869,
+							2.7041,
+							3.1866,
+							2.843,
+							2.9365,
+							2.8437
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 302,
+							"length": 3
+						}
+					},
+					{
+						"content": "kamberkuivatatud",
+						"polygon": [
+							3.2232,
+							2.7042,
+							4.2205,
+							2.7025,
+							4.2205,
+							2.8404,
+							3.223,
+							2.8428
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 306,
+							"length": 16
+						}
+					},
+					{
+						"content": "13,53",
+						"polygon": [
+							6.8363,
+							2.7113,
+							7.1617,
+							2.7116,
+							7.1617,
+							2.8363,
+							6.8364,
+							2.8377
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 323,
+							"length": 5
+						}
+					},
+					{
+						"content": "m3",
+						"polygon": [
+							7.2555,
+							2.7175,
+							7.4071,
+							2.7089,
+							7.4072,
+							2.8252,
+							7.2567,
+							2.8314
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 329,
+							"length": 2
+						}
+					},
+					{
+						"content": "2",
+						"polygon": [
+							0.5229,
+							2.9797,
+							0.6054,
+							2.9804,
+							0.6054,
+							3.0887,
+							0.5223,
+							3.0884
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 332,
+							"length": 1
+						}
+					},
+					{
+						"content": "KS-0297",
+						"polygon": [
+							0.8834,
+							2.9674,
+							1.381,
+							2.9682,
+							1.3801,
+							3.0949,
+							0.8829,
+							3.0922
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 334,
+							"length": 7
+						}
+					},
+					{
+						"content": "Tammelaud",
+						"polygon": [
+							1.9645,
+							2.9667,
+							2.5884,
+							2.9679,
+							2.588,
+							3.1052,
+							1.9643,
+							3.1028
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 342,
+							"length": 9
+						}
+					},
+					{
+						"content": "27",
+						"polygon": [
+							2.6288,
+							2.9679,
+							2.7702,
+							2.9679,
+							2.7698,
+							3.1045,
+							2.6284,
+							3.1052
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 352,
+							"length": 2
+						}
+					},
+					{
+						"content": "mm,",
+						"polygon": [
+							2.8083,
+							2.9679,
+							3.0238,
+							2.9675,
+							3.0232,
+							3.1052,
+							2.808,
+							3.1042
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 355,
+							"length": 3
+						}
+					},
+					{
+						"content": "kuivatatud",
+						"polygon": [
+							3.0507,
+							2.9673,
+							3.6551,
+							2.9661,
+							3.6551,
+							3.1023,
+							3.0502,
+							3.1051
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 359,
+							"length": 10
+						}
+					},
+					{
+						"content": "24,81",
+						"polygon": [
+							6.8294,
+							2.9715,
+							7.1559,
+							2.9724,
+							7.1559,
+							3.0993,
+							6.8292,
+							3.0999
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 370,
+							"length": 5
+						}
+					},
+					{
+						"content": "m3",
+						"polygon": [
+							7.2562,
+							2.9772,
+							7.4072,
+							2.9669,
+							7.4072,
+							3.0845,
+							7.2573,
+							3.0937
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 376,
+							"length": 2
+						}
+					},
+					{
+						"content": "Kauba",
+						"polygon": [
+							0.4662,
+							3.9002,
+							0.8111,
+							3.9011,
+							0.8105,
+							4.0321,
+							0.4662,
+							4.0323
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 379,
+							"length": 5
+						}
+					},
+					{
+						"content": "vastu",
+						"polygon": [
+							0.8456,
+							3.9008,
+							1.1323,
+							3.9013,
+							1.1315,
+							4.0329,
+							0.845,
+							4.0321
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 385,
+							"length": 5
+						}
+					},
+					{
+						"content": "võttis:",
+						"polygon": [
+							1.1668,
+							3.9015,
+							1.5181,
+							3.901,
+							1.5172,
+							4.0329,
+							1.1661,
+							4.0328
+						],
+						"confidence": 0.963,
+						"span": {
+							"offset": 391,
+							"length": 7
+						}
+					},
+					{
+						"content": "Tarnekuupäev:",
+						"polygon": [
+							4.5418,
+							3.8989,
+							5.357,
+							3.9047,
+							5.357,
+							4.0416,
+							4.5419,
+							4.0345
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 399,
+							"length": 13
+						}
+					},
+					{
+						"content": "Sillaotsa",
+						"polygon": [
+							2.8861,
+							11.1011,
+							3.2642,
+							11.1017,
+							3.2629,
+							11.2172,
+							2.885,
+							11.2165
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 413,
+							"length": 9
+						}
+					},
+					{
+						"content": "Saeveski",
+						"polygon": [
+							3.2967,
+							11.1015,
+							3.6824,
+							11.1003,
+							3.6813,
+							11.2175,
+							3.2954,
+							11.2171
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 423,
+							"length": 8
+						}
+					},
+					{
+						"content": "OU",
+						"polygon": [
+							3.7148,
+							11.1003,
+							3.8676,
+							11.1001,
+							3.8663,
+							11.2173,
+							3.7137,
+							11.2175
+						],
+						"confidence": 0.556,
+						"span": {
+							"offset": 432,
+							"length": 2
+						}
+					},
+					{
+						"content": ".",
+						"polygon": [
+							3.9019,
+							11.1001,
+							3.9172,
+							11.1001,
+							3.9159,
+							11.2171,
+							3.9006,
+							11.2172
+						],
+						"confidence": 0.492,
+						"span": {
+							"offset": 435,
+							"length": 1
+						}
+					},
+					{
+						"content": "KMKR",
+						"polygon": [
+							3.9401,
+							11.1001,
+							4.2533,
+							11.1005,
+							4.2518,
+							11.2171,
+							3.9388,
+							11.217
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 437,
+							"length": 4
+						}
+					},
+					{
+						"content": "nr",
+						"polygon": [
+							4.2857,
+							11.1005,
+							4.3755,
+							11.1007,
+							4.374,
+							11.217,
+							4.2843,
+							11.217
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 442,
+							"length": 2
+						}
+					},
+					{
+						"content": "EE102412824",
+						"polygon": [
+							4.406,
+							11.1008,
+							5.0628,
+							11.1009,
+							5.0614,
+							11.2178,
+							4.4045,
+							11.217
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 445,
+							"length": 11
+						}
+					},
+					{
+						"content": ".",
+						"polygon": [
+							5.0934,
+							11.1009,
+							5.1163,
+							11.1008,
+							5.1149,
+							11.218,
+							5.092,
+							11.2179
+						],
+						"confidence": 0.545,
+						"span": {
+							"offset": 457,
+							"length": 1
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							5.1507,
+							11.1008,
+							5.2022,
+							11.1007,
+							5.2009,
+							11.2184,
+							5.1493,
+							11.2182
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 459,
+							"length": 1
+						}
+					},
+					{
+						"content": "/",
+						"polygon": [
+							5.2347,
+							11.1009,
+							5.2767,
+							11.1011,
+							5.2754,
+							11.2182,
+							5.2334,
+							11.2183
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 461,
+							"length": 1
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							5.3091,
+							11.1012,
+							5.3741,
+							11.1015,
+							5.3741,
+							11.2181,
+							5.3079,
+							11.2182
+						],
+						"confidence": 0.985,
+						"span": {
+							"offset": 463,
+							"length": 1
+						}
+					}
+				],
+				"lines": [
+					{
+						"content": "Sillaotsa Saeveski OÜ",
+						"polygon": [
+							0.4626,
+							0.507,
+							2.4628,
+							0.4817,
+							2.4655,
+							0.6996,
+							0.4652,
+							0.7081
+						],
+						"spans": [
+							{
+								"offset": 0,
+								"length": 21
+							}
+						]
+					},
+					{
+						"content": "Saeveski tee 4",
+						"polygon": [
+							0.4658,
+							0.7392,
+							1.2619,
+							0.7386,
+							1.262,
+							0.8632,
+							0.4659,
+							0.8638
+						],
+						"spans": [
+							{
+								"offset": 22,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "65501 Võru",
+						"polygon": [
+							0.4711,
+							0.8864,
+							1.1287,
+							0.8896,
+							1.1281,
+							1.0107,
+							0.4705,
+							1.0083
+						],
+						"spans": [
+							{
+								"offset": 37,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "KMKR nr EE102412824",
+						"polygon": [
+							0.4696,
+							1.0394,
+							1.8138,
+							1.036,
+							1.8141,
+							1.1644,
+							0.4699,
+							1.1679
+						],
+						"spans": [
+							{
+								"offset": 48,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "Registrikood 11812518",
+						"polygon": [
+							0.4689,
+							1.1897,
+							1.7679,
+							1.1839,
+							1.7685,
+							1.3176,
+							0.4695,
+							1.3235
+						],
+						"spans": [
+							{
+								"offset": 68,
+								"length": 21
+							}
+						]
+					},
+					{
+						"content": "SAATELEHT",
+						"polygon": [
+							6.2558,
+							0.5206,
+							7.7913,
+							0.5182,
+							7.7917,
+							0.7679,
+							6.2562,
+							0.7703
+						],
+						"spans": [
+							{
+								"offset": 90,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "Saatelehe nr: 2959",
+						"polygon": [
+							6.7505,
+							0.8244,
+							7.7906,
+							0.8203,
+							7.7911,
+							0.9477,
+							6.7508,
+							0.9518
+						],
+						"spans": [
+							{
+								"offset": 100,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Tarnekuupäev: 07.04.2026",
+						"polygon": [
+							6.3137,
+							0.9688,
+							7.7933,
+							0.9671,
+							7.7935,
+							1.1008,
+							6.3139,
+							1.1025
+						],
+						"spans": [
+							{
+								"offset": 119,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "Tellimus nr: PO-2026-0001",
+						"polygon": [
+							6.2823,
+							1.1202,
+							7.7891,
+							1.1173,
+							7.7894,
+							1.2447,
+							6.2825,
+							1.2476
+						],
+						"spans": [
+							{
+								"offset": 144,
+								"length": 25
+							}
+						]
+					},
+					{
+						"content": "Saaja",
+						"polygon": [
+							0.4664,
+							1.6428,
+							0.7298,
+							1.6439,
+							0.7293,
+							1.7577,
+							0.4659,
+							1.7566
+						],
+						"spans": [
+							{
+								"offset": 170,
+								"length": 5
+							}
+						]
+					},
+					{
+						"content": "Näidis Puit OÜ",
+						"polygon": [
+							0.4683,
+							1.774,
+							1.2841,
+							1.7685,
+							1.285,
+							1.9002,
+							0.4691,
+							1.9058
+						],
+						"spans": [
+							{
+								"offset": 176,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Tehase 12, 11415 Tallinn",
+						"polygon": [
+							0.4697,
+							1.9236,
+							1.8311,
+							1.9224,
+							1.8312,
+							2.0556,
+							0.4698,
+							2.0568
+						],
+						"spans": [
+							{
+								"offset": 191,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "KMKR EE100000001 · Reg. 10000001",
+						"polygon": [
+							0.4691,
+							2.0766,
+							2.6028,
+							2.0721,
+							2.6031,
+							2.2096,
+							0.4694,
+							2.2141
+						],
+						"spans": [
+							{
+								"offset": 216,
+								"length": 32
+							}
+						]
+					},
+					{
+						"content": "Nr",
+						"polygon": [
+							0.524,
+							2.4573,
+							0.6756,
+							2.4577,
+							0.6753,
+							2.5692,
+							0.5236,
+							2.5687
+						],
+						"spans": [
+							{
+								"offset": 249,
+								"length": 2
+							}
+						]
+					},
+					{
+						"content": "Kood",
+						"polygon": [
+							0.8818,
+							2.4514,
+							1.1898,
+							2.4513,
+							1.1898,
+							2.5728,
+							0.8818,
+							2.5729
+						],
+						"spans": [
+							{
+								"offset": 252,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "Nimetus",
+						"polygon": [
+							1.9674,
+							2.4554,
+							2.4462,
+							2.4566,
+							2.4458,
+							2.5731,
+							1.967,
+							2.5715
+						],
+						"spans": [
+							{
+								"offset": 257,
+								"length": 7
+							}
+						]
+					},
+					{
+						"content": "Kogus",
+						"polygon": [
+							6.8017,
+							2.454,
+							7.1559,
+							2.4589,
+							7.1552,
+							2.5867,
+							6.7999,
+							2.5832
+						],
+						"spans": [
+							{
+								"offset": 265,
+								"length": 5
+							}
+						]
+					},
+					{
+						"content": "Ühik",
+						"polygon": [
+							7.2632,
+							2.4428,
+							7.5303,
+							2.4456,
+							7.5289,
+							2.5733,
+							7.2619,
+							2.5705
+						],
+						"spans": [
+							{
+								"offset": 271,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "1",
+						"polygon": [
+							0.5283,
+							2.7163,
+							0.5991,
+							2.7164,
+							0.5989,
+							2.8231,
+							0.5281,
+							2.8229
+						],
+						"spans": [
+							{
+								"offset": 276,
+								"length": 1
+							}
+						]
+					},
+					{
+						"content": "KS-0253",
+						"polygon": [
+							0.8813,
+							2.7071,
+							1.3777,
+							2.7061,
+							1.3779,
+							2.8307,
+							0.8815,
+							2.8317
+						],
+						"spans": [
+							{
+								"offset": 278,
+								"length": 7
+							}
+						]
+					},
+					{
+						"content": "Kaselaud 25x100 mm, kamberkuivatatud",
+						"polygon": [
+							1.9637,
+							2.7042,
+							4.2172,
+							2.7026,
+							4.2173,
+							2.8411,
+							1.9638,
+							2.8427
+						],
+						"spans": [
+							{
+								"offset": 286,
+								"length": 36
+							}
+						]
+					},
+					{
+						"content": "13,53",
+						"polygon": [
+							6.8361,
+							2.7108,
+							7.1607,
+							2.7098,
+							7.1611,
+							2.8346,
+							6.8364,
+							2.8356
+						],
+						"spans": [
+							{
+								"offset": 323,
+								"length": 5
+							}
+						]
+					},
+					{
+						"content": "m3",
+						"polygon": [
+							7.253,
+							2.7137,
+							7.4031,
+							2.7072,
+							7.4072,
+							2.8234,
+							7.2567,
+							2.83
+						],
+						"spans": [
+							{
+								"offset": 329,
+								"length": 2
+							}
+						]
+					},
+					{
+						"content": "2",
+						"polygon": [
+							0.5229,
+							2.9797,
+							0.6036,
+							2.9802,
+							0.603,
+							3.0877,
+							0.5223,
+							3.0872
+						],
+						"spans": [
+							{
+								"offset": 332,
+								"length": 1
+							}
+						]
+					},
+					{
+						"content": "KS-0297",
+						"polygon": [
+							0.8835,
+							2.9655,
+							1.3768,
+							2.9682,
+							1.3762,
+							3.0928,
+							0.8828,
+							3.0901
+						],
+						"spans": [
+							{
+								"offset": 334,
+								"length": 7
+							}
+						]
+					},
+					{
+						"content": "Tammelaud 27 mm, kuivatatud",
+						"polygon": [
+							1.9643,
+							2.9666,
+							3.6547,
+							2.9662,
+							3.6547,
+							3.1033,
+							1.9643,
+							3.1038
+						],
+						"spans": [
+							{
+								"offset": 342,
+								"length": 27
+							}
+						]
+					},
+					{
+						"content": "24,81",
+						"polygon": [
+							6.8294,
+							2.9712,
+							7.1541,
+							2.9717,
+							7.154,
+							3.0985,
+							6.8292,
+							3.098
+						],
+						"spans": [
+							{
+								"offset": 370,
+								"length": 5
+							}
+						]
+					},
+					{
+						"content": "m3",
+						"polygon": [
+							7.253,
+							2.9752,
+							7.4051,
+							2.966,
+							7.4072,
+							3.0834,
+							7.2573,
+							3.0926
+						],
+						"spans": [
+							{
+								"offset": 376,
+								"length": 2
+							}
+						]
+					},
+					{
+						"content": "Kauba vastu võttis:",
+						"polygon": [
+							0.4662,
+							3.9002,
+							1.5139,
+							3.9008,
+							1.5139,
+							4.0318,
+							0.4662,
+							4.0312
+						],
+						"spans": [
+							{
+								"offset": 379,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "Tarnekuupäev:",
+						"polygon": [
+							4.5418,
+							3.8981,
+							5.3526,
+							3.9047,
+							5.3515,
+							4.0403,
+							4.5407,
+							4.0338
+						],
+						"spans": [
+							{
+								"offset": 399,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "Sillaotsa Saeveski OU . KMKR nr EE102412824 . 1 / 1",
+						"polygon": [
+							2.8851,
+							11.0992,
+							5.3709,
+							11.1005,
+							5.3709,
+							11.2165,
+							2.885,
+							11.2153
+						],
+						"spans": [
+							{
+								"offset": 413,
+								"length": 51
+							}
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 0,
+						"length": 464
+					}
+				]
+			}
+		],
+		"tables": [
+			{
+				"rowCount": 3,
+				"columnCount": 5,
+				"cells": [
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 0,
+						"content": "Nr",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.4693,
+									2.3763,
+									0.8461,
+									2.3763,
+									0.8461,
+									2.6172,
+									0.4618,
+									2.6172
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 249,
+								"length": 2
+							}
+						],
+						"elements": [
+							"/paragraphs/3"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 1,
+						"content": "Kood",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.8461,
+									2.3763,
+									1.9235,
+									2.3763,
+									1.9235,
+									2.6172,
+									0.8461,
+									2.6172
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 252,
+								"length": 4
+							}
+						],
+						"elements": [
+							"/paragraphs/4"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 2,
+						"content": "Nimetus",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1.9235,
+									2.3763,
+									6.4369,
+									2.3763,
+									6.4444,
+									2.6172,
+									1.9235,
+									2.6172
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 257,
+								"length": 7
+							}
+						],
+						"elements": [
+							"/paragraphs/5"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 3,
+						"content": "Kogus",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									6.4369,
+									2.3763,
+									7.213,
+									2.3763,
+									7.213,
+									2.6172,
+									6.4444,
+									2.6172
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 265,
+								"length": 5
+							}
+						],
+						"elements": [
+							"/paragraphs/6"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 4,
+						"content": "Ühik",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									7.213,
+									2.3763,
+									7.7931,
+									2.3763,
+									7.7931,
+									2.6172,
+									7.213,
+									2.6172
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 271,
+								"length": 4
+							}
+						],
+						"elements": [
+							"/paragraphs/7"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 0,
+						"content": "1",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.4618,
+									2.6172,
+									0.8461,
+									2.6172,
+									0.8385,
+									2.8958,
+									0.4618,
+									2.8882
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 276,
+								"length": 1
+							}
+						],
+						"elements": [
+							"/paragraphs/8"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 1,
+						"content": "KS-0253",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.8461,
+									2.6172,
+									1.9235,
+									2.6172,
+									1.9235,
+									2.9033,
+									0.8385,
+									2.8958
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 278,
+								"length": 7
+							}
+						],
+						"elements": [
+							"/paragraphs/9"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 2,
+						"content": "Kaselaud 25x100 mm, kamberkuivatatud",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1.9235,
+									2.6172,
+									6.4444,
+									2.6172,
+									6.4444,
+									2.9033,
+									1.9235,
+									2.9033
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 286,
+								"length": 36
+							}
+						],
+						"elements": [
+							"/paragraphs/10"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 3,
+						"content": "13,53",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									6.4444,
+									2.6172,
+									7.213,
+									2.6172,
+									7.213,
+									2.9033,
+									6.4444,
+									2.9033
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 323,
+								"length": 5
+							}
+						],
+						"elements": [
+							"/paragraphs/11"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 4,
+						"content": "m3",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									7.213,
+									2.6172,
+									7.7931,
+									2.6172,
+									7.7931,
+									2.9033,
+									7.213,
+									2.9033
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 329,
+								"length": 2
+							}
+						],
+						"elements": [
+							"/paragraphs/12"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 0,
+						"content": "2",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.4618,
+									2.8882,
+									0.8385,
+									2.8958,
+									0.8385,
+									3.1593,
+									0.4618,
+									3.1593
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 332,
+								"length": 1
+							}
+						],
+						"elements": [
+							"/paragraphs/13"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 1,
+						"content": "KS-0297",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									0.8385,
+									2.8958,
+									1.9235,
+									2.9033,
+									1.9235,
+									3.1593,
+									0.8385,
+									3.1593
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 334,
+								"length": 7
+							}
+						],
+						"elements": [
+							"/paragraphs/14"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 2,
+						"content": "Tammelaud 27 mm, kuivatatud",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1.9235,
+									2.9033,
+									6.4444,
+									2.9033,
+									6.4519,
+									3.1593,
+									1.9235,
+									3.1593
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 342,
+								"length": 27
+							}
+						],
+						"elements": [
+							"/paragraphs/15"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 3,
+						"content": "24,81",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									6.4444,
+									2.9033,
+									7.213,
+									2.9033,
+									7.213,
+									3.1593,
+									6.4519,
+									3.1593
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 370,
+								"length": 5
+							}
+						],
+						"elements": [
+							"/paragraphs/16"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 4,
+						"content": "m3",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									7.213,
+									2.9033,
+									7.7931,
+									2.9033,
+									7.7931,
+									3.1593,
+									7.213,
+									3.1593
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 376,
+								"length": 2
+							}
+						],
+						"elements": [
+							"/paragraphs/17"
+						]
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4487,
+							2.3532,
+							7.7958,
+							2.3535,
+							7.797,
+							3.1728,
+							0.4496,
+							3.1725
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 249,
+						"length": 129
+					}
+				]
+			}
+		],
+		"paragraphs": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 89
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4592,
+							0.507,
+							2.4628,
+							0.4817,
+							2.4732,
+							1.3087,
+							0.4696,
+							1.334
+						]
+					}
+				],
+				"content": "Sillaotsa Saeveski OÜ Saeveski tee 4 65501 Võru KMKR nr EE102412824 Registrikood 11812518"
+			},
+			{
+				"spans": [
+					{
+						"offset": 90,
+						"length": 79
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							6.2557,
+							0.5206,
+							7.7925,
+							0.5176,
+							7.7939,
+							1.2447,
+							6.2571,
+							1.2476
+						]
+					}
+				],
+				"content": "SAATELEHT Saatelehe nr: 2959 Tarnekuupäev: 07.04.2026 Tellimus nr: PO-2026-0001"
+			},
+			{
+				"spans": [
+					{
+						"offset": 170,
+						"length": 78
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4656,
+							1.6428,
+							2.6019,
+							1.6384,
+							2.6031,
+							2.2096,
+							0.4668,
+							2.2141
+						]
+					}
+				],
+				"content": "Saaja Näidis Puit OÜ Tehase 12, 11415 Tallinn KMKR EE100000001 · Reg. 10000001"
+			},
+			{
+				"spans": [
+					{
+						"offset": 249,
+						"length": 2
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4693,
+							2.3763,
+							0.8461,
+							2.3763,
+							0.8461,
+							2.6172,
+							0.4618,
+							2.6172
+						]
+					}
+				],
+				"content": "Nr"
+			},
+			{
+				"spans": [
+					{
+						"offset": 252,
+						"length": 4
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.8461,
+							2.3763,
+							1.9235,
+							2.3763,
+							1.9235,
+							2.6172,
+							0.8461,
+							2.6172
+						]
+					}
+				],
+				"content": "Kood"
+			},
+			{
+				"spans": [
+					{
+						"offset": 257,
+						"length": 7
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.9235,
+							2.3763,
+							6.4369,
+							2.3763,
+							6.4444,
+							2.6172,
+							1.9235,
+							2.6172
+						]
+					}
+				],
+				"content": "Nimetus"
+			},
+			{
+				"spans": [
+					{
+						"offset": 265,
+						"length": 5
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							6.4369,
+							2.3763,
+							7.213,
+							2.3763,
+							7.213,
+							2.6172,
+							6.4444,
+							2.6172
+						]
+					}
+				],
+				"content": "Kogus"
+			},
+			{
+				"spans": [
+					{
+						"offset": 271,
+						"length": 4
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							7.213,
+							2.3763,
+							7.7931,
+							2.3763,
+							7.7931,
+							2.6172,
+							7.213,
+							2.6172
+						]
+					}
+				],
+				"content": "Ühik"
+			},
+			{
+				"spans": [
+					{
+						"offset": 276,
+						"length": 1
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4618,
+							2.6172,
+							0.8461,
+							2.6172,
+							0.8385,
+							2.8958,
+							0.4618,
+							2.8882
+						]
+					}
+				],
+				"content": "1"
+			},
+			{
+				"spans": [
+					{
+						"offset": 278,
+						"length": 7
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.8461,
+							2.6172,
+							1.9235,
+							2.6172,
+							1.9235,
+							2.9033,
+							0.8385,
+							2.8958
+						]
+					}
+				],
+				"content": "KS-0253"
+			},
+			{
+				"spans": [
+					{
+						"offset": 286,
+						"length": 36
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.9235,
+							2.6172,
+							6.4444,
+							2.6172,
+							6.4444,
+							2.9033,
+							1.9235,
+							2.9033
+						]
+					}
+				],
+				"content": "Kaselaud 25x100 mm, kamberkuivatatud"
+			},
+			{
+				"spans": [
+					{
+						"offset": 323,
+						"length": 5
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							6.4444,
+							2.6172,
+							7.213,
+							2.6172,
+							7.213,
+							2.9033,
+							6.4444,
+							2.9033
+						]
+					}
+				],
+				"content": "13,53"
+			},
+			{
+				"spans": [
+					{
+						"offset": 329,
+						"length": 2
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							7.213,
+							2.6172,
+							7.7931,
+							2.6172,
+							7.7931,
+							2.9033,
+							7.213,
+							2.9033
+						]
+					}
+				],
+				"content": "m3"
+			},
+			{
+				"spans": [
+					{
+						"offset": 332,
+						"length": 1
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4618,
+							2.8882,
+							0.8385,
+							2.8958,
+							0.8385,
+							3.1593,
+							0.4618,
+							3.1593
+						]
+					}
+				],
+				"content": "2"
+			},
+			{
+				"spans": [
+					{
+						"offset": 334,
+						"length": 7
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.8385,
+							2.8958,
+							1.9235,
+							2.9033,
+							1.9235,
+							3.1593,
+							0.8385,
+							3.1593
+						]
+					}
+				],
+				"content": "KS-0297"
+			},
+			{
+				"spans": [
+					{
+						"offset": 342,
+						"length": 27
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1.9235,
+							2.9033,
+							6.4444,
+							2.9033,
+							6.4519,
+							3.1593,
+							1.9235,
+							3.1593
+						]
+					}
+				],
+				"content": "Tammelaud 27 mm, kuivatatud"
+			},
+			{
+				"spans": [
+					{
+						"offset": 370,
+						"length": 5
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							6.4444,
+							2.9033,
+							7.213,
+							2.9033,
+							7.213,
+							3.1593,
+							6.4519,
+							3.1593
+						]
+					}
+				],
+				"content": "24,81"
+			},
+			{
+				"spans": [
+					{
+						"offset": 376,
+						"length": 2
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							7.213,
+							2.9033,
+							7.7931,
+							2.9033,
+							7.7931,
+							3.1593,
+							7.213,
+							3.1593
+						]
+					}
+				],
+				"content": "m3"
+			},
+			{
+				"spans": [
+					{
+						"offset": 379,
+						"length": 19
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							0.4662,
+							3.9002,
+							1.5139,
+							3.9008,
+							1.5139,
+							4.0318,
+							0.4662,
+							4.0312
+						]
+					}
+				],
+				"content": "Kauba vastu võttis:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 399,
+						"length": 13
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							4.5418,
+							3.8981,
+							5.3526,
+							3.9047,
+							5.3515,
+							4.0403,
+							4.5407,
+							4.0338
+						]
+					}
+				],
+				"content": "Tarnekuupäev:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 413,
+						"length": 51
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							2.8851,
+							11.0992,
+							5.3709,
+							11.1005,
+							5.3709,
+							11.2165,
+							2.885,
+							11.2153
+						]
+					}
+				],
+				"role": "pageFooter",
+				"content": "Sillaotsa Saeveski OU . KMKR nr EE102412824 . 1 / 1"
+			}
+		],
+		"styles": [],
+		"contentFormat": "text",
+		"sections": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 412
+					}
+				],
+				"elements": [
+					"/paragraphs/0",
+					"/paragraphs/1",
+					"/paragraphs/2",
+					"/tables/0",
+					"/paragraphs/18",
+					"/paragraphs/19"
+				]
+			}
+		]
+	}
+}

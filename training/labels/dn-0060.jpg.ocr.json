@@ -1,0 +1,3227 @@
+{
+	"status": "succeeded",
+	"createdDateTime": "2026-10-19T12:59:32Z",
+	"lastUpdatedDateTime": "2026-10-19T12:59:34Z",
+	"analyzeResult": {
+		"apiVersion": "2024-11-30",
+		"modelId": "prebuilt-layout",
+		"stringIndexType": "utf16CodeUnit",
+		"content": "DELIVERY NOTE\nDelivery note no .: 3405 Delivery date: 26 Jun 2026 Your order: PO-2026-0053\nBaltic Board Supply OÜ Sadama 25 10111 Tallinn VAT no. EE109532815 Reg. code 10776889\nDeliver to\nNäidis Puit OÜ\nTehase 12, 11415 Tallinn\nKMKR EE100000001 . Reg. 10000001\nPos\nItem code\nDescription\nUnit\nQty\n1\nBBS00300\nOak veneered MDF 19 mm, 2440×1220\npcs\n31\n2\nBBS00198\nMDF 19 mm raw, 2800x2070\npcs\n122\nGoods received by:\nDelivery date:\nBaltic Board Supply OU - VAT no. EE109532815 - 1/ 1",
+		"pages": [
+			{
+				"pageNumber": 1,
+				"angle": -0.6194000244140625,
+				"width": 1550,
+				"height": 2018,
+				"unit": "pixel",
+				"words": [
+					{
+						"content": "DELIVERY",
+						"polygon": [
+							181,
+							205,
+							379,
+							201,
+							380,
+							241,
+							182,
+							244
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 0,
+							"length": 8
+						}
+					},
+					{
+						"content": "NOTE",
+						"polygon": [
+							390,
+							201,
+							506,
+							199,
+							506,
+							240,
+							390,
+							241
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 9,
+							"length": 4
+						}
+					},
+					{
+						"content": "Delivery",
+						"polygon": [
+							180,
+							251,
+							251,
+							251,
+							251,
+							271,
+							180,
+							271
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 14,
+							"length": 8
+						}
+					},
+					{
+						"content": "note",
+						"polygon": [
+							255,
+							250,
+							293,
+							250,
+							293,
+							270,
+							256,
+							271
+						],
+						"confidence": 0.988,
+						"span": {
+							"offset": 23,
+							"length": 4
+						}
+					},
+					{
+						"content": "no",
+						"polygon": [
+							298,
+							250,
+							313,
+							249,
+							313,
+							270,
+							299,
+							270
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 28,
+							"length": 2
+						}
+					},
+					{
+						"content": ".:",
+						"polygon": [
+							317,
+							249,
+							328,
+							249,
+							329,
+							269,
+							317,
+							270
+						],
+						"confidence": 0.956,
+						"span": {
+							"offset": 31,
+							"length": 2
+						}
+					},
+					{
+						"content": "3405",
+						"polygon": [
+							334,
+							249,
+							379,
+							248,
+							379,
+							268,
+							334,
+							269
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 34,
+							"length": 4
+						}
+					},
+					{
+						"content": "Delivery",
+						"polygon": [
+							180,
+							275,
+							251,
+							274,
+							251,
+							294,
+							181,
+							295
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 39,
+							"length": 8
+						}
+					},
+					{
+						"content": "date:",
+						"polygon": [
+							255,
+							274,
+							299,
+							273,
+							300,
+							294,
+							256,
+							294
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 48,
+							"length": 5
+						}
+					},
+					{
+						"content": "26",
+						"polygon": [
+							303,
+							273,
+							324,
+							273,
+							324,
+							293,
+							304,
+							293
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 54,
+							"length": 2
+						}
+					},
+					{
+						"content": "Jun",
+						"polygon": [
+							328,
+							273,
+							357,
+							272,
+							358,
+							293,
+							328,
+							293
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 57,
+							"length": 3
+						}
+					},
+					{
+						"content": "2026",
+						"polygon": [
+							363,
+							272,
+							408,
+							271,
+							408,
+							292,
+							363,
+							293
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 61,
+							"length": 4
+						}
+					},
+					{
+						"content": "Your",
+						"polygon": [
+							181,
+							298,
+							219,
+							297,
+							219,
+							317,
+							181,
+							318
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 66,
+							"length": 4
+						}
+					},
+					{
+						"content": "order:",
+						"polygon": [
+							224,
+							297,
+							272,
+							296,
+							273,
+							316,
+							224,
+							317
+						],
+						"confidence": 0.967,
+						"span": {
+							"offset": 71,
+							"length": 6
+						}
+					},
+					{
+						"content": "PO-2026-0053",
+						"polygon": [
+							279,
+							296,
+							410,
+							294,
+							410,
+							315,
+							279,
+							316
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 78,
+							"length": 12
+						}
+					},
+					{
+						"content": "Baltic",
+						"polygon": [
+							967,
+							189,
+							1047,
+							187,
+							1048,
+							222,
+							967,
+							224
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 91,
+							"length": 6
+						}
+					},
+					{
+						"content": "Board",
+						"polygon": [
+							1057,
+							187,
+							1140,
+							185,
+							1141,
+							221,
+							1058,
+							222
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 98,
+							"length": 5
+						}
+					},
+					{
+						"content": "Supply",
+						"polygon": [
+							1150,
+							185,
+							1246,
+							183,
+							1247,
+							219,
+							1150,
+							221
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 104,
+							"length": 6
+						}
+					},
+					{
+						"content": "OÜ",
+						"polygon": [
+							1253,
+							182,
+							1303,
+							181,
+							1303,
+							217,
+							1254,
+							219
+						],
+						"confidence": 0.94,
+						"span": {
+							"offset": 111,
+							"length": 2
+						}
+					},
+					{
+						"content": "Sadama",
+						"polygon": [
+							1208,
+							222,
+							1275,
+							221,
+							1275,
+							241,
+							1208,
+							242
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 114,
+							"length": 6
+						}
+					},
+					{
+						"content": "25",
+						"polygon": [
+							1280,
+							221,
+							1304,
+							220,
+							1304,
+							241,
+							1281,
+							241
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 121,
+							"length": 2
+						}
+					},
+					{
+						"content": "10111",
+						"polygon": [
+							1188,
+							245,
+							1243,
+							244,
+							1243,
+							264,
+							1188,
+							265
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 124,
+							"length": 5
+						}
+					},
+					{
+						"content": "Tallinn",
+						"polygon": [
+							1249,
+							244,
+							1305,
+							244,
+							1305,
+							264,
+							1249,
+							264
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 130,
+							"length": 7
+						}
+					},
+					{
+						"content": "VAT",
+						"polygon": [
+							1108,
+							270,
+							1142,
+							269,
+							1142,
+							290,
+							1108,
+							290
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 138,
+							"length": 3
+						}
+					},
+					{
+						"content": "no.",
+						"polygon": [
+							1146,
+							269,
+							1174,
+							269,
+							1174,
+							289,
+							1146,
+							290
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 142,
+							"length": 3
+						}
+					},
+					{
+						"content": "EE109532815",
+						"polygon": [
+							1180,
+							268,
+							1304,
+							267,
+							1304,
+							287,
+							1181,
+							289
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 146,
+							"length": 11
+						}
+					},
+					{
+						"content": "Reg.",
+						"polygon": [
+							1125,
+							293,
+							1162,
+							293,
+							1162,
+							314,
+							1125,
+							314
+						],
+						"confidence": 0.963,
+						"span": {
+							"offset": 158,
+							"length": 4
+						}
+					},
+					{
+						"content": "code",
+						"polygon": [
+							1166,
+							293,
+							1208,
+							291,
+							1208,
+							313,
+							1167,
+							313
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 163,
+							"length": 4
+						}
+					},
+					{
+						"content": "10776889",
+						"polygon": [
+							1214,
+							291,
+							1304,
+							289,
+							1304,
+							310,
+							1215,
+							312
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 168,
+							"length": 8
+						}
+					},
+					{
+						"content": "Deliver",
+						"polygon": [
+							181,
+							378,
+							235,
+							378,
+							235,
+							396,
+							181,
+							396
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 177,
+							"length": 7
+						}
+					},
+					{
+						"content": "to",
+						"polygon": [
+							240,
+							378,
+							257,
+							378,
+							257,
+							396,
+							240,
+							396
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 185,
+							"length": 2
+						}
+					},
+					{
+						"content": "Näidis",
+						"polygon": [
+							181,
+							399,
+							234,
+							398,
+							234,
+							419,
+							181,
+							419
+						],
+						"confidence": 0.657,
+						"span": {
+							"offset": 188,
+							"length": 6
+						}
+					},
+					{
+						"content": "Puit",
+						"polygon": [
+							239,
+							398,
+							272,
+							397,
+							272,
+							418,
+							240,
+							419
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 195,
+							"length": 4
+						}
+					},
+					{
+						"content": "OÜ",
+						"polygon": [
+							277,
+							397,
+							308,
+							397,
+							308,
+							418,
+							277,
+							418
+						],
+						"confidence": 0.629,
+						"span": {
+							"offset": 200,
+							"length": 2
+						}
+					},
+					{
+						"content": "Tehase",
+						"polygon": [
+							182,
+							421,
+							240,
+							421,
+							240,
+							441,
+							182,
+							441
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 203,
+							"length": 6
+						}
+					},
+					{
+						"content": "12,",
+						"polygon": [
+							246,
+							421,
+							272,
+							420,
+							272,
+							441,
+							247,
+							441
+						],
+						"confidence": 0.974,
+						"span": {
+							"offset": 210,
+							"length": 3
+						}
+					},
+					{
+						"content": "11415",
+						"polygon": [
+							277,
+							420,
+							331,
+							419,
+							332,
+							440,
+							277,
+							441
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 214,
+							"length": 5
+						}
+					},
+					{
+						"content": "Tallinn",
+						"polygon": [
+							336,
+							419,
+							391,
+							419,
+							391,
+							439,
+							336,
+							440
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 220,
+							"length": 7
+						}
+					},
+					{
+						"content": "KMKR",
+						"polygon": [
+							182,
+							444,
+							237,
+							444,
+							237,
+							465,
+							182,
+							465
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 228,
+							"length": 4
+						}
+					},
+					{
+						"content": "EE100000001",
+						"polygon": [
+							243,
+							444,
+							363,
+							442,
+							363,
+							464,
+							243,
+							465
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 233,
+							"length": 11
+						}
+					},
+					{
+						"content": ".",
+						"polygon": [
+							368,
+							442,
+							374,
+							442,
+							374,
+							464,
+							369,
+							464
+						],
+						"confidence": 0.28,
+						"span": {
+							"offset": 245,
+							"length": 1
+						}
+					},
+					{
+						"content": "Reg.",
+						"polygon": [
+							379,
+							442,
+							414,
+							441,
+							414,
+							463,
+							379,
+							464
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 247,
+							"length": 4
+						}
+					},
+					{
+						"content": "10000001",
+						"polygon": [
+							421,
+							441,
+							508,
+							440,
+							508,
+							462,
+							421,
+							463
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 252,
+							"length": 8
+						}
+					},
+					{
+						"content": "Pos",
+						"polygon": [
+							191,
+							503,
+							225,
+							503,
+							225,
+							521,
+							191,
+							522
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 261,
+							"length": 3
+						}
+					},
+					{
+						"content": "Item",
+						"polygon": [
+							244,
+							502,
+							279,
+							502,
+							279,
+							522,
+							244,
+							522
+						],
+						"confidence": 0.952,
+						"span": {
+							"offset": 265,
+							"length": 4
+						}
+					},
+					{
+						"content": "code",
+						"polygon": [
+							289,
+							502,
+							333,
+							501,
+							333,
+							521,
+							289,
+							522
+						],
+						"confidence": 0.99,
+						"span": {
+							"offset": 270,
+							"length": 4
+						}
+					},
+					{
+						"content": "Description",
+						"polygon": [
+							410,
+							499,
+							512,
+							498,
+							512,
+							519,
+							410,
+							520
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 275,
+							"length": 11
+						}
+					},
+					{
+						"content": "Unit",
+						"polygon": [
+							1104,
+							489,
+							1144,
+							489,
+							1144,
+							508,
+							1105,
+							508
+						],
+						"confidence": 0.987,
+						"span": {
+							"offset": 287,
+							"length": 4
+						}
+					},
+					{
+						"content": "Qty",
+						"polygon": [
+							1260,
+							487,
+							1294,
+							488,
+							1294,
+							508,
+							1260,
+							508
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 292,
+							"length": 3
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							193,
+							544,
+							204,
+							544,
+							204,
+							561,
+							193,
+							562
+						],
+						"confidence": 0.997,
+						"span": {
+							"offset": 296,
+							"length": 1
+						}
+					},
+					{
+						"content": "BBS00300",
+						"polygon": [
+							246,
+							541,
+							339,
+							540,
+							339,
+							561,
+							246,
+							562
+						],
+						"confidence": 0.92,
+						"span": {
+							"offset": 298,
+							"length": 8
+						}
+					},
+					{
+						"content": "Oak",
+						"polygon": [
+							411,
+							538,
+							444,
+							538,
+							444,
+							559,
+							411,
+							560
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 307,
+							"length": 3
+						}
+					},
+					{
+						"content": "veneered",
+						"polygon": [
+							448,
+							538,
+							528,
+							536,
+							528,
+							558,
+							448,
+							559
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 311,
+							"length": 8
+						}
+					},
+					{
+						"content": "MDF",
+						"polygon": [
+							533,
+							536,
+							576,
+							536,
+							576,
+							558,
+							534,
+							558
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 320,
+							"length": 3
+						}
+					},
+					{
+						"content": "19",
+						"polygon": [
+							581,
+							536,
+							602,
+							535,
+							602,
+							557,
+							582,
+							557
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 324,
+							"length": 2
+						}
+					},
+					{
+						"content": "mm,",
+						"polygon": [
+							608,
+							535,
+							643,
+							535,
+							643,
+							557,
+							608,
+							557
+						],
+						"confidence": 0.942,
+						"span": {
+							"offset": 327,
+							"length": 3
+						}
+					},
+					{
+						"content": "2440×1220",
+						"polygon": [
+							648,
+							534,
+							748,
+							533,
+							748,
+							555,
+							649,
+							557
+						],
+						"confidence": 0.636,
+						"span": {
+							"offset": 331,
+							"length": 9
+						}
+					},
+					{
+						"content": "pcs",
+						"polygon": [
+							1104,
+							532,
+							1135,
+							532,
+							1135,
+							550,
+							1104,
+							550
+						],
+						"confidence": 0.99,
+						"span": {
+							"offset": 341,
+							"length": 3
+						}
+					},
+					{
+						"content": "31",
+						"polygon": [
+							1270,
+							527,
+							1293,
+							527,
+							1293,
+							545,
+							1270,
+							546
+						],
+						"confidence": 0.998,
+						"span": {
+							"offset": 345,
+							"length": 2
+						}
+					},
+					{
+						"content": "2",
+						"polygon": [
+							192,
+							583,
+							206,
+							583,
+							206,
+							601,
+							192,
+							602
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 348,
+							"length": 1
+						}
+					},
+					{
+						"content": "BBS00198",
+						"polygon": [
+							247,
+							581,
+							339,
+							580,
+							339,
+							601,
+							247,
+							601
+						],
+						"confidence": 0.948,
+						"span": {
+							"offset": 350,
+							"length": 8
+						}
+					},
+					{
+						"content": "MDF",
+						"polygon": [
+							411,
+							578,
+							455,
+							578,
+							455,
+							599,
+							411,
+							599
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 359,
+							"length": 3
+						}
+					},
+					{
+						"content": "19",
+						"polygon": [
+							461,
+							578,
+							482,
+							577,
+							482,
+							598,
+							461,
+							599
+						],
+						"confidence": 0.995,
+						"span": {
+							"offset": 363,
+							"length": 2
+						}
+					},
+					{
+						"content": "mm",
+						"polygon": [
+							487,
+							577,
+							518,
+							577,
+							518,
+							598,
+							487,
+							598
+						],
+						"confidence": 0.996,
+						"span": {
+							"offset": 366,
+							"length": 2
+						}
+					},
+					{
+						"content": "raw,",
+						"polygon": [
+							523,
+							577,
+							558,
+							576,
+							558,
+							597,
+							523,
+							598
+						],
+						"confidence": 0.892,
+						"span": {
+							"offset": 369,
+							"length": 4
+						}
+					},
+					{
+						"content": "2800x2070",
+						"polygon": [
+							563,
+							576,
+							663,
+							575,
+							663,
+							596,
+							563,
+							597
+						],
+						"confidence": 0.614,
+						"span": {
+							"offset": 374,
+							"length": 9
+						}
+					},
+					{
+						"content": "pcs",
+						"polygon": [
+							1104,
+							572,
+							1136,
+							572,
+							1136,
+							589,
+							1104,
+							590
+						],
+						"confidence": 0.975,
+						"span": {
+							"offset": 384,
+							"length": 3
+						}
+					},
+					{
+						"content": "122",
+						"polygon": [
+							1260,
+							567,
+							1294,
+							566,
+							1294,
+							586,
+							1260,
+							586
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 388,
+							"length": 3
+						}
+					},
+					{
+						"content": "Goods",
+						"polygon": [
+							185,
+							723,
+							240,
+							723,
+							240,
+							744,
+							185,
+							744
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 392,
+							"length": 5
+						}
+					},
+					{
+						"content": "received",
+						"polygon": [
+							245,
+							723,
+							315,
+							722,
+							315,
+							744,
+							245,
+							744
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 398,
+							"length": 8
+						}
+					},
+					{
+						"content": "by:",
+						"polygon": [
+							320,
+							722,
+							347,
+							722,
+							347,
+							744,
+							320,
+							744
+						],
+						"confidence": 0.994,
+						"span": {
+							"offset": 407,
+							"length": 3
+						}
+					},
+					{
+						"content": "Delivery",
+						"polygon": [
+							804,
+							715,
+							875,
+							715,
+							875,
+							735,
+							804,
+							736
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 411,
+							"length": 8
+						}
+					},
+					{
+						"content": "date:",
+						"polygon": [
+							879,
+							714,
+							923,
+							714,
+							923,
+							735,
+							879,
+							735
+						],
+						"confidence": 0.993,
+						"span": {
+							"offset": 420,
+							"length": 5
+						}
+					},
+					{
+						"content": "Baltic",
+						"polygon": [
+							557,
+							1803,
+							594,
+							1803,
+							594,
+							1822,
+							557,
+							1822
+						],
+						"confidence": 0.977,
+						"span": {
+							"offset": 426,
+							"length": 6
+						}
+					},
+					{
+						"content": "Board",
+						"polygon": [
+							602,
+							1803,
+							641,
+							1802,
+							641,
+							1822,
+							602,
+							1822
+						],
+						"confidence": 0.977,
+						"span": {
+							"offset": 433,
+							"length": 5
+						}
+					},
+					{
+						"content": "Supply",
+						"polygon": [
+							647,
+							1802,
+							691,
+							1802,
+							691,
+							1821,
+							647,
+							1822
+						],
+						"confidence": 0.989,
+						"span": {
+							"offset": 439,
+							"length": 6
+						}
+					},
+					{
+						"content": "OU",
+						"polygon": [
+							696,
+							1802,
+							717,
+							1801,
+							717,
+							1821,
+							696,
+							1821
+						],
+						"confidence": 0.653,
+						"span": {
+							"offset": 446,
+							"length": 2
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							721,
+							1801,
+							727,
+							1801,
+							727,
+							1821,
+							721,
+							1821
+						],
+						"confidence": 0.437,
+						"span": {
+							"offset": 449,
+							"length": 1
+						}
+					},
+					{
+						"content": "VAT",
+						"polygon": [
+							731,
+							1801,
+							759,
+							1801,
+							759,
+							1821,
+							731,
+							1821
+						],
+						"confidence": 0.986,
+						"span": {
+							"offset": 451,
+							"length": 3
+						}
+					},
+					{
+						"content": "no.",
+						"polygon": [
+							763,
+							1801,
+							781,
+							1801,
+							781,
+							1821,
+							763,
+							1821
+						],
+						"confidence": 0.736,
+						"span": {
+							"offset": 455,
+							"length": 3
+						}
+					},
+					{
+						"content": "EE109532815",
+						"polygon": [
+							789,
+							1801,
+							888,
+							1800,
+							888,
+							1820,
+							789,
+							1821
+						],
+						"confidence": 0.977,
+						"span": {
+							"offset": 459,
+							"length": 11
+						}
+					},
+					{
+						"content": "-",
+						"polygon": [
+							893,
+							1800,
+							896,
+							1800,
+							896,
+							1820,
+							893,
+							1820
+						],
+						"confidence": 0.295,
+						"span": {
+							"offset": 471,
+							"length": 1
+						}
+					},
+					{
+						"content": "1/",
+						"polygon": [
+							902,
+							1800,
+							920,
+							1800,
+							920,
+							1820,
+							902,
+							1820
+						],
+						"confidence": 0.793,
+						"span": {
+							"offset": 473,
+							"length": 2
+						}
+					},
+					{
+						"content": "1",
+						"polygon": [
+							926,
+							1800,
+							936,
+							1800,
+							936,
+							1820,
+							926,
+							1820
+						],
+						"confidence": 0.992,
+						"span": {
+							"offset": 476,
+							"length": 1
+						}
+					}
+				],
+				"lines": [
+					{
+						"content": "DELIVERY NOTE",
+						"polygon": [
+							181,
+							202,
+							505,
+							199,
+							506,
+							240,
+							182,
+							244
+						],
+						"spans": [
+							{
+								"offset": 0,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "Delivery note no .: 3405",
+						"polygon": [
+							180,
+							251,
+							379,
+							248,
+							379,
+							268,
+							180,
+							272
+						],
+						"spans": [
+							{
+								"offset": 14,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "Delivery date: 26 Jun 2026",
+						"polygon": [
+							180,
+							275,
+							408,
+							271,
+							408,
+							292,
+							181,
+							295
+						],
+						"spans": [
+							{
+								"offset": 39,
+								"length": 26
+							}
+						]
+					},
+					{
+						"content": "Your order: PO-2026-0053",
+						"polygon": [
+							181,
+							297,
+							409,
+							294,
+							410,
+							314,
+							181,
+							318
+						],
+						"spans": [
+							{
+								"offset": 66,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "Baltic Board Supply OÜ",
+						"polygon": [
+							967,
+							189,
+							1302,
+							181,
+							1303,
+							217,
+							967,
+							224
+						],
+						"spans": [
+							{
+								"offset": 91,
+								"length": 22
+							}
+						]
+					},
+					{
+						"content": "Sadama 25",
+						"polygon": [
+							1208,
+							222,
+							1303,
+							220,
+							1304,
+							240,
+							1208,
+							242
+						],
+						"spans": [
+							{
+								"offset": 114,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "10111 Tallinn",
+						"polygon": [
+							1188,
+							245,
+							1304,
+							244,
+							1304,
+							263,
+							1188,
+							265
+						],
+						"spans": [
+							{
+								"offset": 124,
+								"length": 13
+							}
+						]
+					},
+					{
+						"content": "VAT no. EE109532815",
+						"polygon": [
+							1108,
+							270,
+							1303,
+							267,
+							1304,
+							287,
+							1108,
+							290
+						],
+						"spans": [
+							{
+								"offset": 138,
+								"length": 19
+							}
+						]
+					},
+					{
+						"content": "Reg. code 10776889",
+						"polygon": [
+							1125,
+							293,
+							1303,
+							289,
+							1304,
+							310,
+							1125,
+							314
+						],
+						"spans": [
+							{
+								"offset": 158,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Deliver to",
+						"polygon": [
+							181,
+							378,
+							257,
+							378,
+							257,
+							396,
+							181,
+							396
+						],
+						"spans": [
+							{
+								"offset": 177,
+								"length": 10
+							}
+						]
+					},
+					{
+						"content": "Näidis Puit OÜ",
+						"polygon": [
+							181,
+							399,
+							307,
+							397,
+							308,
+							417,
+							181,
+							419
+						],
+						"spans": [
+							{
+								"offset": 188,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Tehase 12, 11415 Tallinn",
+						"polygon": [
+							182,
+							421,
+							390,
+							419,
+							390,
+							439,
+							182,
+							441
+						],
+						"spans": [
+							{
+								"offset": 203,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "KMKR EE100000001 . Reg. 10000001",
+						"polygon": [
+							182,
+							444,
+							508,
+							440,
+							508,
+							462,
+							182,
+							466
+						],
+						"spans": [
+							{
+								"offset": 228,
+								"length": 32
+							}
+						]
+					},
+					{
+						"content": "Pos",
+						"polygon": [
+							191,
+							503,
+							225,
+							503,
+							225,
+							521,
+							191,
+							521
+						],
+						"spans": [
+							{
+								"offset": 261,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "Item code",
+						"polygon": [
+							244,
+							502,
+							332,
+							501,
+							332,
+							521,
+							244,
+							522
+						],
+						"spans": [
+							{
+								"offset": 265,
+								"length": 9
+							}
+						]
+					},
+					{
+						"content": "Description",
+						"polygon": [
+							410,
+							499,
+							511,
+							498,
+							512,
+							519,
+							410,
+							519
+						],
+						"spans": [
+							{
+								"offset": 275,
+								"length": 11
+							}
+						]
+					},
+					{
+						"content": "Unit",
+						"polygon": [
+							1104,
+							489,
+							1144,
+							489,
+							1144,
+							507,
+							1105,
+							508
+						],
+						"spans": [
+							{
+								"offset": 287,
+								"length": 4
+							}
+						]
+					},
+					{
+						"content": "Qty",
+						"polygon": [
+							1260,
+							487,
+							1294,
+							487,
+							1294,
+							507,
+							1260,
+							507
+						],
+						"spans": [
+							{
+								"offset": 292,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "1",
+						"polygon": [
+							193,
+							544,
+							204,
+							544,
+							204,
+							561,
+							193,
+							561
+						],
+						"spans": [
+							{
+								"offset": 296,
+								"length": 1
+							}
+						]
+					},
+					{
+						"content": "BBS00300",
+						"polygon": [
+							246,
+							541,
+							339,
+							540,
+							339,
+							561,
+							246,
+							561
+						],
+						"spans": [
+							{
+								"offset": 298,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "Oak veneered MDF 19 mm, 2440×1220",
+						"polygon": [
+							410,
+							538,
+							747,
+							533,
+							748,
+							555,
+							411,
+							560
+						],
+						"spans": [
+							{
+								"offset": 307,
+								"length": 33
+							}
+						]
+					},
+					{
+						"content": "pcs",
+						"polygon": [
+							1104,
+							532,
+							1135,
+							532,
+							1135,
+							549,
+							1104,
+							550
+						],
+						"spans": [
+							{
+								"offset": 341,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "31",
+						"polygon": [
+							1270,
+							527,
+							1293,
+							526,
+							1293,
+							545,
+							1270,
+							545
+						],
+						"spans": [
+							{
+								"offset": 345,
+								"length": 2
+							}
+						]
+					},
+					{
+						"content": "2",
+						"polygon": [
+							192,
+							583,
+							206,
+							583,
+							206,
+							601,
+							192,
+							601
+						],
+						"spans": [
+							{
+								"offset": 348,
+								"length": 1
+							}
+						]
+					},
+					{
+						"content": "BBS00198",
+						"polygon": [
+							247,
+							581,
+							339,
+							580,
+							339,
+							601,
+							247,
+							601
+						],
+						"spans": [
+							{
+								"offset": 350,
+								"length": 8
+							}
+						]
+					},
+					{
+						"content": "MDF 19 mm raw, 2800x2070",
+						"polygon": [
+							410,
+							578,
+							662,
+							575,
+							663,
+							596,
+							411,
+							599
+						],
+						"spans": [
+							{
+								"offset": 359,
+								"length": 24
+							}
+						]
+					},
+					{
+						"content": "pcs",
+						"polygon": [
+							1104,
+							572,
+							1135,
+							572,
+							1135,
+							589,
+							1104,
+							589
+						],
+						"spans": [
+							{
+								"offset": 384,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "122",
+						"polygon": [
+							1259,
+							567,
+							1294,
+							566,
+							1294,
+							586,
+							1260,
+							586
+						],
+						"spans": [
+							{
+								"offset": 388,
+								"length": 3
+							}
+						]
+					},
+					{
+						"content": "Goods received by:",
+						"polygon": [
+							185,
+							722,
+							347,
+							722,
+							347,
+							743,
+							185,
+							744
+						],
+						"spans": [
+							{
+								"offset": 392,
+								"length": 18
+							}
+						]
+					},
+					{
+						"content": "Delivery date:",
+						"polygon": [
+							804,
+							715,
+							922,
+							714,
+							922,
+							735,
+							804,
+							736
+						],
+						"spans": [
+							{
+								"offset": 411,
+								"length": 14
+							}
+						]
+					},
+					{
+						"content": "Baltic Board Supply OU - VAT no. EE109532815 - 1/ 1",
+						"polygon": [
+							557,
+							1802,
+							936,
+							1800,
+							936,
+							1820,
+							557,
+							1822
+						],
+						"spans": [
+							{
+								"offset": 426,
+								"length": 51
+							}
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 0,
+						"length": 477
+					}
+				]
+			}
+		],
+		"tables": [
+			{
+				"rowCount": 3,
+				"columnCount": 5,
+				"cells": [
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 0,
+						"content": "Pos",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									182,
+									491,
+									234,
+									490,
+									235,
+									529,
+									183,
+									529
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 261,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/7"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 1,
+						"content": "Item code",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									234,
+									490,
+									372,
+									488,
+									374,
+									528,
+									235,
+									529
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 265,
+								"length": 9
+							}
+						],
+						"elements": [
+							"/paragraphs/8"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 2,
+						"content": "Description",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									372,
+									488,
+									908,
+									480,
+									909,
+									520,
+									374,
+									528
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 275,
+								"length": 11
+							}
+						],
+						"elements": [
+							"/paragraphs/9"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 3,
+						"content": "Unit",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									908,
+									480,
+									1202,
+									477,
+									1202,
+									515,
+									909,
+									520
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 287,
+								"length": 4
+							}
+						],
+						"elements": [
+							"/paragraphs/10"
+						]
+					},
+					{
+						"kind": "columnHeader",
+						"rowIndex": 0,
+						"columnIndex": 4,
+						"content": "Qty",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1202,
+									477,
+									1305,
+									474,
+									1305,
+									514,
+									1202,
+									515
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 292,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/11"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 0,
+						"content": "1",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									183,
+									529,
+									235,
+									529,
+									235,
+									568,
+									183,
+									569
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 296,
+								"length": 1
+							}
+						],
+						"elements": [
+							"/paragraphs/12"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 1,
+						"content": "BBS00300",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									235,
+									529,
+									374,
+									528,
+									374,
+									566,
+									235,
+									568
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 298,
+								"length": 8
+							}
+						],
+						"elements": [
+							"/paragraphs/13"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 2,
+						"content": "Oak veneered MDF 19 mm, 2440×1220",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									374,
+									528,
+									909,
+									520,
+									909,
+									559,
+									374,
+									566
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 307,
+								"length": 33
+							}
+						],
+						"elements": [
+							"/paragraphs/14"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 3,
+						"content": "pcs",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									909,
+									520,
+									1202,
+									515,
+									1203,
+									555,
+									909,
+									559
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 341,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/15"
+						]
+					},
+					{
+						"rowIndex": 1,
+						"columnIndex": 4,
+						"content": "31",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1202,
+									515,
+									1305,
+									514,
+									1305,
+									553,
+									1203,
+									555
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 345,
+								"length": 2
+							}
+						],
+						"elements": [
+							"/paragraphs/16"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 0,
+						"content": "2",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									183,
+									569,
+									235,
+									568,
+									235,
+									609,
+									184,
+									609
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 348,
+								"length": 1
+							}
+						],
+						"elements": [
+							"/paragraphs/17"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 1,
+						"content": "BBS00198",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									235,
+									568,
+									374,
+									566,
+									375,
+									608,
+									235,
+									609
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 350,
+								"length": 8
+							}
+						],
+						"elements": [
+							"/paragraphs/18"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 2,
+						"content": "MDF 19 mm raw, 2800x2070",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									374,
+									566,
+									909,
+									559,
+									911,
+									601,
+									375,
+									608
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 359,
+								"length": 24
+							}
+						],
+						"elements": [
+							"/paragraphs/19"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 3,
+						"content": "pcs",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									909,
+									559,
+									1203,
+									555,
+									1204,
+									596,
+									911,
+									601
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 384,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/20"
+						]
+					},
+					{
+						"rowIndex": 2,
+						"columnIndex": 4,
+						"content": "122",
+						"boundingRegions": [
+							{
+								"pageNumber": 1,
+								"polygon": [
+									1203,
+									555,
+									1305,
+									553,
+									1305,
+									595,
+									1204,
+									596
+								]
+							}
+						],
+						"spans": [
+							{
+								"offset": 388,
+								"length": 3
+							}
+						],
+						"elements": [
+							"/paragraphs/21"
+						]
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							182,
+							485,
+							1303,
+							476,
+							1304,
+							601,
+							184,
+							610
+						]
+					}
+				],
+				"spans": [
+					{
+						"offset": 261,
+						"length": 130
+					}
+				]
+			}
+		],
+		"paragraphs": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 13
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							181,
+							202,
+							505,
+							199,
+							506,
+							240,
+							182,
+							244
+						]
+					}
+				],
+				"content": "DELIVERY NOTE"
+			},
+			{
+				"spans": [
+					{
+						"offset": 14,
+						"length": 76
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							180,
+							251,
+							409,
+							247,
+							410,
+							314,
+							181,
+							318
+						]
+					}
+				],
+				"content": "Delivery note no .: 3405 Delivery date: 26 Jun 2026 Your order: PO-2026-0053"
+			},
+			{
+				"spans": [
+					{
+						"offset": 91,
+						"length": 85
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							967,
+							189,
+							1302,
+							181,
+							1306,
+							310,
+							970,
+							318
+						]
+					}
+				],
+				"content": "Baltic Board Supply OÜ Sadama 25 10111 Tallinn VAT no. EE109532815 Reg. code 10776889"
+			},
+			{
+				"spans": [
+					{
+						"offset": 177,
+						"length": 10
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							181,
+							378,
+							257,
+							378,
+							257,
+							396,
+							181,
+							396
+						]
+					}
+				],
+				"content": "Deliver to"
+			},
+			{
+				"spans": [
+					{
+						"offset": 188,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							181,
+							399,
+							307,
+							397,
+							308,
+							417,
+							181,
+							419
+						]
+					}
+				],
+				"content": "Näidis Puit OÜ"
+			},
+			{
+				"spans": [
+					{
+						"offset": 203,
+						"length": 24
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							182,
+							421,
+							390,
+							419,
+							390,
+							439,
+							182,
+							441
+						]
+					}
+				],
+				"content": "Tehase 12, 11415 Tallinn"
+			},
+			{
+				"spans": [
+					{
+						"offset": 228,
+						"length": 32
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							182,
+							444,
+							508,
+							440,
+							508,
+							462,
+							182,
+							466
+						]
+					}
+				],
+				"content": "KMKR EE100000001 . Reg. 10000001"
+			},
+			{
+				"spans": [
+					{
+						"offset": 261,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							182,
+							491,
+							234,
+							490,
+							235,
+							529,
+							183,
+							529
+						]
+					}
+				],
+				"content": "Pos"
+			},
+			{
+				"spans": [
+					{
+						"offset": 265,
+						"length": 9
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							234,
+							490,
+							372,
+							488,
+							374,
+							528,
+							235,
+							529
+						]
+					}
+				],
+				"content": "Item code"
+			},
+			{
+				"spans": [
+					{
+						"offset": 275,
+						"length": 11
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							372,
+							488,
+							908,
+							480,
+							909,
+							520,
+							374,
+							528
+						]
+					}
+				],
+				"content": "Description"
+			},
+			{
+				"spans": [
+					{
+						"offset": 287,
+						"length": 4
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							908,
+							480,
+							1202,
+							477,
+							1202,
+							515,
+							909,
+							520
+						]
+					}
+				],
+				"content": "Unit"
+			},
+			{
+				"spans": [
+					{
+						"offset": 292,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1202,
+							477,
+							1305,
+							474,
+							1305,
+							514,
+							1202,
+							515
+						]
+					}
+				],
+				"content": "Qty"
+			},
+			{
+				"spans": [
+					{
+						"offset": 296,
+						"length": 1
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							183,
+							529,
+							235,
+							529,
+							235,
+							568,
+							183,
+							569
+						]
+					}
+				],
+				"content": "1"
+			},
+			{
+				"spans": [
+					{
+						"offset": 298,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							235,
+							529,
+							374,
+							528,
+							374,
+							566,
+							235,
+							568
+						]
+					}
+				],
+				"content": "BBS00300"
+			},
+			{
+				"spans": [
+					{
+						"offset": 307,
+						"length": 33
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							374,
+							528,
+							909,
+							520,
+							909,
+							559,
+							374,
+							566
+						]
+					}
+				],
+				"content": "Oak veneered MDF 19 mm, 2440×1220"
+			},
+			{
+				"spans": [
+					{
+						"offset": 341,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							909,
+							520,
+							1202,
+							515,
+							1203,
+							555,
+							909,
+							559
+						]
+					}
+				],
+				"content": "pcs"
+			},
+			{
+				"spans": [
+					{
+						"offset": 345,
+						"length": 2
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1202,
+							515,
+							1305,
+							514,
+							1305,
+							553,
+							1203,
+							555
+						]
+					}
+				],
+				"content": "31"
+			},
+			{
+				"spans": [
+					{
+						"offset": 348,
+						"length": 1
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							183,
+							569,
+							235,
+							568,
+							235,
+							609,
+							184,
+							609
+						]
+					}
+				],
+				"content": "2"
+			},
+			{
+				"spans": [
+					{
+						"offset": 350,
+						"length": 8
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							235,
+							568,
+							374,
+							566,
+							375,
+							608,
+							235,
+							609
+						]
+					}
+				],
+				"content": "BBS00198"
+			},
+			{
+				"spans": [
+					{
+						"offset": 359,
+						"length": 24
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							374,
+							566,
+							909,
+							559,
+							911,
+							601,
+							375,
+							608
+						]
+					}
+				],
+				"content": "MDF 19 mm raw, 2800x2070"
+			},
+			{
+				"spans": [
+					{
+						"offset": 384,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							909,
+							559,
+							1203,
+							555,
+							1204,
+							596,
+							911,
+							601
+						]
+					}
+				],
+				"content": "pcs"
+			},
+			{
+				"spans": [
+					{
+						"offset": 388,
+						"length": 3
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							1203,
+							555,
+							1305,
+							553,
+							1305,
+							595,
+							1204,
+							596
+						]
+					}
+				],
+				"content": "122"
+			},
+			{
+				"spans": [
+					{
+						"offset": 392,
+						"length": 18
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							185,
+							722,
+							347,
+							722,
+							347,
+							743,
+							185,
+							744
+						]
+					}
+				],
+				"content": "Goods received by:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 411,
+						"length": 14
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							804,
+							715,
+							922,
+							714,
+							922,
+							735,
+							804,
+							736
+						]
+					}
+				],
+				"content": "Delivery date:"
+			},
+			{
+				"spans": [
+					{
+						"offset": 426,
+						"length": 51
+					}
+				],
+				"boundingRegions": [
+					{
+						"pageNumber": 1,
+						"polygon": [
+							557,
+							1802,
+							936,
+							1800,
+							936,
+							1820,
+							557,
+							1822
+						]
+					}
+				],
+				"role": "pageFooter",
+				"content": "Baltic Board Supply OU - VAT no. EE109532815 - 1/ 1"
+			}
+		],
+		"styles": [],
+		"contentFormat": "text",
+		"sections": [
+			{
+				"spans": [
+					{
+						"offset": 0,
+						"length": 425
+					}
+				],
+				"elements": [
+					"/paragraphs/0",
+					"/paragraphs/1",
+					"/paragraphs/2",
+					"/paragraphs/3",
+					"/paragraphs/4",
+					"/paragraphs/5",
+					"/paragraphs/6",
+					"/tables/0",
+					"/paragraphs/22",
+					"/paragraphs/23"
+				]
+			}
+		]
+	}
+}
