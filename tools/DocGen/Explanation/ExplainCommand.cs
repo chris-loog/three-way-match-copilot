@@ -33,8 +33,9 @@ internal static class ExplainCommand
             .Options;
         await using var db = new ThreeWayMatchDbContext(dbOptions);
 
-        var llm = ExplanationRegistration.CreateClient(new ExplanationOptions { Endpoint = new Uri(endpoint) });
-        var service = new ExplanationService(db, llm, TimeProvider.System, NullLogger<ExplanationService>.Instance);
+        var options = new ExplanationOptions { Endpoint = new Uri(endpoint) };
+        var llm = ExplanationRegistration.CreateClient(options);
+        var service = new ExplanationService(db, llm, TimeProvider.System, NullLogger<ExplanationService>.Instance, options);
 
         var ids = await db.MatchResults.AsNoTracking()
             .Where(m => (m.Decision == Decision.NeedsReview || m.Decision == Decision.OnHold) && m.ReviewedAt == null)

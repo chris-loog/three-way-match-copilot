@@ -13,6 +13,7 @@ public static class ExplanationRegistration
     /// </summary>
     public static IServiceCollection AddExplanations(this IServiceCollection services, ExplanationOptions options)
     {
+        services.AddSingleton(options);
         services.AddSingleton(_ => CreateClient(options));
         services.AddScoped<ExplanationService>();
         return services;

@@ -14,9 +14,12 @@ internal sealed class FakeLlm(Func<string, int, LlmResult> answer) : ILlmClient
 {
     public List<string> Prompts { get; } = [];
 
+    public List<string> Schemas { get; } = [];
+
     public Task<LlmResult> CompleteJsonAsync(string systemPrompt, string userPrompt, string schemaName, string jsonSchema, CancellationToken cancellationToken)
     {
         Prompts.Add(userPrompt);
+        Schemas.Add(jsonSchema);
         return Task.FromResult(answer(userPrompt, Prompts.Count));
     }
 

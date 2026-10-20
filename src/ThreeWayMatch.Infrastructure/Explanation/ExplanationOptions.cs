@@ -1,3 +1,5 @@
+using ThreeWayMatch.Domain.Explanation;
+
 namespace ThreeWayMatch.Infrastructure.Explanation;
 
 public sealed class ExplanationOptions
@@ -7,6 +9,9 @@ public sealed class ExplanationOptions
 
     /// <summary>The name of the model deployment in Azure OpenAI.</summary>
     public string Deployment { get; init; } = "gpt-4.1-mini";
+
+    /// <summary>Our company name in the closing of a message to a supplier.</summary>
+    public string CompanyName { get; init; } = SupplierLetter.DefaultCompany;
 
     public float Temperature { get; init; } = 0.2f;
 

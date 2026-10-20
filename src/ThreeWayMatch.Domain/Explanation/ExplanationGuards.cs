@@ -38,6 +38,12 @@ public static partial class ExplanationGuards
             failures.Add($"Blocking findings not mentioned: {string.Join(", ", missing)}.");
         }
 
+        // The program writes the greeting, closing and name. A bracket in the body is a placeholder the model left behind.
+        if (reply.DraftMessageToSupplier.AsSpan().IndexOfAny('[', ']') >= 0)
+        {
+            failures.Add("The message to the supplier contains a placeholder in square brackets.");
+        }
+
         if (reply.DraftMessageToSupplier.Length > MaxDraftLength)
         {
             failures.Add("The message to the supplier is too long.");

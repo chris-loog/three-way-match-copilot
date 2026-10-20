@@ -108,8 +108,8 @@ public class ExplanationGuardTests
     [Fact]
     public void The_template_writes_the_supplier_message_in_the_suppliers_language()
     {
-        Assert.StartsWith("Tere", ExplanationFallback.Build(Facts("Estonian")).DraftMessageToSupplier, StringComparison.Ordinal);
-        Assert.StartsWith("Hello", ExplanationFallback.Build(Facts("English")).DraftMessageToSupplier, StringComparison.Ordinal);
+        Assert.StartsWith("Kontrollime", ExplanationFallback.Build(Facts("Estonian")).DraftMessageToSupplier, StringComparison.Ordinal);
+        Assert.StartsWith("We are checking", ExplanationFallback.Build(Facts("English")).DraftMessageToSupplier, StringComparison.Ordinal);
     }
 
     [Fact]
@@ -129,6 +129,8 @@ public class ExplanationGuardTests
     [InlineData("en-GB", "English")]
     [InlineData(null, "English")]
     [InlineData("xx-nonsense", "English")]
+    [InlineData("fi-FI", "English")]
+    [InlineData("de-DE", "English")]
     public void The_supplier_language_comes_from_the_document_culture(string? culture, string expected)
     {
         Assert.Equal(expected, ExplanationFacts.Language(culture));

@@ -5,7 +5,11 @@ using ThreeWayMatch.Domain.Ap;
 
 namespace ThreeWayMatch.Domain.Explanation;
 
-public sealed record FactFinding(string Code, string Severity, int? Line, string? Expected, string? Actual, decimal AmountAtStake);
+public sealed record FactFinding(string Code, string Severity, int? Line, string? Expected, string? Actual, decimal AmountAtStake)
+{
+    /// <summary>What the code means, from <see cref="FindingCatalogue"/>. Sent to the model so it does not guess from the name.</summary>
+    public string Meaning => FindingCatalogue.Meaning(Code);
+}
 
 /// <summary>A document line as the model sees it. The description is free text from the document: it is truncated and sent as data only.</summary>
 public sealed record FactLine(int Line, string? Description, decimal? Quantity, string? Unit, decimal? UnitPrice, string Match);
@@ -30,6 +34,9 @@ public sealed record ExplanationFacts(
     IReadOnlyList<FactLine> Lines,
     SupplierHistory History)
 {
+    /// <summary>False when any finding is one the supplier must not be written about (a bank account change, goods still to arrive).</summary>
+    public bool SupplierDraftAllowed => Findings.All(f => FindingCatalogue.AllowsSupplierDraft(f.Code));
+
     private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, WriteIndented = false };
 
     public string ToJson() => JsonSerializer.Serialize(this, JsonOptions);
@@ -49,17 +56,9 @@ public sealed record ExplanationFacts(
         return cleaned.Length <= maxLength ? cleaned : cleaned[..maxLength];
     }
 
-    private static readonly Dictionary<string, string> LanguageNames = new()
-    {
-        ["et"] = "Estonian", ["en"] = "English", ["fi"] = "Finnish", ["sv"] = "Swedish", ["lv"] = "Latvian", ["lt"] = "Lithuanian", ["de"] = "German", ["ru"] = "Russian",
-    };
-
-    /// <summary>The language of a supplier's documents, named for the model. Anything unknown is English.</summary>
-    public static string Language(string? documentCulture)
-    {
-        var code = documentCulture?.Split('-')[0].ToLowerInvariant();
-        return code is not null && LanguageNames.TryGetValue(code, out var name) ? name : "English";
-    }
+    /// <summary>The language of the message to the supplier: Estonian for et, English for everything else (the only languages the letter frame exists in).</summary>
+    public static string Language(string? documentCulture) =>
+        string.Equals(documentCulture?.Split('-')[0], "et", StringComparison.OrdinalIgnoreCase) ? "Estonian" : "English";
 }
 
 /// <summary>The spelling of discrepancy codes in the catalogue and in the facts: <c>QtyOverInvoiced</c> becomes <c>QTY_OVER_INVOICED</c>.</summary>

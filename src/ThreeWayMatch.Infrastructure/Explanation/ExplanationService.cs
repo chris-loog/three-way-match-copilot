@@ -17,8 +17,11 @@ public sealed partial class ExplanationService(
     ThreeWayMatchDbContext db,
     ILlmClient llm,
     TimeProvider clock,
-    ILogger<ExplanationService> logger)
+    ILogger<ExplanationService> logger,
+    ExplanationOptions? options = null)
 {
+    private readonly string company = options?.CompanyName ?? SupplierLetter.DefaultCompany;
+
     private const int MaxAttempts = 2;
 
     public async Task<ExplanationOutcome> GenerateAsync(int documentId, CancellationToken cancellationToken)
@@ -79,7 +82,7 @@ public sealed partial class ExplanationService(
             LlmResult result;
             try
             {
-                result = await llm.CompleteJsonAsync(ExplanationPrompt.System, ExplanationPrompt.User(facts, failures), ExplanationReply.SchemaName, ExplanationReply.Schema, cancellationToken);
+                result = await llm.CompleteJsonAsync(ExplanationPrompt.System, ExplanationPrompt.User(facts, failures), ExplanationReply.SchemaName, ExplanationReply.SchemaFor(facts.SupplierDraftAllowed), cancellationToken);
             }
             catch (Exception ex) when (ex is not OperationCanceledException)
             {
@@ -91,18 +94,18 @@ public sealed partial class ExplanationService(
             total = new LlmResult(result.Text, total.PromptTokens + result.PromptTokens, total.CompletionTokens + result.CompletionTokens, result.Model);
             LogUsage(logger, attempt, result.Model, result.PromptTokens, result.CompletionTokens, timer.ElapsedMilliseconds);
 
-            var reply = ExplanationReply.TryParse(result.Text);
-            failures = reply is null ? ["The answer was not valid JSON with all four fields."] : ExplanationGuards.Check(facts, reply);
+            var reply = ExplanationReply.TryParse(result.Text, facts.SupplierDraftAllowed);
+            failures = reply is null ? ["The answer was not valid JSON with all required fields."] : ExplanationGuards.Check(facts, reply);
             if (reply is not null && failures.Count == 0)
             {
-                return (reply, ExplanationSource.Model, attempt > 1 ? $"Attempt 1 failed the checks and was retried." : null, total);
+                return (SupplierLetter.Finish(facts, reply, company), ExplanationSource.Model, attempt > 1 ? $"Attempt 1 failed the checks and was retried." : null, total);
             }
 
             notes.Add($"Attempt {attempt}: {string.Join(' ', failures)}");
         }
 
         LogFallback(logger, string.Join(' ', notes));
-        return (ExplanationFallback.Build(facts), ExplanationSource.Template, string.Join(' ', notes), total);
+        return (SupplierLetter.Finish(facts, ExplanationFallback.Build(facts), company), ExplanationSource.Template, string.Join(' ', notes), total);
     }
 
     private async Task<ExplanationFacts> BuildFactsAsync(Document document, MatchResult match, CancellationToken cancellationToken)

@@ -92,10 +92,17 @@
                         <dt>Likely cause</dt><dd>@x.LikelyCause</dd>
                         <dt>Suggested next step</dt><dd>@x.SuggestedAction</dd>
                     </dl>
-                    <details>
-                        <summary>Draft message to the supplier (@x.DraftLanguage)</summary>
-                        <pre class="draft">@x.DraftMessage</pre>
-                    </details>
+                    @if (string.IsNullOrWhiteSpace(x.DraftMessage))
+                    {
+                        <p class="note">No message to the supplier is drafted for this document. Follow the next step above.</p>
+                    }
+                    else
+                    {
+                        <details>
+                            <summary>Draft message to the supplier (@x.DraftLanguage)</summary>
+                            <pre class="draft">@x.DraftMessage</pre>
+                        </details>
+                    }
                     <p class="note" style="margin-top:10px">
                         @if (x.Source == ExplanationSource.Model)
                         {

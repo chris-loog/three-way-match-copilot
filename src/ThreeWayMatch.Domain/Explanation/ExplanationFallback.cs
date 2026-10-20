@@ -5,7 +5,8 @@ namespace ThreeWayMatch.Domain.Explanation;
 
 /// <summary>
 /// The answer shown when the model is unavailable or fails the guards twice. Built from the facts with fixed wording,
-/// so every number and code in it is true by construction.
+/// so every number and code in it is true by construction. Like the model's answer it holds only the body of the supplier
+/// message; <see cref="SupplierLetter.Finish"/> frames it.
 /// </summary>
 public static class ExplanationFallback
 {
@@ -27,7 +28,7 @@ public static class ExplanationFallback
             blocking
                 ? "Do not approve before the blocking findings are cleared. Check them against the order, the goods receipt and the supplier."
                 : "Check the findings against the order and the goods receipt, then approve or ask the supplier.",
-            SupplierMessage(facts));
+            facts.SupplierDraftAllowed ? SupplierMessage(facts) : string.Empty);
     }
 
     private static string Describe(FactFinding finding, string? currency)
@@ -52,8 +53,8 @@ public static class ExplanationFallback
                 : string.Empty)));
 
         return estonian
-            ? $"Tere!\n\nKontrollime teie dokumenti {number} (tellimus {order}) ja leidsime järgmist:\n{lines}\n\nPalun kinnitage või saatke parandatud dokument.\n\nLugupidamisega"
-            : $"Hello,\n\nWe are checking your document {number} (order {order}) and found the following:\n{lines}\n\nPlease confirm or send a corrected document.\n\nKind regards";
+            ? $"Kontrollime teie dokumenti {number} (tellimus {order}) ja leidsime järgmist:\n{lines}\n\nPalun kinnitage või saatke parandatud dokument."
+            : $"We are checking your document {number} (order {order}) and found the following:\n{lines}\n\nPlease confirm or send a corrected document.";
     }
 
     private static string PhraseEn(string code) => code switch
