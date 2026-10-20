@@ -122,10 +122,15 @@ az functionapp config appsettings set -g "$RG" -n "$FUNC" --settings \
 APP_REG=$(az ad app create --display-name gh-three-way-match-deploy --query appId -o tsv)
 APP_REG_OBJECT=$(az ad app show --id "$APP_REG" --query id -o tsv)
 az ad sp create --id "$APP_REG" >/dev/null
+# GitHub now puts the numeric owner and repository IDs in the OIDC subject: repo:OWNER@OWNER_ID/REPO@REPO_ID:ref:...
+# A subject without them is rejected by Entra (AADSTS700213). Older repositories without IDs would need the plain form.
+OWNER_ID=$(gh api "repos/$GH_REPO" --jq '.owner.id')
+REPO_ID=$(gh api "repos/$GH_REPO" --jq '.id')
+SUBJECT="repo:${GH_REPO%%/*}@$OWNER_ID/${GH_REPO##*/}@$REPO_ID:ref:refs/heads/main"
 az ad app federated-credential create --id "$APP_REG_OBJECT" --parameters "{
   \"name\": \"github-main\",
   \"issuer\": \"https://token.actions.githubusercontent.com\",
-  \"subject\": \"repo:$GH_REPO:ref:refs/heads/main\",
+  \"subject\": \"$SUBJECT\",
   \"audiences\": [\"api://AzureADTokenExchange\"]
 }"
 sleep 30
