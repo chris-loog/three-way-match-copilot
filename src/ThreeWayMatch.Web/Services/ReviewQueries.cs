@@ -196,8 +196,14 @@ public sealed class ReviewQueries(ThreeWayMatchDbContext db)
             .Select(g => new { Code = g.Key, Count = g.Count() }).ToListAsync(cancellationToken);
 
         // Accuracy per field: how often a reviewer had to fix what the model read.
-        var corrections = await db.FieldCorrections.AsNoTracking().Select(c => new { c.FieldName, Supplier = c.ExtractedDocument!.SupplierName }).ToListAsync(cancellationToken);
-        var documents = await db.ExtractedDocuments.AsNoTracking().Select(e => new { e.SupplierName }).ToListAsync(cancellationToken);
+        // The supplier is the one the document was matched to. The text printed on a scan is misread often ("OÜ" becomes "OU", "O0"),
+        // and grouping by it would show one supplier as several.
+        var documents = await db.ExtractedDocuments.AsNoTracking()
+            .Select(e => new { e.Id, Supplier = e.Document!.MatchResult != null && e.Document.MatchResult.Supplier != null ? e.Document.MatchResult.Supplier.Name : e.SupplierName })
+            .ToListAsync(cancellationToken);
+        var supplierOf = documents.ToDictionary(d => d.Id, d => d.Supplier);
+        var corrections = (await db.FieldCorrections.AsNoTracking().Select(c => new { c.FieldName, c.ExtractedDocumentId }).ToListAsync(cancellationToken))
+            .Select(c => new { c.FieldName, Supplier = supplierOf.GetValueOrDefault(c.ExtractedDocumentId) }).ToList();
         var lineCount = await db.ExtractedLines.CountAsync(cancellationToken);
 
         static string Plain(string field) => field.Contains('.', StringComparison.Ordinal) ? field[(field.IndexOf('.', StringComparison.Ordinal) + 1)..] : field;
@@ -207,7 +213,7 @@ public sealed class ReviewQueries(ThreeWayMatchDbContext db)
             .Where(f => f.Total > 0)
             .ToList();
 
-        var suppliers = documents.GroupBy(d => d.SupplierName ?? "Unknown supplier")
+        var suppliers = documents.GroupBy(d => d.Supplier ?? "Unknown supplier")
             .Select(g => (Supplier: g.Key, Corrections: corrections.Count(c => (c.Supplier ?? "Unknown supplier") == g.Key), Documents: g.Count()))
             .OrderByDescending(s => s.Corrections).ThenBy(s => s.Supplier).ToList();
 
