@@ -21,7 +21,7 @@ Evaluated on the dev split (179 documents: 124 clean, 20 light scans, 15 heavy s
 | **Field accuracy, clean documents** | 100 % on every checked invoice and delivery-note field (66 invoices, 58 delivery notes) |
 | **Cost** | About 1 US cent per document to read; an explanation adds under 0.1 cent (list prices, see `eval/evaluation.ipynb`) |
 
-The test split (including a supplier layout the system never saw) is reported once, at the end. It is not in this table yet. Details, charts and the honest limits are under [Results](#results).
+**Test split (79 documents, one run, including a supplier layout the system never saw):** 0 wrong automatic approvals out of 22 documents with a real problem; 44 of 79 straight through (55.7 %); 13 of 57 good documents sent to a person (22.8 %). Details, charts and the honest limits are under [Results](#results).
 
 ## The problem
 
@@ -94,13 +94,37 @@ Produced by one command, `dotnet run --project tools/DocGen -- eval`, which runs
 
 **What fixing the first run taught.** The first dev run sent 50 of 140 good documents to review. Three real read errors caused most of them: the OCR writes `no .:` with a space before the dot, it reads the superscript of m³ as `ª` on scans, and the prebuilt invoice model sometimes leaves the order number out although it is printed. After fixing those (each with a test) it was 22. The rest are heavy scans and photos.
 
-**Not measured yet:** the test split, the custom delivery-note model compared with the layout rules (neural against template, including the held-out layout), processing time from the real pipeline, and the quality of the language-model explanations scored by hand. They are added here when the runs are done.
+**Test split, run once** (79 documents: 42 invoices and 37 delivery notes, 27 of them from the layout the system never saw; delivery notes read by the custom neural model, the default):
+
+| | Test result |
+|---|---|
+| Wrong automatic approvals | **0 of 22** documents with a real problem |
+| Straight through | 44 of 79 (55.7 %); dev was 67.0 % |
+| Good documents sent to a person | 13 of 57 (22.8 %): 3 clean, 4 photos, 1 real photo, 4 heavy scans, 1 light scan |
+| Decisions as expected | 82.3 % (dev 88.3 %) |
+| Invoices on the held-out layout | 12 of 14 decisions correct |
+
+The test split is lower than dev on straight-through rate. Part of it is the unseen layout (5 of the 13 false alarms are on it: 4 delivery notes, 1 invoice) and part is photos and heavy scans (9 of the 13). A document sent to a person is the safe outcome, so the zero in the first row is the number that matters.
+
+**Delivery-note readers compared on the test split** (mean accuracy over number, PO reference, VAT number, date, line count and quantities):
+
+| Reader | Known layouts (24 notes) | Held-out layout (13 notes) | Wrong auto-approvals | Good notes sent to review |
+|---|---|---|---|---|
+| `prebuilt-layout` + rules | 100 % | 97 % | 0 | 5 |
+| Neural model (default) | 99 % | 94 % | 0 | 7 |
+| Template model | 98 % | 74 % | **2** | 7 |
+
+- The **template model** failed on the unseen layout: it read the delivery date correctly in none of the 13 notes, and quantities in 69 %. Two notes with a wrong quantity were read with a confidence of 0.99 and approved. A fixed-layout model is confident exactly where it should not be.
+- The **neural model** generalised better (quantities 77 % on the held-out layout), and none of its misreads led to a wrong approval on this test set.
+- The plain **layout model with rules scored best on test**, slightly better than the trained neural model. It needs no labelling or training. The neural model stays the default because it was the model chosen on dev, and the test split was not used to change the choice. With 13 notes on the held-out layout the difference is two or three documents; it is a signal, not a proof. Picking the layout reader would be a documented "v2" decision.
+
+**Not measured yet:** processing time from the real pipeline and the quality of the language-model explanations scored by hand. They are added here when the runs are done.
 
 ### Honest limits
 
 - The data is synthetic: five layouts, one fictional company, and errors injected by the same person who wrote the rules. Recall on injected errors is partly circular; the scans, the photos and the held-out layout are the honest part.
 - 179 dev documents are few. A single document moves a percentage by several points, which is why counts sit next to percentages.
-- The threshold was chosen on dev. The test split is run once.
+- The threshold was chosen on dev. The test split was run once; any later run is reported as v2.
 - The results show the method, not performance in a real plant.
 
 ## Security
