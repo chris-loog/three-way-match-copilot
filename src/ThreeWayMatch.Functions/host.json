@@ -10,7 +10,7 @@
   },
   "extensions": {
     "queues": {
-      "messageEncoding": "none",
+      "messageEncoding": "base64",
       "maxDequeueCount": 5,
       "batchSize": 1,
       "newBatchThreshold": 0,
