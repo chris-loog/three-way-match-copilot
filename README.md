@@ -6,9 +6,13 @@
 
 Reads supplier invoices and delivery notes with Azure AI Document Intelligence, matches them against purchase orders and goods receipts in an ERP-style Azure SQL database, approves the clean ones automatically, and sends the rest to a review screen where a language model explains what is wrong. Built for the purchasing team of a manufacturer that today compares every document by hand.
 
-**Live demo:** <!-- DEMO-LINK --> added after the first deploy. The site scales to zero, so the first request waits a few seconds for a cold start. It runs in demo mode (a fixed reviewer, sample data only).
+**Live demo:** https://ca-three-way-match.redriver-afcee29f.swedencentral.azurecontainerapps.io (the site scales to zero, so the first request waits a few seconds for a cold start). It runs in demo mode (a fixed reviewer, sample data only).
 
 Everything here is synthetic. The company, the suppliers and the documents are fictional.
+
+| The review queue, most money at risk first | One invoice: findings, explanation, order and delivery |
+|---|---|
+| ![The review queue](docs/img/inbox.png) | ![An invoice with its findings and explanation](docs/img/detail.png) |
 
 ## The result in four numbers
 
@@ -118,7 +122,7 @@ The test split is lower than dev on straight-through rate. Part of it is the uns
 - The **neural model** generalised better (quantities 77 % on the held-out layout), and none of its misreads led to a wrong approval on this test set.
 - The plain **layout model with rules scored best on test**, slightly better than the trained neural model. It needs no labelling or training. The neural model stays the default because it was the model chosen on dev, and the test split was not used to change the choice. With 13 notes on the held-out layout the difference is two or three documents; it is a signal, not a proof. Picking the layout reader would be a documented "v2" decision.
 
-**Processing time**, from the real pipeline (17 invoices uploaded to Blob Storage, queue, Function running locally against Azure SQL): median 8.5 s, p95 10.2 s, slowest 13.7 s (the first one, with the database waking from auto-pause). Most of it is the extraction step. The deployed Function has not been timed yet.
+**Processing time**, from the pipeline in Azure: 8 invoices (4 clean, 3 heavy scans, 1 photo) uploaded to the deployed site. Median 9.7 s, p95 11.6 s (slowest 12.5 s), from the Function picking up the queue message to the final status (queue wait and Function cold start not included). The 8 ran in parallel because the Function app scaled out. Earlier, 17 invoices through the Function running on a laptop against the same Azure services gave a median of 8.5 s. Most of the time is the extraction call to Document Intelligence.
 
 **Explanations, scored on 10 documents** by Claude from the text (not by a human; the PDFs were not opened), 1 to 5:
 
@@ -225,10 +229,6 @@ eval/                              evaluation notebook and run instructions
 infra/, db/                        Azure CLI scripts, SQL for the identity grant, schema
 ```
 
-## Why this matters
-
-Purchase-to-pay matching is where an ERP meets paper. I have worked with Monitor ERP integrations and built an ERP for a scrap-metal company, and the rules here come from that kind of work: partial deliveries are the normal case, units are the quiet source of errors, and a bank-account change is the invoice you must never wave through. The point of the project is to show that document AI can take the routine work out of that process without taking the control away from the people responsible for it.
-
 ## Limitations and next steps
 
 - One fictional company, five layouts, synthetic documents. No e-invoice XML (a structured invoice needs no OCR and should be the first intake path).
@@ -238,5 +238,7 @@ Purchase-to-pay matching is where an ERP meets paper. I have worked with Monitor
 - More layouts, and a retraining loop from the stored corrections.
 
 ## Licence and data
+
+The code is released under the [MIT licence](LICENSE).
 
 The documents, suppliers, prices and bank accounts are generated. Bank account numbers use an unassigned bank code with a valid checksum, so no generated account can be real. No data from any employer or client was used.

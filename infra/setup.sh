@@ -94,4 +94,21 @@ az sql server firewall-rule create -g "$RG" -s "$SQL_SERVER" -n chris-dev \
 az sql server firewall-rule create -g "$RG" -s "$SQL_SERVER" -n AllowAzureServices \
   --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 
+# --- The two custom delivery-note models (step 4.1) ---
+# These were made by hand in Document Intelligence Studio (project "delivery-note"): 28 dev delivery notes labelled, then two builds.
+# The label files are in training/labels/ in the repo; the documents and labels sit in the `training` container.
+# This is the same build through the REST API (version 2024-11-30), kept as a record of what Studio did.
+# It is commented out and has NOT been run: it was written from the API documentation, not tested.
+#
+# SAS=$(az storage container generate-sas --account-name stthreewaymatch --name training --permissions rl \
+#   --expiry "$(date -u -d '+1 hour' +%Y-%m-%dT%H:%MZ)" --auth-mode login --as-user -o tsv)   # user delegation SAS, no account key
+# DI_ENDPOINT=https://di-three-way-match.cognitiveservices.azure.com
+# TOKEN=$(az account get-access-token --resource https://cognitiveservices.azure.com --query accessToken -o tsv)
+# for BUILD in "neural:delivery-note-neural-v1" "template:delivery-note-template-v1"; do
+#   curl -s -X POST "$DI_ENDPOINT/documentintelligence/documentModels:build?api-version=2024-11-30" \
+#     -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+#     -d "{\"modelId\": \"${BUILD#*:}\", \"buildMode\": \"${BUILD%%:*}\", \"azureBlobSource\": {\"containerUrl\": \"https://stthreewaymatch.blob.core.windows.net/training?$SAS\"}}"
+# done
+# The build runs asynchronously; poll the Operation-Location header of the response. Neural training uses free hours first, then is billed per hour.
+
 echo "Done. Subscription: $SUB"
