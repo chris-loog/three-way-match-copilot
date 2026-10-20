@@ -19,7 +19,7 @@ Evaluated on the dev split (179 documents: 124 clean, 20 light scans, 15 heavy s
 | **Wrong automatic approvals** | **0 of 39** documents with a real problem |
 | **Straight-through rate** | 65.9 % overall (118 of 179). 96 of 98 clean documents (98 %). Heavy scans and photos mostly go to a person, on purpose. |
 | **Field accuracy, clean documents** | 100 % on every checked invoice and delivery-note field (66 invoices, 58 delivery notes) |
-| **Cost** | About 1 US cent per document to read; an explanation adds under 0.1 cent (list prices, see `eval/evaluation.ipynb`) |
+| **Cost** | About 2 US cents per document all in: 1.95 to read, 0.08 for an explanation when one is needed (list prices, see `eval/evaluation.ipynb`) |
 
 **Test split (79 documents, one run, including a supplier layout the system never saw):** 0 wrong automatic approvals out of 22 documents with a real problem; 44 of 79 straight through (55.7 %); 13 of 57 good documents sent to a person (22.8 %). Details, charts and the honest limits are under [Results](#results).
 
@@ -50,7 +50,7 @@ flowchart LR
 4. **Match.** Supplier by VAT number; purchase order by reference; each line by supplier item code, then our item code, then wording we learned from reviewers, then fuzzy wording (a guess, which always forces review). Units convert only through the supplier's item data: solid cubic metres and stacked cubic metres are never converted.
 5. **Decide.** Thirteen rules look for discrepancies. The decision is code, not a model: *rejected* (exact duplicate), *on hold* (goods not fully received yet), *needs review* (any warning, block or guess), *auto-approved* (nothing found).
 6. **Review.** A person sees the document next to what was read, the order and the receipt, and approves or corrects. A human decision is never overwritten by a machine re-run. Corrections are stored and re-applied on top of the stored result, so a correction re-matches without calling Azure.
-7. **Explain.** On request, a language model writes a short explanation and a draft message to the supplier, in the supplier's language. It gets structured facts, never the document text, and its answer must pass checks in plain code.
+7. **Explain.** On request, a language model writes a short explanation and, where it is safe, a draft message to the supplier in Estonian or English. It gets structured facts, never the document text, and its answer must pass checks in plain code. For a changed bank account and for goods that have not arrived yet, no supplier message is drafted; the reviewer gets fixed text instead (phone the supplier on the number in the master data; wait for the goods).
 
 ### Discrepancies it catches
 
@@ -118,13 +118,24 @@ The test split is lower than dev on straight-through rate. Part of it is the uns
 - The **neural model** generalised better (quantities 77 % on the held-out layout), and none of its misreads led to a wrong approval on this test set.
 - The plain **layout model with rules scored best on test**, slightly better than the trained neural model. It needs no labelling or training. The neural model stays the default because it was the model chosen on dev, and the test split was not used to change the choice. With 13 notes on the held-out layout the difference is two or three documents; it is a signal, not a proof. Picking the layout reader would be a documented "v2" decision.
 
-**Not measured yet:** processing time from the real pipeline and the quality of the language-model explanations scored by hand. They are added here when the runs are done.
+**Processing time**, from the real pipeline (17 invoices uploaded to Blob Storage, queue, Function running locally against Azure SQL): median 8.5 s, p95 10.2 s, slowest 13.7 s (the first one, with the database waking from auto-pause). Most of it is the extraction step. The deployed Function has not been timed yet.
+
+**Explanations, scored on 10 documents** by Claude from the text (not by a human; the PDFs were not opened), 1 to 5:
+
+| | Correct | Useful | Safe to send |
+|---|---|---|---|
+| v1 (the model writes the whole letter) | 4.0 | 3.5 | 2.5 |
+| v2 (fixed meaning per code, letter frame written in code) | 4.6 | 4.1 | 4.7 |
+
+What v1 got wrong: it explained a partial delivery as over-delivery, it drafted bank-change letters that ask the sender to confirm by reply (the channel a fraudster controls), it mangled supplier names (`ÖC`) and left placeholders (`[Teie nimi]`). v2 sends each finding's meaning with the facts, writes the greeting, the supplier's name and the closing in code, and drafts nothing for a bank change or a partial delivery. In the v2 run 15 of 16 answers came from the model; one fell back to the template text after the model twice left out the blocking code, which is the guard doing its job.
 
 ### Honest limits
 
 - The data is synthetic: five layouts, one fictional company, and errors injected by the same person who wrote the rules. Recall on injected errors is partly circular; the scans, the photos and the held-out layout are the honest part.
 - 179 dev documents are few. A single document moves a percentage by several points, which is why counts sit next to percentages.
 - The threshold was chosen on dev. The test split was run once; any later run is reported as v2.
+- The explanation scores are one reader's judgement on 10 documents, not a measured accuracy.
+- Duplicate checks only know the documents the system has already processed. A possible duplicate of an invoice it never saw is approved if nothing else is wrong.
 - The results show the method, not performance in a real plant.
 
 ## Security

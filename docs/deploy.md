@@ -15,7 +15,7 @@ push to main --> CI (build, test) --> Deploy workflow
 ## First time
 
 1. Create the base resources: `infra/setup.sh` (already done for this project).
-2. Create the deploy resources: `bash infra/setup-phase9.sh`. It creates the managed identity and its roles, the registry, the Container Apps environment and app, the Function app, and the GitHub OIDC app registration, then sets the repository variables.
+2. Create the deploy resources: `bash infra/setup-phase9.sh`. It creates the managed identity and its roles, the registry, the web app, the Function app, and the GitHub OIDC app registration, then sets the repository variables. The web app runs in the **existing** Container Apps environment of the Steel Defect Triage project, because the subscription allows only one environment in total (a second one fails with `MaxNumberOfGlobalEnvironmentsInSubExceeded`). Its logs go to that environment's Log Analytics workspace.
 3. Grant the identity database access (the one step `az` cannot do): run `db/grant-identity.sql` in the Portal query editor as the Entra admin. The identity gets `db_datareader` and `db_datawriter` only, so the running app cannot change the schema.
 4. Apply the migrations: `bash infra/migrate.sh`.
 5. Push to `main`. The deploy workflow runs after CI.
@@ -45,4 +45,4 @@ Container Apps also keeps the previous revision for a while: `az containerapp re
 
 ## Cost and teardown
 
-The registry (Basic) costs about 5 euro a month. Container Apps scale to zero (the first request after idle waits for a cold start of some seconds), the Function app is Flex Consumption, SQL is the free serverless offer, and the rest stays inside free grants at demo traffic. To remove everything: `az group delete -n rg-three-way-match`, then delete the app registration `gh-three-way-match-deploy`.
+The registry (Basic) costs about 5 euro a month. Container Apps scale to zero (the first request after idle waits for a cold start of some seconds), the Function app is Flex Consumption, SQL is the free serverless offer, and the rest stays inside free grants at demo traffic. To remove this project: `az group delete -n rg-three-way-match`, then delete the app registration `gh-three-way-match-deploy`. Deleting this group does not touch the shared environment. The reverse is not true: deleting `rg-steel-defect-triage` (or its environment) breaks this web app, so delete this project's app first.
