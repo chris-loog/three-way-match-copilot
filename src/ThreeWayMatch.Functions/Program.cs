@@ -4,6 +4,7 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using ThreeWayMatch.Infrastructure;
 using ThreeWayMatch.Infrastructure.DocumentIntelligence;
 
@@ -12,6 +13,17 @@ var builder = FunctionsApplication.CreateBuilder(args);
 builder.Services
     .AddApplicationInsightsTelemetryWorkerService()
     .ConfigureFunctionsApplicationInsights();
+
+// The isolated worker ships with a filter that sends only Warning and above from our own ILogger code to Application Insights.
+// Remove it, otherwise the "Processed in ... ms" line (the processing time per document) never arrives.
+builder.Logging.Services.Configure<LoggerFilterOptions>(options =>
+{
+    var defaultRule = options.Rules.FirstOrDefault(rule => rule.ProviderName == "Microsoft.Extensions.Logging.ApplicationInsights.ApplicationInsightsLoggerProvider");
+    if (defaultRule is not null)
+    {
+        options.Rules.Remove(defaultRule);
+    }
+});
 
 // Settings are read from environment variables: local.settings.json on your machine, application settings in Azure.
 // There are no keys anywhere: every Azure service is reached with DefaultAzureCredential
